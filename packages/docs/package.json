@@ -1,0 +1,18 @@
+{
+  "name": "@senna-ui/docs",
+  "version": "0.0.1",
+  "description": "Pre-packaged API documentation for the Senna docs.",
+  "main": "core.json",
+  "types": "core.d.ts",
+  "files": [
+    "core.json",
+    "core.d.ts"
+  ],
+  "author": "Senna UI",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/senna-ui/senna-docs.git"
+  },
+  "homepage": "https://senna-ui.com/docs"
+}

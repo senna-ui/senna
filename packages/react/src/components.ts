@@ -8,7 +8,7 @@ import { JSX } from '@senna-ui/core';
 import { defineCustomElements, applyPolyfills } from '@senna-ui/core/loader';
 
 applyPolyfills().then(() => defineCustomElements());
-export const SaButton = /*@__PURE__*/createReactComponent<JSX.SaButton, HTMLSaButtonElement>('sa-button');
-export const SaCol = /*@__PURE__*/createReactComponent<JSX.SaCol, HTMLSaColElement>('sa-col');
-export const SaContainer = /*@__PURE__*/createReactComponent<JSX.SaContainer, HTMLSaContainerElement>('sa-container');
-export const SaRow = /*@__PURE__*/createReactComponent<JSX.SaRow, HTMLSaRowElement>('sa-row');
+export const SenButton = /*@__PURE__*/createReactComponent<JSX.SenButton, HTMLSenButtonElement>('sen-button');
+export const SenCol = /*@__PURE__*/createReactComponent<JSX.SenCol, HTMLSenColElement>('sen-col');
+export const SenContainer = /*@__PURE__*/createReactComponent<JSX.SenContainer, HTMLSenContainerElement>('sen-container');
+export const SenRow = /*@__PURE__*/createReactComponent<JSX.SenRow, HTMLSenRowElement>('sen-row');

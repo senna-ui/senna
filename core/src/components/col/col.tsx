@@ -1,7 +1,7 @@
 import { Component, ComponentInterface, Host, h, Prop } from "@stencil/core";
 
 @Component({
-  tag: "sa-col",
+  tag: "sen-col",
   styleUrl: "col.scss",
   shadow: false,
 })

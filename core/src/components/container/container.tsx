@@ -1,7 +1,7 @@
 import { Component, ComponentInterface, h, Host } from "@stencil/core";
 
 @Component({
-  tag: "sa-container",
+  tag: "sen-container",
   styleUrl: "container.scss",
   shadow: false,
 })

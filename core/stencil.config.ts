@@ -12,7 +12,7 @@ export const config: Config = {
   ],
   outputTargets: [
     reactOutputTarget({
-      componentCorePackage: '@senna-ui/core',
+      componentCorePackage: "@senna-ui/core",
       proxiesFile: "../packages/react/src/components.ts",
     }),
     {
@@ -21,6 +21,10 @@ export const config: Config = {
     },
     {
       type: "docs-readme",
+    },
+    {
+      type: "docs-json",
+      file: "../packages/docs/core.json",
     },
     {
       type: "www",

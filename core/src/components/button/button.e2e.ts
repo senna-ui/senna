@@ -1,11 +1,11 @@
 import { newE2EPage } from "@stencil/core/testing";
 
-describe("sa-button", () => {
+describe("sen-button", () => {
   it("renders", async () => {
     const page = await newE2EPage();
-    await page.setContent("<sa-button></sa-button>");
+    await page.setContent("<sen-button></sen-button>");
 
-    const element = await page.find("sa-button");
+    const element = await page.find("sen-button");
     expect(element).toHaveClass("hydrated");
   });
 });

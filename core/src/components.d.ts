@@ -7,7 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Color, } from "./interface";
 export namespace Components {
-    interface SaButton {
+    interface SenButton {
         /**
           * Button type
          */
@@ -21,7 +21,7 @@ export namespace Components {
          */
         "disabled": boolean;
     }
-    interface SaCol {
+    interface SenCol {
         /**
           * Large column width
          */
@@ -43,45 +43,45 @@ export namespace Components {
          */
         "xs"?: number;
     }
-    interface SaContainer {
+    interface SenContainer {
     }
-    interface SaRow {
+    interface SenRow {
     }
 }
 declare global {
-    interface HTMLSaButtonElement extends Components.SaButton, HTMLStencilElement {
+    interface HTMLSenButtonElement extends Components.SenButton, HTMLStencilElement {
     }
-    var HTMLSaButtonElement: {
-        prototype: HTMLSaButtonElement;
-        new (): HTMLSaButtonElement;
+    var HTMLSenButtonElement: {
+        prototype: HTMLSenButtonElement;
+        new (): HTMLSenButtonElement;
     };
-    interface HTMLSaColElement extends Components.SaCol, HTMLStencilElement {
+    interface HTMLSenColElement extends Components.SenCol, HTMLStencilElement {
     }
-    var HTMLSaColElement: {
-        prototype: HTMLSaColElement;
-        new (): HTMLSaColElement;
+    var HTMLSenColElement: {
+        prototype: HTMLSenColElement;
+        new (): HTMLSenColElement;
     };
-    interface HTMLSaContainerElement extends Components.SaContainer, HTMLStencilElement {
+    interface HTMLSenContainerElement extends Components.SenContainer, HTMLStencilElement {
     }
-    var HTMLSaContainerElement: {
-        prototype: HTMLSaContainerElement;
-        new (): HTMLSaContainerElement;
+    var HTMLSenContainerElement: {
+        prototype: HTMLSenContainerElement;
+        new (): HTMLSenContainerElement;
     };
-    interface HTMLSaRowElement extends Components.SaRow, HTMLStencilElement {
+    interface HTMLSenRowElement extends Components.SenRow, HTMLStencilElement {
     }
-    var HTMLSaRowElement: {
-        prototype: HTMLSaRowElement;
-        new (): HTMLSaRowElement;
+    var HTMLSenRowElement: {
+        prototype: HTMLSenRowElement;
+        new (): HTMLSenRowElement;
     };
     interface HTMLElementTagNameMap {
-        "sa-button": HTMLSaButtonElement;
-        "sa-col": HTMLSaColElement;
-        "sa-container": HTMLSaContainerElement;
-        "sa-row": HTMLSaRowElement;
+        "sen-button": HTMLSenButtonElement;
+        "sen-col": HTMLSenColElement;
+        "sen-container": HTMLSenContainerElement;
+        "sen-row": HTMLSenRowElement;
     }
 }
 declare namespace LocalJSX {
-    interface SaButton {
+    interface SenButton {
         /**
           * Button type
          */
@@ -95,7 +95,7 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
     }
-    interface SaCol {
+    interface SenCol {
         /**
           * Large column width
          */
@@ -117,25 +117,25 @@ declare namespace LocalJSX {
          */
         "xs"?: number;
     }
-    interface SaContainer {
+    interface SenContainer {
     }
-    interface SaRow {
+    interface SenRow {
     }
     interface IntrinsicElements {
-        "sa-button": SaButton;
-        "sa-col": SaCol;
-        "sa-container": SaContainer;
-        "sa-row": SaRow;
+        "sen-button": SenButton;
+        "sen-col": SenCol;
+        "sen-container": SenContainer;
+        "sen-row": SenRow;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "sa-button": LocalJSX.SaButton & JSXBase.HTMLAttributes<HTMLSaButtonElement>;
-            "sa-col": LocalJSX.SaCol & JSXBase.HTMLAttributes<HTMLSaColElement>;
-            "sa-container": LocalJSX.SaContainer & JSXBase.HTMLAttributes<HTMLSaContainerElement>;
-            "sa-row": LocalJSX.SaRow & JSXBase.HTMLAttributes<HTMLSaRowElement>;
+            "sen-button": LocalJSX.SenButton & JSXBase.HTMLAttributes<HTMLSenButtonElement>;
+            "sen-col": LocalJSX.SenCol & JSXBase.HTMLAttributes<HTMLSenColElement>;
+            "sen-container": LocalJSX.SenContainer & JSXBase.HTMLAttributes<HTMLSenContainerElement>;
+            "sen-row": LocalJSX.SenRow & JSXBase.HTMLAttributes<HTMLSenRowElement>;
         }
     }
 }

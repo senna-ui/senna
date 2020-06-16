@@ -3,11 +3,11 @@ export default {
 };
 
 export const Columns = () => `
-  <sa-container>
-    <sa-row>
-      <sa-col md="6">Column 1</sa-col>
-      <sa-col>Column 2</sa-col>
-      <sa-col>Column 3</sa-col>
-    </sa-row>
-  </sa-container>
+  <sen-container>
+    <sen-row>
+      <sen-col md="6">Column 1</sen-col>
+      <sen-col>Column 2</sen-col>
+      <sen-col>Column 3</sen-col>
+    </sen-row>
+  </sen-container>
 `;

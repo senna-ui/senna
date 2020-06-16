@@ -1,27 +1,27 @@
 {
   "compilerOptions": {
-    "strict": true,
     "alwaysStrict": true,
+    "strict": true,
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
     "declaration": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
-    "assumeChangesOnlyAffectDirectDependencies": true,
-    "jsx": "react",
-    "jsxFactory": "h",
     "lib": ["dom", "es2017"],
-    "module": "esnext",
+    "module": "es2015",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": ".tmp",
     "pretty": true,
     "removeComments": false,
-    "target": "es2017"
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "**/test"]
+    "strictPropertyInitialization": false,
+    "target": "es2017",
+    "baseUrl": ".",
+    "paths": {
+      "@ionic/core": ["./core"],
+      "@ionic/react": ["./packages/react"]
+    }
+  }
 }

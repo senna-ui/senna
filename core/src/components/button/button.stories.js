@@ -8,7 +8,7 @@ export default {
 };
 
 export const Primary = () =>
-  '<sa-button color="primary">My Button</sa-button>';
+  '<sen-button color="primary">My Button</sen-button>';
 
 export const Secondary = () =>
-  '<sa-button color="secondary">My Button</sa-button>';
+  '<sen-button color="secondary">My Button</sen-button>';

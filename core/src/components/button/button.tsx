@@ -2,7 +2,7 @@ import { Component, ComponentInterface, Host, h, Prop } from "@stencil/core";
 import { Color } from "../../interface";
 
 @Component({
-  tag: "sa-button",
+  tag: "sen-button",
   styleUrl: "button.scss",
   shadow: true,
 })
