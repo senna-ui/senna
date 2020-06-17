@@ -39,12 +39,13 @@
     "eslint": "^7.2.0",
     "eslint-plugin-react": "^7.20.0"
   },
-  "license": "MIT",
+  "license": "UNLICENSED",
   "dependencies": {
     "bootstrap": "^4.5.0"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
     "access": "restricted"
-  }
+  },
+  "gitHead": "f994e0ab1fe65bab9ecf851a7aa815896a13a75e"
 }
