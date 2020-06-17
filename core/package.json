@@ -1,7 +1,7 @@
 {
   "name": "@senna-ui/core",
   "version": "0.0.5",
-  "description": "Stencil Component Starter",
+  "description": "Senna UI core framework",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
