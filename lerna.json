@@ -1,8 +1,10 @@
 {
-  "packages": [
-    "core",
-    "packages/*"
-  ],
+  "packages": ["core", "packages/*"],
   "version": "0.0.1",
-  "npmClient": "npm"
+  "npmClient": "npm",
+  "command": {
+    "publish": {
+      "registry": "https://npm.pkg.github.com"
+    }
+  }
 }
