@@ -20,8 +20,8 @@
     "target": "es2017",
     "baseUrl": ".",
     "paths": {
-      "@ionic/core": ["./core"],
-      "@ionic/react": ["./packages/react"]
+      "@senna-ui/core": ["./core"],
+      "@senna-ui/react": ["./packages/react"]
     }
   }
 }

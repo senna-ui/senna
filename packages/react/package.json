@@ -2,7 +2,7 @@
   "name": "@senna-ui/react",
   "sideEffects": false,
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "description": "React specific wrapper for component-library",
   "repository": {
     "type": "git",
@@ -46,5 +46,9 @@
       "node_modules",
       "dist"
     ]
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "restricted"
   }
 }

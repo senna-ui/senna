@@ -1,5 +1,5 @@
-const path = require('path');
-const fs = require('fs');
+const path = require("path");
+const fs = require("fs");
 
 // Test dist build:
 // Double-triple check all the packages
@@ -7,35 +7,12 @@ const fs = require('fs');
 [
   // core
   {
-    files: ['../core/dist/index.js', '../core/dist/ionic/index.esm.js']
-  },
-  // angular
-  {
-    files: [
-      '../angular/dist/schematics/collection.json',
-      '../angular/dist/fesm5/ionic-angular.js',
-      '../angular/dist/fesm2015/ionic-angular.js',
-      '../angular/dist/ionic-angular.d.ts',
-      '../angular/dist/ionic-angular.metadata.json'
-    ]
-  },
-  // angular-server
-  {
-    files: [
-      '../packages/angular-server/dist/fesm5/ionic-angular-server.js',
-      '../packages/angular-server/dist/fesm2015/ionic-angular-server.js',
-      '../packages/angular-server/dist/ionic-angular-server.d.ts',
-      '../packages/angular-server/dist/ionic-angular-server.metadata.json'
-    ]
+    files: ["../core/dist/index.js", "../core/dist/senna/index.esm.js"],
   },
   // react
   {
-    files: ['../packages/react/dist/index.js']
+    files: ["../packages/react/dist/index.js"],
   },
-  // react-router
-  {
-    files: ['../packages/react-router/dist/index.js']
-  }
 ].forEach(testPackage);
 
 function testPackage(testPkg) {
@@ -44,11 +21,11 @@ function testPackage(testPkg) {
     const pkgJson = require(testPkg.packageJson);
 
     if (!pkgJson.name) {
-      throw new Error('missing package.json name: ' + testPkg.packageJson);
+      throw new Error("missing package.json name: " + testPkg.packageJson);
     }
 
     if (!pkgJson.main) {
-      throw new Error('missing package.json main: ' + testPkg.packageJson);
+      throw new Error("missing package.json main: " + testPkg.packageJson);
     }
 
     const pkgPath = path.join(pkgDir, pkgJson.main);
@@ -58,9 +35,9 @@ function testPackage(testPkg) {
       if (!Array.isArray(pkgJson.files)) {
         throw new Error(testPkg.packageJson + ' missing "files" property');
       }
-      testPkg.files.forEach(testPkgFile => {
+      testPkg.files.forEach((testPkgFile) => {
         if (!pkgJson.files.includes(testPkgFile)) {
-          throw new Error(testPkg.packageJson + ' missing file ' + testPkgFile);
+          throw new Error(testPkg.packageJson + " missing file " + testPkgFile);
         }
 
         const filePath = path.join(__dirname, pkgDir, testPkgFile);
@@ -79,15 +56,17 @@ function testPackage(testPkg) {
     }
 
     if (testPkg.exports) {
-      testPkg.exports.forEach(exportName => {
+      testPkg.exports.forEach((exportName) => {
         const m = pkgImport[exportName];
         if (!m) {
-          throw new Error('export "' + exportName + '" not found in: ' + testPkg.packageJson);
+          throw new Error(
+            'export "' + exportName + '" not found in: ' + testPkg.packageJson
+          );
         }
       });
     }
   } else if (testPkg.files) {
-    testPkg.files.forEach(file => {
+    testPkg.files.forEach((file) => {
       const filePath = path.join(__dirname, file);
       fs.statSync(filePath);
     });

@@ -14,5 +14,9 @@
     "type": "git",
     "url": "git+https://github.com/senna-ui/senna-docs.git"
   },
-  "homepage": "https://senna-ui.com/docs"
+  "homepage": "https://senna-ui.com/docs",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "restricted"
+  }
 }

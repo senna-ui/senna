@@ -163,11 +163,6 @@ function preparePackage(tasks, package, version, install) {
         title: `${pkg.name}: lint`,
         task: () => execa("npm", ["run", "lint"], { cwd: projectRoot }),
       });
-      // TODO will not work due to https://github.com/ionic-team/ionic/issues/20136
-      // projectTasks.push({
-      //   title: `${pkg.name}: test`,
-      //   task: async () => await execa('npm', ['test'], { cwd: projectRoot })
-      // });
     }
 
     // Build
@@ -186,7 +181,7 @@ function preparePackage(tasks, package, version, install) {
 
     if (version) {
       projectTasks.push({
-        title: `${pkg.name}: update ionic/core dep to ${version}`,
+        title: `${pkg.name}: update senna-ui/core dep to ${version}`,
         task: () => {
           updateDependency(pkg, "@senna-ui/core", version);
           writePkg(package, pkg);
@@ -218,7 +213,7 @@ function prepareDevPackage(tasks, package, version) {
     }
 
     projectTasks.push({
-      title: `${pkg.name}: update ionic/core dep to ${version}`,
+      title: `${pkg.name}: update senna-ui/core dep to ${version}`,
       task: () => {
         updateDependency(pkg, "@senna-ui/core", version);
         writePkg(package, pkg);
