@@ -1,10 +1,5 @@
-import notes from "./readme.md";
-
 export default {
   title: "Button",
-  parameters: {
-    notes,
-  },
 };
 
 export const Primary = () =>

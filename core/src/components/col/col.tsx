@@ -9,23 +9,23 @@ export class Col implements ComponentInterface {
   /**
    * X-small column width
    */
-  @Prop() xs?: number;
+  @Prop() xs?: string | number;
   /**
    * Small column width
    */
-  @Prop() sm?: number;
+  @Prop() sm?: string | number;
   /**
    * Medium column width
    */
-  @Prop() md?: number;
+  @Prop() md?: string | number;
   /**
    * Large column width
    */
-  @Prop() lg?: number;
+  @Prop() lg?: string | number;
   /**
    * X-Large column width
    */
-  @Prop() xl?: number;
+  @Prop() xl?: string | number;
 
   render() {
     const classes = {

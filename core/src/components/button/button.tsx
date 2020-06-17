@@ -4,9 +4,9 @@ import { Color } from "../../interface";
 @Component({
   tag: "sen-button",
   styleUrl: "button.scss",
-  shadow: true,
+  shadow: false,
 })
-export class SaButton implements ComponentInterface {
+export class Button implements ComponentInterface {
   /**
    * Button type
    */

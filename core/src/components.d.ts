@@ -7,6 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Color, } from "./interface";
 export namespace Components {
+    interface SenApp {
+    }
     interface SenButton {
         /**
           * Button type
@@ -21,39 +23,59 @@ export namespace Components {
          */
         "disabled": boolean;
     }
+    interface SenButtonGroup {
+    }
     interface SenCol {
         /**
           * Large column width
          */
-        "lg"?: number;
+        "lg"?: string | number;
         /**
           * Medium column width
          */
-        "md"?: number;
+        "md"?: string | number;
         /**
           * Small column width
          */
-        "sm"?: number;
+        "sm"?: string | number;
         /**
           * X-Large column width
          */
-        "xl"?: number;
+        "xl"?: string | number;
         /**
           * X-small column width
          */
-        "xs"?: number;
+        "xs"?: string | number;
     }
     interface SenContainer {
+    }
+    interface SenFormField {
+        /**
+          * Label of the form field
+         */
+        "label": string;
     }
     interface SenRow {
     }
 }
 declare global {
+    interface HTMLSenAppElement extends Components.SenApp, HTMLStencilElement {
+    }
+    var HTMLSenAppElement: {
+        prototype: HTMLSenAppElement;
+        new (): HTMLSenAppElement;
+    };
     interface HTMLSenButtonElement extends Components.SenButton, HTMLStencilElement {
     }
     var HTMLSenButtonElement: {
         prototype: HTMLSenButtonElement;
         new (): HTMLSenButtonElement;
+    };
+    interface HTMLSenButtonGroupElement extends Components.SenButtonGroup, HTMLStencilElement {
+    }
+    var HTMLSenButtonGroupElement: {
+        prototype: HTMLSenButtonGroupElement;
+        new (): HTMLSenButtonGroupElement;
     };
     interface HTMLSenColElement extends Components.SenCol, HTMLStencilElement {
     }
@@ -67,6 +89,12 @@ declare global {
         prototype: HTMLSenContainerElement;
         new (): HTMLSenContainerElement;
     };
+    interface HTMLSenFormFieldElement extends Components.SenFormField, HTMLStencilElement {
+    }
+    var HTMLSenFormFieldElement: {
+        prototype: HTMLSenFormFieldElement;
+        new (): HTMLSenFormFieldElement;
+    };
     interface HTMLSenRowElement extends Components.SenRow, HTMLStencilElement {
     }
     var HTMLSenRowElement: {
@@ -74,13 +102,18 @@ declare global {
         new (): HTMLSenRowElement;
     };
     interface HTMLElementTagNameMap {
+        "sen-app": HTMLSenAppElement;
         "sen-button": HTMLSenButtonElement;
+        "sen-button-group": HTMLSenButtonGroupElement;
         "sen-col": HTMLSenColElement;
         "sen-container": HTMLSenContainerElement;
+        "sen-form-field": HTMLSenFormFieldElement;
         "sen-row": HTMLSenRowElement;
     }
 }
 declare namespace LocalJSX {
+    interface SenApp {
+    }
     interface SenButton {
         /**
           * Button type
@@ -95,36 +128,47 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
     }
+    interface SenButtonGroup {
+    }
     interface SenCol {
         /**
           * Large column width
          */
-        "lg"?: number;
+        "lg"?: string | number;
         /**
           * Medium column width
          */
-        "md"?: number;
+        "md"?: string | number;
         /**
           * Small column width
          */
-        "sm"?: number;
+        "sm"?: string | number;
         /**
           * X-Large column width
          */
-        "xl"?: number;
+        "xl"?: string | number;
         /**
           * X-small column width
          */
-        "xs"?: number;
+        "xs"?: string | number;
     }
     interface SenContainer {
+    }
+    interface SenFormField {
+        /**
+          * Label of the form field
+         */
+        "label"?: string;
     }
     interface SenRow {
     }
     interface IntrinsicElements {
+        "sen-app": SenApp;
         "sen-button": SenButton;
+        "sen-button-group": SenButtonGroup;
         "sen-col": SenCol;
         "sen-container": SenContainer;
+        "sen-form-field": SenFormField;
         "sen-row": SenRow;
     }
 }
@@ -132,9 +176,12 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "sen-app": LocalJSX.SenApp & JSXBase.HTMLAttributes<HTMLSenAppElement>;
             "sen-button": LocalJSX.SenButton & JSXBase.HTMLAttributes<HTMLSenButtonElement>;
+            "sen-button-group": LocalJSX.SenButtonGroup & JSXBase.HTMLAttributes<HTMLSenButtonGroupElement>;
             "sen-col": LocalJSX.SenCol & JSXBase.HTMLAttributes<HTMLSenColElement>;
             "sen-container": LocalJSX.SenContainer & JSXBase.HTMLAttributes<HTMLSenContainerElement>;
+            "sen-form-field": LocalJSX.SenFormField & JSXBase.HTMLAttributes<HTMLSenFormFieldElement>;
             "sen-row": LocalJSX.SenRow & JSXBase.HTMLAttributes<HTMLSenRowElement>;
         }
     }

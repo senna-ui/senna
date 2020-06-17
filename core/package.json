@@ -32,6 +32,7 @@
     "@stencil/sass": "^1.3.1",
     "@storybook/addon-notes": "^5.3.19",
     "@storybook/html": "^5.3.19",
+    "@storybook/preset-typescript": "^3.0.0",
     "@types/jest": "^26.0.0",
     "@typescript-eslint/eslint-plugin": "^3.2.0",
     "@typescript-eslint/parser": "^3.2.0",
@@ -41,7 +42,7 @@
   },
   "license": "UNLICENSED",
   "dependencies": {
-    "bootstrap": "^4.5.0"
+    "bootstrap": "^5.0.0-alpha1"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
