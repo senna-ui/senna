@@ -1,6 +1,9 @@
 {
-  "packages": ["core", "packages/*"],
-  "version": "0.0.3",
+  "packages": [
+    "core",
+    "packages/*"
+  ],
+  "version": "0.0.4",
   "npmClient": "npm",
   "command": {
     "publish": {
