@@ -1,6 +1,6 @@
 {
   "name": "@senna-ui/docs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Pre-packaged API documentation for the Senna docs.",
   "main": "core.json",
   "types": "core.d.ts",
