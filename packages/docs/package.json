@@ -12,12 +12,13 @@
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/senna-ui/senna-docs.git"
+    "url": "https://github.com/senna-ui/senna.git",
+    "directory": "packages/docs"
   },
   "homepage": "https://senna-ui.com/docs",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/",
     "access": "restricted"
   },
-  "gitHead": "dd4e62ca264f4bbb184228dab54c884290e656f1"
+  "gitHead": "c8c100be698ce22e08aad01be62f676f524773b5"
 }
