@@ -1,0 +1,25 @@
+@import "./grid.mixins";
+
+// Grid
+// --------------------------------------------------
+
+/// @prop - The padding for the grid
+$grid-padding: var(--sen-grid-padding, 5px) !default;
+
+/// @prop - The padding for the grid at different breakpoints
+$grid-paddings: (
+  xs: var(--sen-grid-padding-xs, $grid-padding),
+  sm: var(--sen-grid-padding-sm, $grid-padding),
+  md: var(--sen-grid-padding-md, $grid-padding),
+  lg: var(--sen-grid-padding-lg, $grid-padding),
+  xl: var(--sen-grid-padding-xl, $grid-padding),
+) !default;
+
+/// @prop - Width of the grid for different screen sizes when fixed is enabled
+$grid-widths: (
+  xs: var(--sen-grid-width-xs, var(--sen-grid-width, 100%)),
+  sm: var(--sen-grid-width-sm, var(--sen-grid-width, 540px)),
+  md: var(--sen-grid-width-md, var(--sen-grid-width, 720px)),
+  lg: var(--sen-grid-width-lg, var(--sen-grid-width, 960px)),
+  xl: var(--sen-grid-width-xl, var(--sen-grid-width, 1140px)),
+) !default;

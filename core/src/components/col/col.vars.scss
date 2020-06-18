@@ -1,0 +1,16 @@
+@import "../grid/grid.mixins";
+
+// Grid Column
+// --------------------------------------------------
+
+/// @prop - The padding for the grid column
+$grid-column-padding: var(--sen-grid-column-padding, 5px) !default;
+
+/// @prop - The padding for the column at different breakpoints
+$grid-column-paddings: (
+  xs: var(--sen-grid-column-padding-xs, $grid-column-padding),
+  sm: var(--sen-grid-column-padding-sm, $grid-column-padding),
+  md: var(--sen-grid-column-padding-md, $grid-column-padding),
+  lg: var(--sen-grid-column-padding-lg, $grid-column-padding),
+  xl: var(--sen-grid-column-padding-xl, $grid-column-padding),
+) !default;

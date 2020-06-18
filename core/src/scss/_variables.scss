@@ -49,23 +49,33 @@ $dark: $gray-800 !default;
 
 $text-color: $black;
 $font-family: "Source Sans Pro", Helvetica, sans-serif;
+$font-family-monospace: "Consolas", monospace;
 
 $body-bg: $white !default;
 $link-color: $primary !default;
 
 $spacer: 0.1rem;
 
-$input-btn-padding-y: 0.1rem !default;
-$input-btn-padding-x: 0.3rem !default;
+$input-btn-padding-y: 4px !default;
+$input-btn-padding-x: 10px !default;
 
 $border-radius: 0 !default;
 
-$font-family-base: var(--bs-font-sans-serif) !default;
-$font-family-code: var(--bs-font-monospace) !default;
+$font-family-base: var(--sen-font-family, $font-family) !default;
+$font-family-code: var(--sen-font-monospace, $font-family-monospace) !default;
 
-// $font-size-root effects the value of `rem`, which is used for as well font sizes, paddings and margins
-// $font-size-base effects the font size of the body text
-$font-size-root: 13px !default;
-$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-base: 13px !default; // Assumes the browser default, typically `16px`
 $font-size-sm: $font-size-base * 0.875 !default;
 $font-size-lg: $font-size-base * 1.25 !default;
+
+// The minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries
+$screen-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+) !default;
+
+$grid-column-padding: 12px;

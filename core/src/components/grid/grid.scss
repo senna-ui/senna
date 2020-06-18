@@ -1,0 +1,49 @@
+@import "./grid.vars";
+
+// Grid
+// --------------------------------------------------
+
+:host {
+  /**
+   * @prop --sen-grid-padding: Padding for the Grid
+   * @prop --sen-grid-padding-xs: Padding for the Grid on xs screens
+   * @prop --sen-grid-padding-sm: Padding for the Grid on sm screens
+   * @prop --sen-grid-padding-md: Padding for the Grid on md screens
+   * @prop --sen-grid-padding-lg: Padding for the Grid on lg screens
+   * @prop --sen-grid-padding-xl: Padding for the Grid on xl screens
+   *
+   * @prop --sen-grid-width: Width of the fixed Grid
+   * @prop --sen-grid-width-xs: Width of the fixed Grid on xs screens
+   * @prop --sen-grid-width-sm: Width of the fixed Grid on sm screens
+   * @prop --sen-grid-width-md: Width of the fixed Grid on md screens
+   * @prop --sen-grid-width-lg: Width of the fixed Grid on lg screens
+   * @prop --sen-grid-width-xl: Width of the fixed Grid on xl screens
+   */
+
+  @include make-breakpoint-padding($grid-paddings);
+  @include margin-horizontal(auto);
+
+  display: block;
+
+  flex: 1;
+}
+
+// Fixed Grid
+// --------------------------------------------------
+
+:host(.grid-fixed) {
+  @include make-grid-widths();
+}
+
+// Grid Padding
+// --------------------------------------------------
+
+// Remove the padding from grid and all immediate children columns
+:host(.ion-no-padding) {
+  --sen-grid-column-padding: 0;
+  --sen-grid-column-padding-xs: 0;
+  --sen-grid-column-padding-sm: 0;
+  --sen-grid-column-padding-md: 0;
+  --sen-grid-column-padding-lg: 0;
+  --sen-grid-column-padding-xl: 0;
+}

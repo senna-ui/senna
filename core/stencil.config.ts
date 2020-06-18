@@ -5,9 +5,10 @@ import { reactOutputTarget } from "@stencil/react-output-target";
 export const config: Config = {
   namespace: "Senna",
   taskQueue: "async",
+  globalStyle: "src/scss/senna.scss",
   plugins: [
     sass({
-      injectGlobalPaths: ["src/scss/global"],
+      injectGlobalPaths: ["src/scss/globals"],
     }),
   ],
   outputTargets: [

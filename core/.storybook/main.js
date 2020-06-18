@@ -1,4 +1,5 @@
 const path = require("path");
+const glob = require("glob");
 
 module.exports = {
   stories: ["../src/**/*.stories.tsx"],
@@ -14,4 +15,14 @@ module.exports = {
     },
     "@storybook/addon-notes/register",
   ],
+  webpackFinal: (config) => {
+    // watch all revelant files in dist folder
+    const distDir = path.resolve(__dirname, "../dist");
+    const files = glob.sync(`${distDir}/**/*.entry.js`, {
+      absolute: true,
+      ignore: ["**/*.system.entry.js"],
+    });
+    config.entry.push(...files);
+    return config;
+  },
 };

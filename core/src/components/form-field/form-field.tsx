@@ -3,7 +3,7 @@ import { Component, ComponentInterface, Host, Prop, h } from "@stencil/core";
 @Component({
   tag: "sen-form-field",
   styleUrl: "form-field.scss",
-  shadow: false,
+  shadow: true,
 })
 export class FormField implements ComponentInterface {
   /**
@@ -15,10 +15,10 @@ export class FormField implements ComponentInterface {
     return (
       <Host>
         <sen-row>
-          <sen-col xs="6" md="2">
-            <label class="col-form-label">{this.label}</label>
+          <sen-col size="3">
+            <label class="form-label">{this.label}</label>
           </sen-col>
-          <sen-col xs="6" md="10">
+          <sen-col size="9">
             <slot />
           </sen-col>
         </sen-row>

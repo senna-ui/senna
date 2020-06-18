@@ -1,27 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { SaButton  } from '@senna-ui/react'
+import React, { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import {
+  SenApp,
+  SenButton,
+  SenContainer,
+  SenRow,
+  SenCol,
+  SenFormField,
+} from "@senna-ui/react";
 
 function App() {
+  const [buttonText, setButtonText] = useState("button text");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <SaButton color="primary">Click me</SaButton>
-        <SaButton color="secondary">Secondary click me</SaButton>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="App" style={{ padding: "20px" }}>
+      <SenApp>
+        <SenButton
+          onClick={() => setButtonText("lala" + Math.random())}
+          color="secondary"
         >
-          Learn React
-        </a>
-      </header>
+          Secondary click me
+          {buttonText}
+        </SenButton>
+        <SenContainer>
+          <SenRow>
+            <SenCol>
+              <SenFormField label={buttonText || "hello"}>
+                {buttonText}
+              </SenFormField>
+            </SenCol>
+            <SenCol>asdf</SenCol>
+            <SenCol>asdf</SenCol>
+            <SenCol>asdf</SenCol>
+            <SenCol>asdf</SenCol>
+          </SenRow>
+        </SenContainer>
+      </SenApp>
     </div>
   );
 }

@@ -1,0 +1,25 @@
+:host {
+  display: inline-block;
+
+  button {
+    color: $white;
+    background: $primary;
+    border-radius: $border-radius;
+    border-width: 0;
+    padding: $input-btn-padding-y $input-btn-padding-x;
+    font-size: $font-size-base;
+
+    &.btn-secondary {
+      background: $secondary;
+    }
+    &.btn-warning {
+      background: $warning;
+    }
+    &.btn-danger {
+      background: $danger;
+    }
+  }
+  &.btn-secondary {
+    background: $secondary;
+  }
+}

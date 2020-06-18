@@ -1,11 +1,17 @@
-import { Component, ComponentInterface, Host, h } from "@stencil/core";
+import { Component, ComponentInterface, Host, Element, h } from "@stencil/core";
 
 @Component({
   tag: "sen-app",
   styleUrl: "app.scss",
-  shadow: false,
+  shadow: true,
 })
 export class App implements ComponentInterface {
+  @Element() el!: HTMLSenAppElement;
+
+  componentWillLoad() {
+    console.log("el", this.el.shadowRoot);
+  }
+
   render() {
     return (
       <Host>

@@ -1,0 +1,9 @@
+:host {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+
+  .form-label {
+    margin-top: 5px;
+    display: inline-block;
+  }
+}

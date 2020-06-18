@@ -7,6 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Color, } from "./interface";
 export namespace Components {
+    interface InputText {
+    }
     interface SenApp {
     }
     interface SenButton {
@@ -27,27 +29,101 @@ export namespace Components {
     }
     interface SenCol {
         /**
-          * Large column width
+          * The amount to offset the column, in terms of how many columns it should shift to the end of the total available.
          */
-        "lg"?: string | number;
+        "offset"?: string;
         /**
-          * Medium column width
+          * The amount to offset the column for lg screens, in terms of how many columns it should shift to the end of the total available.
          */
-        "md"?: string | number;
+        "offsetLg"?: string;
         /**
-          * Small column width
+          * The amount to offset the column for md screens, in terms of how many columns it should shift to the end of the total available.
          */
-        "sm"?: string | number;
+        "offsetMd"?: string;
         /**
-          * X-Large column width
+          * The amount to offset the column for sm screens, in terms of how many columns it should shift to the end of the total available.
          */
-        "xl"?: string | number;
+        "offsetSm"?: string;
         /**
-          * X-small column width
+          * The amount to offset the column for xl screens, in terms of how many columns it should shift to the end of the total available.
          */
-        "xs"?: string | number;
-    }
-    interface SenContainer {
+        "offsetXl"?: string;
+        /**
+          * The amount to offset the column for xs screens, in terms of how many columns it should shift to the end of the total available.
+         */
+        "offsetXs"?: string;
+        /**
+          * The amount to pull the column, in terms of how many columns it should shift to the start of the total available.
+         */
+        "pull"?: string;
+        /**
+          * The amount to pull the column for lg screens, in terms of how many columns it should shift to the start of the total available.
+         */
+        "pullLg"?: string;
+        /**
+          * The amount to pull the column for md screens, in terms of how many columns it should shift to the start of the total available.
+         */
+        "pullMd"?: string;
+        /**
+          * The amount to pull the column for sm screens, in terms of how many columns it should shift to the start of the total available.
+         */
+        "pullSm"?: string;
+        /**
+          * The amount to pull the column for xl screens, in terms of how many columns it should shift to the start of the total available.
+         */
+        "pullXl"?: string;
+        /**
+          * The amount to pull the column for xs screens, in terms of how many columns it should shift to the start of the total available.
+         */
+        "pullXs"?: string;
+        /**
+          * The amount to push the column, in terms of how many columns it should shift to the end of the total available.
+         */
+        "push"?: string;
+        /**
+          * The amount to push the column for lg screens, in terms of how many columns it should shift to the end of the total available.
+         */
+        "pushLg"?: string;
+        /**
+          * The amount to push the column for md screens, in terms of how many columns it should shift to the end of the total available.
+         */
+        "pushMd"?: string;
+        /**
+          * The amount to push the column for sm screens, in terms of how many columns it should shift to the end of the total available.
+         */
+        "pushSm"?: string;
+        /**
+          * The amount to push the column for xl screens, in terms of how many columns it should shift to the end of the total available.
+         */
+        "pushXl"?: string;
+        /**
+          * The amount to push the column for xs screens, in terms of how many columns it should shift to the end of the total available.
+         */
+        "pushXs"?: string;
+        /**
+          * The size of the column, in terms of how many columns it should take up out of the total available. If `"auto"` is passed, the column will be the size of its content.
+         */
+        "size"?: string;
+        /**
+          * The size of the column for lg screens, in terms of how many columns it should take up out of the total available. If `"auto"` is passed, the column will be the size of its content.
+         */
+        "sizeLg"?: string;
+        /**
+          * The size of the column for md screens, in terms of how many columns it should take up out of the total available. If `"auto"` is passed, the column will be the size of its content.
+         */
+        "sizeMd"?: string;
+        /**
+          * The size of the column for sm screens, in terms of how many columns it should take up out of the total available. If `"auto"` is passed, the column will be the size of its content.
+         */
+        "sizeSm"?: string;
+        /**
+          * The size of the column for xl screens, in terms of how many columns it should take up out of the total available. If `"auto"` is passed, the column will be the size of its content.
+         */
+        "sizeXl"?: string;
+        /**
+          * The size of the column for xs screens, in terms of how many columns it should take up out of the total available. If `"auto"` is passed, the column will be the size of its content.
+         */
+        "sizeXs"?: string;
     }
     interface SenFormField {
         /**
@@ -55,10 +131,22 @@ export namespace Components {
          */
         "label": string;
     }
+    interface SenGrid {
+        /**
+          * If `true`, the grid will have a fixed width based on the screen size.
+         */
+        "fixed": boolean;
+    }
     interface SenRow {
     }
 }
 declare global {
+    interface HTMLInputTextElement extends Components.InputText, HTMLStencilElement {
+    }
+    var HTMLInputTextElement: {
+        prototype: HTMLInputTextElement;
+        new (): HTMLInputTextElement;
+    };
     interface HTMLSenAppElement extends Components.SenApp, HTMLStencilElement {
     }
     var HTMLSenAppElement: {
@@ -83,17 +171,17 @@ declare global {
         prototype: HTMLSenColElement;
         new (): HTMLSenColElement;
     };
-    interface HTMLSenContainerElement extends Components.SenContainer, HTMLStencilElement {
-    }
-    var HTMLSenContainerElement: {
-        prototype: HTMLSenContainerElement;
-        new (): HTMLSenContainerElement;
-    };
     interface HTMLSenFormFieldElement extends Components.SenFormField, HTMLStencilElement {
     }
     var HTMLSenFormFieldElement: {
         prototype: HTMLSenFormFieldElement;
         new (): HTMLSenFormFieldElement;
+    };
+    interface HTMLSenGridElement extends Components.SenGrid, HTMLStencilElement {
+    }
+    var HTMLSenGridElement: {
+        prototype: HTMLSenGridElement;
+        new (): HTMLSenGridElement;
     };
     interface HTMLSenRowElement extends Components.SenRow, HTMLStencilElement {
     }
@@ -102,16 +190,19 @@ declare global {
         new (): HTMLSenRowElement;
     };
     interface HTMLElementTagNameMap {
+        "input-text": HTMLInputTextElement;
         "sen-app": HTMLSenAppElement;
         "sen-button": HTMLSenButtonElement;
         "sen-button-group": HTMLSenButtonGroupElement;
         "sen-col": HTMLSenColElement;
-        "sen-container": HTMLSenContainerElement;
         "sen-form-field": HTMLSenFormFieldElement;
+        "sen-grid": HTMLSenGridElement;
         "sen-row": HTMLSenRowElement;
     }
 }
 declare namespace LocalJSX {
+    interface InputText {
+    }
     interface SenApp {
     }
     interface SenButton {
@@ -132,27 +223,101 @@ declare namespace LocalJSX {
     }
     interface SenCol {
         /**
-          * Large column width
+          * The amount to offset the column, in terms of how many columns it should shift to the end of the total available.
          */
-        "lg"?: string | number;
+        "offset"?: string;
         /**
-          * Medium column width
+          * The amount to offset the column for lg screens, in terms of how many columns it should shift to the end of the total available.
          */
-        "md"?: string | number;
+        "offsetLg"?: string;
         /**
-          * Small column width
+          * The amount to offset the column for md screens, in terms of how many columns it should shift to the end of the total available.
          */
-        "sm"?: string | number;
+        "offsetMd"?: string;
         /**
-          * X-Large column width
+          * The amount to offset the column for sm screens, in terms of how many columns it should shift to the end of the total available.
          */
-        "xl"?: string | number;
+        "offsetSm"?: string;
         /**
-          * X-small column width
+          * The amount to offset the column for xl screens, in terms of how many columns it should shift to the end of the total available.
          */
-        "xs"?: string | number;
-    }
-    interface SenContainer {
+        "offsetXl"?: string;
+        /**
+          * The amount to offset the column for xs screens, in terms of how many columns it should shift to the end of the total available.
+         */
+        "offsetXs"?: string;
+        /**
+          * The amount to pull the column, in terms of how many columns it should shift to the start of the total available.
+         */
+        "pull"?: string;
+        /**
+          * The amount to pull the column for lg screens, in terms of how many columns it should shift to the start of the total available.
+         */
+        "pullLg"?: string;
+        /**
+          * The amount to pull the column for md screens, in terms of how many columns it should shift to the start of the total available.
+         */
+        "pullMd"?: string;
+        /**
+          * The amount to pull the column for sm screens, in terms of how many columns it should shift to the start of the total available.
+         */
+        "pullSm"?: string;
+        /**
+          * The amount to pull the column for xl screens, in terms of how many columns it should shift to the start of the total available.
+         */
+        "pullXl"?: string;
+        /**
+          * The amount to pull the column for xs screens, in terms of how many columns it should shift to the start of the total available.
+         */
+        "pullXs"?: string;
+        /**
+          * The amount to push the column, in terms of how many columns it should shift to the end of the total available.
+         */
+        "push"?: string;
+        /**
+          * The amount to push the column for lg screens, in terms of how many columns it should shift to the end of the total available.
+         */
+        "pushLg"?: string;
+        /**
+          * The amount to push the column for md screens, in terms of how many columns it should shift to the end of the total available.
+         */
+        "pushMd"?: string;
+        /**
+          * The amount to push the column for sm screens, in terms of how many columns it should shift to the end of the total available.
+         */
+        "pushSm"?: string;
+        /**
+          * The amount to push the column for xl screens, in terms of how many columns it should shift to the end of the total available.
+         */
+        "pushXl"?: string;
+        /**
+          * The amount to push the column for xs screens, in terms of how many columns it should shift to the end of the total available.
+         */
+        "pushXs"?: string;
+        /**
+          * The size of the column, in terms of how many columns it should take up out of the total available. If `"auto"` is passed, the column will be the size of its content.
+         */
+        "size"?: string;
+        /**
+          * The size of the column for lg screens, in terms of how many columns it should take up out of the total available. If `"auto"` is passed, the column will be the size of its content.
+         */
+        "sizeLg"?: string;
+        /**
+          * The size of the column for md screens, in terms of how many columns it should take up out of the total available. If `"auto"` is passed, the column will be the size of its content.
+         */
+        "sizeMd"?: string;
+        /**
+          * The size of the column for sm screens, in terms of how many columns it should take up out of the total available. If `"auto"` is passed, the column will be the size of its content.
+         */
+        "sizeSm"?: string;
+        /**
+          * The size of the column for xl screens, in terms of how many columns it should take up out of the total available. If `"auto"` is passed, the column will be the size of its content.
+         */
+        "sizeXl"?: string;
+        /**
+          * The size of the column for xs screens, in terms of how many columns it should take up out of the total available. If `"auto"` is passed, the column will be the size of its content.
+         */
+        "sizeXs"?: string;
     }
     interface SenFormField {
         /**
@@ -160,15 +325,22 @@ declare namespace LocalJSX {
          */
         "label"?: string;
     }
+    interface SenGrid {
+        /**
+          * If `true`, the grid will have a fixed width based on the screen size.
+         */
+        "fixed"?: boolean;
+    }
     interface SenRow {
     }
     interface IntrinsicElements {
+        "input-text": InputText;
         "sen-app": SenApp;
         "sen-button": SenButton;
         "sen-button-group": SenButtonGroup;
         "sen-col": SenCol;
-        "sen-container": SenContainer;
         "sen-form-field": SenFormField;
+        "sen-grid": SenGrid;
         "sen-row": SenRow;
     }
 }
@@ -176,12 +348,13 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "input-text": LocalJSX.InputText & JSXBase.HTMLAttributes<HTMLInputTextElement>;
             "sen-app": LocalJSX.SenApp & JSXBase.HTMLAttributes<HTMLSenAppElement>;
             "sen-button": LocalJSX.SenButton & JSXBase.HTMLAttributes<HTMLSenButtonElement>;
             "sen-button-group": LocalJSX.SenButtonGroup & JSXBase.HTMLAttributes<HTMLSenButtonGroupElement>;
             "sen-col": LocalJSX.SenCol & JSXBase.HTMLAttributes<HTMLSenColElement>;
-            "sen-container": LocalJSX.SenContainer & JSXBase.HTMLAttributes<HTMLSenContainerElement>;
             "sen-form-field": LocalJSX.SenFormField & JSXBase.HTMLAttributes<HTMLSenFormFieldElement>;
+            "sen-grid": LocalJSX.SenGrid & JSXBase.HTMLAttributes<HTMLSenGridElement>;
             "sen-row": LocalJSX.SenRow & JSXBase.HTMLAttributes<HTMLSenRowElement>;
         }
     }

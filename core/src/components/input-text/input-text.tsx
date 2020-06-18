@@ -1,11 +1,11 @@
 import { Component, ComponentInterface, Host, h } from "@stencil/core";
 
 @Component({
-  tag: "sen-row",
-  styleUrl: "row.scss",
+  tag: "input-text",
+  styleUrl: "input-text.scss",
   shadow: true,
 })
-export class Row implements ComponentInterface {
+export class InputText implements ComponentInterface {
   render() {
     return (
       <Host>
