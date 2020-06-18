@@ -5,7 +5,7 @@ import { Component, ComponentInterface, Host, h } from "@stencil/core";
   styleUrl: "button-group.scss",
   shadow: true,
 })
-export class Col implements ComponentInterface {
+export class ButtonGroup implements ComponentInterface {
   render() {
     return (
       <Host class="btn-group">

@@ -1,1 +1,5 @@
-@import "../../scss/senna";
+:host {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  color: $font-color-base;
+}

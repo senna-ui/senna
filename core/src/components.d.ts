@@ -7,6 +7,12 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AutocompleteTypes, Color, InputChangeEventDetail, TextFieldTypes, } from "./interface";
 export namespace Components {
+    interface SenAlert {
+        /**
+          * Button variant
+         */
+        "color"?: Color;
+    }
     interface SenApp {
     }
     interface SenButton {
@@ -253,6 +259,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLSenAlertElement extends Components.SenAlert, HTMLStencilElement {
+    }
+    var HTMLSenAlertElement: {
+        prototype: HTMLSenAlertElement;
+        new (): HTMLSenAlertElement;
+    };
     interface HTMLSenAppElement extends Components.SenApp, HTMLStencilElement {
     }
     var HTMLSenAppElement: {
@@ -302,6 +314,7 @@ declare global {
         new (): HTMLSenRowElement;
     };
     interface HTMLElementTagNameMap {
+        "sen-alert": HTMLSenAlertElement;
         "sen-app": HTMLSenAppElement;
         "sen-button": HTMLSenButtonElement;
         "sen-button-group": HTMLSenButtonGroupElement;
@@ -313,6 +326,12 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface SenAlert {
+        /**
+          * Button variant
+         */
+        "color"?: Color;
+    }
     interface SenApp {
     }
     interface SenButton {
@@ -562,6 +581,7 @@ declare namespace LocalJSX {
     interface SenRow {
     }
     interface IntrinsicElements {
+        "sen-alert": SenAlert;
         "sen-app": SenApp;
         "sen-button": SenButton;
         "sen-button-group": SenButtonGroup;
@@ -576,6 +596,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "sen-alert": LocalJSX.SenAlert & JSXBase.HTMLAttributes<HTMLSenAlertElement>;
             "sen-app": LocalJSX.SenApp & JSXBase.HTMLAttributes<HTMLSenAppElement>;
             "sen-button": LocalJSX.SenButton & JSXBase.HTMLAttributes<HTMLSenButtonElement>;
             "sen-button-group": LocalJSX.SenButtonGroup & JSXBase.HTMLAttributes<HTMLSenButtonGroupElement>;
