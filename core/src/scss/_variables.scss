@@ -74,14 +74,20 @@ $btn-padding-x: $spacer !default;
 $btn-border-width: $border-width;
 
 $input-border-width: $border-width !default;
-$input-border-color: $gray-300 !default;
+$input-border-color: $gray-200 !default;
 $input-padding-y: $btn-padding-y !default;
 $input-padding-x: $spacer * 0.8 !default;
 $input-line-height: 1em;
 $input-background: $gray-200 !default;
 
+$fieldset-border-color: $gray-200 !default;
+$fieldset-border-radius: $border-radius !default;
+$fieldset-border-width: 2px !default;
+$fieldset-padding: $spacer - $fieldset-border-width !default;
+$fieldset-legend-color: $gray-400 !default;
+
 $alert-padding: $spacer !default;
-$alert-border-width: 1px !default;
+$alert-border-width: 2px !default;
 
 // The minimum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries

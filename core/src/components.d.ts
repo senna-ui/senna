@@ -129,6 +129,12 @@ export namespace Components {
          */
         "sizeXs"?: string;
     }
+    interface SenFieldset {
+        /**
+          * Legend describing the fieldset
+         */
+        "legend"?: string;
+    }
     interface SenFormField {
         /**
           * Label of the form field
@@ -289,6 +295,12 @@ declare global {
         prototype: HTMLSenColElement;
         new (): HTMLSenColElement;
     };
+    interface HTMLSenFieldsetElement extends Components.SenFieldset, HTMLStencilElement {
+    }
+    var HTMLSenFieldsetElement: {
+        prototype: HTMLSenFieldsetElement;
+        new (): HTMLSenFieldsetElement;
+    };
     interface HTMLSenFormFieldElement extends Components.SenFormField, HTMLStencilElement {
     }
     var HTMLSenFormFieldElement: {
@@ -319,6 +331,7 @@ declare global {
         "sen-button": HTMLSenButtonElement;
         "sen-button-group": HTMLSenButtonGroupElement;
         "sen-col": HTMLSenColElement;
+        "sen-fieldset": HTMLSenFieldsetElement;
         "sen-form-field": HTMLSenFormFieldElement;
         "sen-grid": HTMLSenGridElement;
         "sen-input": HTMLSenInputElement;
@@ -447,6 +460,12 @@ declare namespace LocalJSX {
           * The size of the column for xs screens, in terms of how many columns it should take up out of the total available. If `"auto"` is passed, the column will be the size of its content.
          */
         "sizeXs"?: string;
+    }
+    interface SenFieldset {
+        /**
+          * Legend describing the fieldset
+         */
+        "legend"?: string;
     }
     interface SenFormField {
         /**
@@ -586,6 +605,7 @@ declare namespace LocalJSX {
         "sen-button": SenButton;
         "sen-button-group": SenButtonGroup;
         "sen-col": SenCol;
+        "sen-fieldset": SenFieldset;
         "sen-form-field": SenFormField;
         "sen-grid": SenGrid;
         "sen-input": SenInput;
@@ -601,6 +621,7 @@ declare module "@stencil/core" {
             "sen-button": LocalJSX.SenButton & JSXBase.HTMLAttributes<HTMLSenButtonElement>;
             "sen-button-group": LocalJSX.SenButtonGroup & JSXBase.HTMLAttributes<HTMLSenButtonGroupElement>;
             "sen-col": LocalJSX.SenCol & JSXBase.HTMLAttributes<HTMLSenColElement>;
+            "sen-fieldset": LocalJSX.SenFieldset & JSXBase.HTMLAttributes<HTMLSenFieldsetElement>;
             "sen-form-field": LocalJSX.SenFormField & JSXBase.HTMLAttributes<HTMLSenFormFieldElement>;
             "sen-grid": LocalJSX.SenGrid & JSXBase.HTMLAttributes<HTMLSenGridElement>;
             "sen-input": LocalJSX.SenInput & JSXBase.HTMLAttributes<HTMLSenInputElement>;
