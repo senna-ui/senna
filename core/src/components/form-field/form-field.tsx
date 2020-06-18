@@ -15,10 +15,10 @@ export class FormField implements ComponentInterface {
     return (
       <Host>
         <sen-row>
-          <sen-col size="3">
+          <sen-col size="2">
             <label class="form-label">{this.label}</label>
           </sen-col>
-          <sen-col size="9">
+          <sen-col>
             <slot />
           </sen-col>
         </sen-row>

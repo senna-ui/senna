@@ -3,7 +3,10 @@ export default {
 };
 
 export const Default = () => `
-  <sen-form-field label="lala">
-    <input type="text" />
+  <sen-form-field label="First name">
+    <sen-input type="text"></sen-input>
+  </sen-form-field>
+  <sen-form-field label="Last name">
+    <sen-input type="text"></sen-input>
   </sen-form-field>
 `;

@@ -4,6 +4,7 @@ const glob = require("glob");
 module.exports = {
   stories: ["../src/**/*.stories.tsx"],
   addons: [
+    "@storybook/addon-actions/register",
     {
       name: "@storybook/preset-typescript",
       options: {

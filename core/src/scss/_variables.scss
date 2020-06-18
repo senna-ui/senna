@@ -55,9 +55,18 @@ $body-bg: $white !default;
 $link-color: $primary !default;
 
 $spacer: 0.1rem;
+$border-width: 0;
 
-$input-btn-padding-y: 4px !default;
-$input-btn-padding-x: 10px !default;
+$btn-padding-y: 4px !default;
+$btn-padding-x: 10px !default;
+$btn-border-width: $border-width;
+
+$input-border-width: $border-width !default;
+$input-border-color: $gray-300 !default;
+$input-padding-y: $btn-padding-y !default;
+$input-padding-x: 6px !default;
+$input-line-height: 1em;
+$input-background: $gray-200 !default;
 
 $border-radius: 0 !default;
 
@@ -78,4 +87,4 @@ $screen-breakpoints: (
   xl: 1200px,
 ) !default;
 
-$grid-column-padding: 12px;
+$grid-column-padding: 5px;

@@ -6,8 +6,9 @@
     background: $primary;
     border-radius: $border-radius;
     border-width: 0;
-    padding: $input-btn-padding-y $input-btn-padding-x;
+    padding: $btn-padding-y $btn-padding-x;
     font-size: $font-size-base;
+    font-family: $font-family-base;
 
     &.btn-secondary {
       background: $secondary;
