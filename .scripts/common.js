@@ -377,23 +377,12 @@ function isVersionGreater(oldVersion, newVersion) {
   return true;
 }
 
-function copyCDNLoader(tasks, version) {
-  tasks.push({
-    title: `Copy CDN loader`,
-    task: () =>
-      execa("node", ["copy-cdn-loader.js", version], {
-        cwd: path.join(rootDir, "core", "scripts"),
-      }),
-  });
-}
-
 module.exports = {
   checkTestDist,
   checkGit,
   askNpmTag,
   isValidVersion,
   isVersionGreater,
-  copyCDNLoader,
   copyPackageToDist,
   packages,
   packagePath,

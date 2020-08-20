@@ -1,24 +1,28 @@
-import React from 'react';
+import React from "react";
 
 import {
   attachEventProps,
   createForwardRef,
   dashToPascalCase,
   isCoveredByReact,
-} from './utils/index';
+} from "./utils/index";
 
-interface IonicReactInternalProps<ElementType> extends React.HTMLAttributes<ElementType> {
+interface SennaReactInternalProps<ElementType>
+  extends React.HTMLAttributes<ElementType> {
   forwardedRef?: React.Ref<ElementType>;
   ref?: React.Ref<any>;
 }
 
-export const createReactComponent = <PropType, ElementType>(tagName: string) => {
+export const createReactComponent = <PropType, ElementType>(
+  tagName: string
+) => {
   const displayName = dashToPascalCase(tagName);
-  const ReactComponent = class extends React.Component<IonicReactInternalProps<ElementType>> {
-    
+  const ReactComponent = class extends React.Component<
+    SennaReactInternalProps<ElementType>
+  > {
     private ref: React.RefObject<HTMLElement>;
-    
-    constructor(props: IonicReactInternalProps<ElementType>) {
+
+    constructor(props: SennaReactInternalProps<ElementType>) {
       super(props);
       this.ref = React.createRef<HTMLElement>();
     }
@@ -27,18 +31,26 @@ export const createReactComponent = <PropType, ElementType>(tagName: string) => 
       this.componentDidUpdate(this.props);
     }
 
-    componentDidUpdate(prevProps: IonicReactInternalProps<ElementType>) {
+    componentDidUpdate(prevProps: SennaReactInternalProps<ElementType>) {
       const node = this.ref.current;
       attachEventProps(node, this.props, prevProps);
     }
 
     render() {
-      const { children, forwardedRef, style, className, ref, ...cProps } = this.props;
+      const {
+        children,
+        forwardedRef,
+        style,
+        className,
+        ref,
+        ...cProps
+      } = this.props;
 
       const propsToPass = Object.keys(cProps).reduce((acc, name) => {
-        const isEventProp = name.indexOf('on') === 0 && name[2] === name[2].toUpperCase();
-        const isDataProp = name.indexOf('data-') === 0;
-        const isAriaProp = name.indexOf('aria-') === 0;
+        const isEventProp =
+          name.indexOf("on") === 0 && name[2] === name[2].toUpperCase();
+        const isDataProp = name.indexOf("data-") === 0;
+        const isAriaProp = name.indexOf("aria-") === 0;
 
         if (isEventProp) {
           const eventName = name.substring(2).toLowerCase();

@@ -38,13 +38,13 @@ async function main() {
     packages.forEach((package) => {
       common.prepareDevPackage(tasks, package, devVersion);
     });
-    common.copyCDNLoader(tasks, devVersion);
+    //common.copyCDNLoader(tasks, devVersion);
     common.publishPackages(tasks, packages, devVersion, DIST_NPM_TAG);
 
     const listr = new Listr(tasks);
     await listr.run();
 
-    console.log(`\nionic ${devVersion} published!! 🎉\n`);
+    console.log(`\nsenna ${devVersion} published!! 🎉\n`);
   } catch (err) {
     console.log("\n", red(err), "\n");
     process.exit(1);

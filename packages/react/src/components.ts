@@ -18,3 +18,4 @@ export const SenFormField = /*@__PURE__*/createReactComponent<JSX.SenFormField, 
 export const SenGrid = /*@__PURE__*/createReactComponent<JSX.SenGrid, HTMLSenGridElement>('sen-grid');
 export const SenInput = /*@__PURE__*/createReactComponent<JSX.SenInput, HTMLSenInputElement>('sen-input');
 export const SenRow = /*@__PURE__*/createReactComponent<JSX.SenRow, HTMLSenRowElement>('sen-row');
+export const SenTable = /*@__PURE__*/createReactComponent<JSX.SenTable, HTMLSenTableElement>('sen-table');

@@ -1,25 +1,27 @@
-import React from 'react';
+import React from "react";
 
 export const dashToPascalCase = (str: string) =>
   str
     .toLowerCase()
-    .split('-')
-    .map(segment => segment.charAt(0).toUpperCase() + segment.slice(1))
-    .join('');
+    .split("-")
+    .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+    .join("");
 
 export interface ReactProps {
   class?: string;
 }
 
-export type IonicReactExternalProps<PropType, ElementType> = PropType & React.HTMLAttributes<ElementType> & ReactProps;
+export type SennaReactExternalProps<PropType, ElementType> = PropType &
+  React.HTMLAttributes<ElementType> &
+  ReactProps;
 
 export const createForwardRef = <PropType, ElementType>(
   ReactComponent: any,
-  displayName: string,
+  displayName: string
 ) => {
   const forwardRef = (
-    props: IonicReactExternalProps<PropType, ElementType>,
-    ref: React.Ref<ElementType>,
+    props: SennaReactExternalProps<PropType, ElementType>,
+    ref: React.Ref<ElementType>
   ) => {
     return <ReactComponent {...props} forwardedRef={ref} />;
   };
@@ -28,4 +30,4 @@ export const createForwardRef = <PropType, ElementType>(
   return React.forwardRef(forwardRef);
 };
 
-export * from './attachEventProps';
+export * from "./attachEventProps";
