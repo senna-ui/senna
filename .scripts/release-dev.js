@@ -25,10 +25,12 @@ async function main() {
     const originalVersion = common.readPkg("core").version;
     const devVersion = await getDevVersion(originalVersion);
 
-    const confirm = await askDevVersion(devVersion);
-    if (!confirm) {
-      console.log(``);
-      return;
+    if (!process.argv.includes("--yes")) {
+      const confirm = await askDevVersion(devVersion);
+      if (!confirm) {
+        console.log(``);
+        return;
+      }
     }
 
     const tasks = [];
