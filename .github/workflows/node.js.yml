@@ -22,7 +22,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - run: echo "@senna-ui:registry=https://npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
       - run: npm install
       - run: npx lerna bootstrap --no-ci
       - run: rm packages/react/package-lock.json
       - run: npm run release.dev.ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
