@@ -26,4 +26,4 @@ jobs:
       - run: rm packages/react/package-lock.json
       - run: npm run release.dev.ci
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
