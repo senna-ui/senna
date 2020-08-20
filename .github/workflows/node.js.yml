@@ -14,7 +14,8 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x]
-
+    env:
+      NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
@@ -25,5 +26,3 @@ jobs:
       - run: npx lerna bootstrap --no-ci
       - run: rm packages/react/package-lock.json
       - run: npm run release.dev.ci
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
