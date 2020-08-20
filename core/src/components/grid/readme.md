@@ -355,6 +355,19 @@ export const GridExample: React.FC = () => (
 | `--sen-grid-width-xs`   | Width of the fixed Grid on xs screens |
 
 
+## Dependencies
+
+### Used by
+
+ - [sen-fieldset](../fieldset)
+
+### Graph
+```mermaid
+graph TD;
+  sen-fieldset --> sen-grid
+  style sen-grid fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

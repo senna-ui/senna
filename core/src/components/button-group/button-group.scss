@@ -1,3 +1,11 @@
 :host {
   display: flex;
 }
+
+::slotted(sen-button:first-child) {
+  --border-right-radius: 0;
+}
+
+::slotted(sen-button:last-child) {
+  --border-left-radius: 0;
+}

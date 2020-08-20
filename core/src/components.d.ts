@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { AutocompleteTypes, Color, InputChangeEventDetail, TextFieldTypes, } from "./interface";
+import { AutocompleteTypes, Color, InputChangeEventDetail, TableHeaders, TextFieldTypes, } from "./interface";
 export namespace Components {
     interface SenAlert {
         /**
@@ -263,6 +263,16 @@ export namespace Components {
     }
     interface SenRow {
     }
+    interface SenTable {
+        /**
+          * Table data, array of table rows
+         */
+        "data": any[];
+        /**
+          * Table headers
+         */
+        "headers": TableHeaders;
+    }
 }
 declare global {
     interface HTMLSenAlertElement extends Components.SenAlert, HTMLStencilElement {
@@ -325,6 +335,12 @@ declare global {
         prototype: HTMLSenRowElement;
         new (): HTMLSenRowElement;
     };
+    interface HTMLSenTableElement extends Components.SenTable, HTMLStencilElement {
+    }
+    var HTMLSenTableElement: {
+        prototype: HTMLSenTableElement;
+        new (): HTMLSenTableElement;
+    };
     interface HTMLElementTagNameMap {
         "sen-alert": HTMLSenAlertElement;
         "sen-app": HTMLSenAppElement;
@@ -336,6 +352,7 @@ declare global {
         "sen-grid": HTMLSenGridElement;
         "sen-input": HTMLSenInputElement;
         "sen-row": HTMLSenRowElement;
+        "sen-table": HTMLSenTableElement;
     }
 }
 declare namespace LocalJSX {
@@ -599,6 +616,16 @@ declare namespace LocalJSX {
     }
     interface SenRow {
     }
+    interface SenTable {
+        /**
+          * Table data, array of table rows
+         */
+        "data"?: any[];
+        /**
+          * Table headers
+         */
+        "headers"?: TableHeaders;
+    }
     interface IntrinsicElements {
         "sen-alert": SenAlert;
         "sen-app": SenApp;
@@ -610,6 +637,7 @@ declare namespace LocalJSX {
         "sen-grid": SenGrid;
         "sen-input": SenInput;
         "sen-row": SenRow;
+        "sen-table": SenTable;
     }
 }
 export { LocalJSX as JSX };
@@ -626,6 +654,7 @@ declare module "@stencil/core" {
             "sen-grid": LocalJSX.SenGrid & JSXBase.HTMLAttributes<HTMLSenGridElement>;
             "sen-input": LocalJSX.SenInput & JSXBase.HTMLAttributes<HTMLSenInputElement>;
             "sen-row": LocalJSX.SenRow & JSXBase.HTMLAttributes<HTMLSenRowElement>;
+            "sen-table": LocalJSX.SenTable & JSXBase.HTMLAttributes<HTMLSenTableElement>;
         }
     }
 }

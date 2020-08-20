@@ -1,14 +1,14 @@
 $white: #fff !default;
-$gray-100: #f8f8f8 !default;
-$gray-200: #e9e9e9 !default;
-$gray-300: #dedede !default;
-$gray-400: #cecece !default;
-$gray-500: #adadad !default;
-$gray-600: #6c6c6c !default;
-$gray-700: #494949 !default;
-$gray-800: #343434 !default;
-$gray-900: #212121 !default;
-$black: #212121 !default;
+$gray-100: #F8F6F6 !default;
+$gray-200: #E9E6E6 !default;
+$gray-300: #DEDCDC !default;
+$gray-400: #CECBCB !default;
+$gray-500: #ADAcAc !default;
+$gray-600: #6C6A6A !default;
+$gray-700: #494444 !default;
+$gray-800: #343030 !default;
+$gray-900: #211010 !default;
+$black: #211010 !default;
 
 $grays: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -57,6 +57,7 @@ $link-color: $primary !default;
 $spacer: 8px !default;
 
 $border-width: 0 !default;
+$border-color: $gray-300;
 $border-radius: 0 !default;
 
 $font-family-base: var(--sen-font-family, $font-family) !default;
@@ -72,6 +73,7 @@ $font-size-lg: $font-size-base * 1.25 !default;
 $btn-padding-y: $spacer / 2 !default;
 $btn-padding-x: $spacer !default;
 $btn-border-width: $border-width;
+$btn-border-radius: 3px;
 
 $input-border-width: $border-width !default;
 $input-border-color: $gray-200 !default;
@@ -80,7 +82,7 @@ $input-padding-x: $spacer * 0.8 !default;
 $input-line-height: 1em;
 $input-background: $gray-200 !default;
 
-$fieldset-border-color: $gray-200 !default;
+$fieldset-border-color: $gray-100 !default;
 $fieldset-border-radius: $border-radius !default;
 $fieldset-border-width: 2px !default;
 $fieldset-padding: $spacer - $fieldset-border-width !default;
@@ -88,6 +90,19 @@ $fieldset-legend-color: $gray-400 !default;
 
 $alert-padding: $spacer !default;
 $alert-border-width: 2px !default;
+
+// Tables
+$table-cell-padding-y:        .4rem !default;
+$table-cell-padding-x:        .6rem !default;
+$table-cell-vertical-align:   top !default;
+
+$table-header-bg: $gray-100 !default;
+
+$table-bg:                    transparent !default;
+$table-border-width:          $border-width !default;
+$table-border-color:          $border-color !default;
+
+$table-row-active-bg: $gray-200 !default;
 
 // The minimum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries

@@ -1,0 +1,24 @@
+:host {
+}
+
+table {
+  background: $table-bg;
+  border: var(--sen-table-border-width, $table-border-width) solid var(--sen-table-border-color, $table-border-color);
+  border-spacing: 0;
+}
+
+th,
+td {
+  text-align: left;
+  padding: var(--sen-table-cell-padding-y, $table-cell-padding-y) var(--sen-table-cell-padding-x, $table-cell-padding-x);
+}
+
+
+th {
+  background: var(--sen-table-header-bg, $table-header-bg);
+}
+
+
+tr:hover {
+  background: var(--sen-table-row-active-bg, $table-row-active-bg);
+}

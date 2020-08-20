@@ -69,6 +69,17 @@ export type TextFieldTypes =
   | "url"
   | "time";
 
+export type TextAlign = "right" | "center" | "left";
+
 export interface InputChangeEventDetail {
   value: string | undefined | null;
 }
+
+export type TableHeaders = TableHeader[];
+
+export type TableHeader = {
+  value: string;
+  textAlign?: TextAlign;
+  key: string
+};
+
