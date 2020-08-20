@@ -23,6 +23,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npx lerna bootstrap --no-ci
+      - run: rm packages/react/package-lock.json
       - run: npm run release.dev.ci
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
