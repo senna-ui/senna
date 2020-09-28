@@ -4,7 +4,7 @@ import { Color } from "../../interface";
 @Component({
   tag: "sen-button",
   styleUrl: "button.scss",
-  shadow: true,
+  shadow: true
 })
 export class Button implements ComponentInterface {
   /**
@@ -18,18 +18,18 @@ export class Button implements ComponentInterface {
   /**
    * Disables the button
    */
-  @Prop({ reflectToAttr: true }) disabled = false;
+  @Prop({ reflect: true }) disabled = false;
 
   render() {
     const classes = {
       btn: true,
-      ["btn-" + this.color]: true,
+      ["btn-" + this.color]: true
     };
 
     return (
       <Host>
         <button class={classes} type={this.buttonType} disabled={this.disabled}>
-          <slot></slot>
+          <slot />
         </button>
       </Host>
     );

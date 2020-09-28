@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { AutocompleteTypes, Color, InputChangeEventDetail, TableHeaders, TextFieldTypes, } from "./interface";
+import { AutocompleteTypes, Color, InputChangeEventDetail, TableHeaders, TextFieldTypes } from "./interface";
 export namespace Components {
     interface SenAlert {
         /**
@@ -191,11 +191,24 @@ export namespace Components {
         /**
           * A hint to the browser for which enter key to display. Possible values: `"enter"`, `"done"`, `"go"`, `"next"`, `"previous"`, `"search"`, and `"send"`.
          */
-        "enterkeyhint"?: "enter" | "done" | "go" | "next" | "previous" | "search" | "send";
+        "enterkeyhint"?: | "enter"
+    | "done"
+    | "go"
+    | "next"
+    | "previous"
+    | "search"
+    | "send";
         /**
           * A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`.
          */
-        "inputmode"?: "none" | "text" | "tel" | "url" | "email" | "numeric" | "decimal" | "search";
+        "inputmode"?: | "none"
+    | "text"
+    | "tel"
+    | "url"
+    | "email"
+    | "numeric"
+    | "decimal"
+    | "search";
         /**
           * The maximum value, which must not be less than its minimum (min attribute) value.
          */
@@ -540,11 +553,24 @@ declare namespace LocalJSX {
         /**
           * A hint to the browser for which enter key to display. Possible values: `"enter"`, `"done"`, `"go"`, `"next"`, `"previous"`, `"search"`, and `"send"`.
          */
-        "enterkeyhint"?: "enter" | "done" | "go" | "next" | "previous" | "search" | "send";
+        "enterkeyhint"?: | "enter"
+    | "done"
+    | "go"
+    | "next"
+    | "previous"
+    | "search"
+    | "send";
         /**
           * A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`.
          */
-        "inputmode"?: "none" | "text" | "tel" | "url" | "email" | "numeric" | "decimal" | "search";
+        "inputmode"?: | "none"
+    | "text"
+    | "tel"
+    | "url"
+    | "email"
+    | "numeric"
+    | "decimal"
+    | "search";
         /**
           * The maximum value, which must not be less than its minimum (min attribute) value.
          */

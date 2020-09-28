@@ -16,32 +16,37 @@
     "tsc": "tsc -p .",
     "rollup": "rollup -c"
   },
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs.js",
   "types": "./dist/index.d.ts",
-  "files": ["dist/"],
+  "files": [
+    "dist/"
+  ],
   "devDependencies": {
-    "@types/jest": "23.3.9",
-    "@types/node": "^14.0.13",
-    "@types/react": "16.7.6",
-    "@types/react-dom": "16.0.9",
-    "jest": "^23.0.0",
+    "@types/jest": "26.0.14",
+    "@types/node": "^14.11.2",
+    "@types/react": "16.9.49",
+    "@types/react-dom": "16.9.8",
+    "jest": "^26.4.2",
     "jest-dom": "^3.0.2",
-    "np": "^3.1.0",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "typescript": "^3.3.4000"
+    "np": "^6.5.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "typescript": "^4.0.3"
   },
   "dependencies": {
     "@senna-ui/core": "^0.0.5"
   },
   "peerDependencies": {
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "jest": {
     "preset": "ts-jest",
     "setupTestFrameworkScriptFile": "<rootDir>/jest.setup.js",
-    "testPathIgnorePatterns": ["node_modules", "dist"]
+    "testPathIgnorePatterns": [
+      "node_modules",
+      "dist"
+    ]
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

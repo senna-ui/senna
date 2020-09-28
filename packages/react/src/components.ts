@@ -3,11 +3,10 @@
 /* auto-generated react proxies */
 import { createReactComponent } from './react-component-lib';
 
-import { JSX } from '@senna-ui/core';
+import type { JSX } from '@senna-ui/core';
 
-import { defineCustomElements, applyPolyfills } from '@senna-ui/core/loader';
 
-applyPolyfills().then(() => defineCustomElements());
+
 export const SenAlert = /*@__PURE__*/createReactComponent<JSX.SenAlert, HTMLSenAlertElement>('sen-alert');
 export const SenApp = /*@__PURE__*/createReactComponent<JSX.SenApp, HTMLSenAppElement>('sen-app');
 export const SenButton = /*@__PURE__*/createReactComponent<JSX.SenButton, HTMLSenButtonElement>('sen-button');
