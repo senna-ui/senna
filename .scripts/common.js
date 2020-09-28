@@ -39,19 +39,19 @@ async function askNpmTag(version) {
         new inquirer.Separator(),
         {
           name: "Other (specify)",
-          value: null,
-        },
-      ]),
+          value: null
+        }
+      ])
     },
     {
       type: "confirm",
       name: "confirm",
-      message: (answers) => {
+      message: answers => {
         return `Will publish ${cyan(version)} to ${cyan(
           answers.npmTag
         )}. Continue?`;
-      },
-    },
+      }
+    }
   ];
 
   const { npmTag, confirm } = await inquirer.prompt(prompts);
@@ -65,36 +65,36 @@ function checkGit(tasks) {
       task: () =>
         execa
           .stdout("git", ["symbolic-ref", "--short", "HEAD"])
-          .then((branch) => {
+          .then(branch => {
             if (
               branch.indexOf("release") === -1 &&
               branch.indexOf("hotfix") === -1
             ) {
               throw new Error(`Must be on a "release" or "hotfix" branch.`);
             }
-          }),
+          })
     },
     {
       title: "Check local working tree",
       task: () =>
-        execa.stdout("git", ["status", "--porcelain"]).then((status) => {
+        execa.stdout("git", ["status", "--porcelain"]).then(status => {
           if (status !== "") {
             throw new Error(
               `Unclean working tree. Commit or stash changes first.`
             );
           }
-        }),
+        })
     },
     {
       title: "Check remote history",
       task: () =>
         execa
           .stdout("git", ["rev-list", "--count", "--left-only", "@{u}...HEAD"])
-          .then((result) => {
+          .then(result => {
             if (result !== "0") {
               throw new Error(`Remote history differs. Please pull changes.`);
             }
-          }),
+          })
     }
   );
 }
@@ -103,15 +103,15 @@ function checkTestDist(tasks) {
   tasks.push({
     title: "Check dist folders for required files",
     task: () =>
-      execa.stdout("node", [".scripts/test-dist.js"]).then((status) => {
+      execa.stdout("node", [".scripts/test-dist.js"]).then(status => {
         if (status.indexOf("✅ test.dist") === -1) {
           throw new Error(`Test Dist did not find some required files`);
         }
-      }),
+      })
   });
 }
 
-const isValidVersion = (input) => Boolean(semver.valid(input));
+const isValidVersion = input => Boolean(semver.valid(input));
 
 function preparePackage(tasks, package, version, install) {
   const projectRoot = projectPath(package);
@@ -127,7 +127,7 @@ function preparePackage(tasks, package, version, install) {
             `New version \`${version}\` should be higher than current version \`${pkg.version}\``
           );
         }
-      },
+      }
     });
     if (install) {
       projectTasks.push({
@@ -135,7 +135,7 @@ function preparePackage(tasks, package, version, install) {
         task: async () => {
           await fs.remove(path.join(projectRoot, "node_modules"));
           await execa("npm", ["i"], { cwd: projectRoot });
-        },
+        }
       });
     }
   }
@@ -145,14 +145,14 @@ function preparePackage(tasks, package, version, install) {
       projectTasks.push({
         title: `${pkg.name}: npm link @senna-ui/core`,
         task: () =>
-          execa("npm", ["link", "@senna-ui/core"], { cwd: projectRoot }),
+          execa("npm", ["link", "@senna-ui/core"], { cwd: projectRoot })
       });
 
       if (package === "packages/react-router") {
         projectTasks.push({
           title: `${pkg.name}: npm link @senna-ui/react`,
           task: () =>
-            execa("npm", ["link", "@senna-ui/react"], { cwd: projectRoot }),
+            execa("npm", ["link", "@senna-ui/react"], { cwd: projectRoot })
         });
       }
     }
@@ -161,21 +161,21 @@ function preparePackage(tasks, package, version, install) {
     if (version) {
       projectTasks.push({
         title: `${pkg.name}: lint`,
-        task: () => execa("npm", ["run", "lint"], { cwd: projectRoot }),
+        task: () => execa("npm", ["run", "lint"], { cwd: projectRoot })
       });
     }
 
     // Build
     projectTasks.push({
       title: `${pkg.name}: build`,
-      task: () => execa("npm", ["run", "build"], { cwd: projectRoot }),
+      task: () => execa("npm", ["run", "build"], { cwd: projectRoot })
     });
 
     // Link core or react for sub projects
     if (package === "core" || package === "packages/react") {
       projectTasks.push({
         title: `${pkg.name}: npm link`,
-        task: () => execa("npm", ["link"], { cwd: projectRoot }),
+        task: () => execa("npm", ["link"], { cwd: projectRoot })
       });
     }
 
@@ -185,7 +185,7 @@ function preparePackage(tasks, package, version, install) {
         task: () => {
           updateDependency(pkg, "@senna-ui/core", version);
           writePkg(package, pkg);
-        },
+        }
       });
     }
   }
@@ -193,7 +193,7 @@ function preparePackage(tasks, package, version, install) {
   // Add project tasks
   tasks.push({
     title: `Prepare ${bold(pkg.name)}`,
-    task: () => new Listr(projectTasks),
+    task: () => new Listr(projectTasks)
   });
 }
 
@@ -208,7 +208,7 @@ function prepareDevPackage(tasks, package, version) {
       projectTasks.push({
         title: `${pkg.name}: npm link @senna-ui/core`,
         task: () =>
-          execa("npm", ["link", "@senna-ui/core"], { cwd: projectRoot }),
+          execa("npm", ["link", "@senna-ui/core"], { cwd: projectRoot })
       });
     }
 
@@ -217,18 +217,18 @@ function prepareDevPackage(tasks, package, version) {
       task: () => {
         updateDependency(pkg, "@senna-ui/core", version);
         writePkg(package, pkg);
-      },
+      }
     });
 
     projectTasks.push({
       title: `${pkg.name}: build`,
-      task: () => execa("npm", ["run", "build"], { cwd: projectRoot }),
+      task: () => execa("npm", ["run", "build"], { cwd: projectRoot })
     });
 
     if (package === "core" || package === "packages/react") {
       projectTasks.push({
         title: `${pkg.name}: npm link`,
-        task: () => execa("npm", ["link"], { cwd: projectRoot }),
+        task: () => execa("npm", ["link"], { cwd: projectRoot })
       });
     }
   }
@@ -236,12 +236,12 @@ function prepareDevPackage(tasks, package, version) {
   // Add project tasks
   tasks.push({
     title: `Prepare dev build: ${bold(pkg.name)}`,
-    task: () => new Listr(projectTasks),
+    task: () => new Listr(projectTasks)
   });
 }
 
 function updatePackageVersions(tasks, packages, version) {
-  packages.forEach((package) => {
+  packages.forEach(package => {
     updatePackageVersion(tasks, package, version);
 
     tasks.push({
@@ -254,7 +254,7 @@ function updatePackageVersions(tasks, packages, version) {
           updateDependency(pkg, "@senna-ui/core", version);
           writePkg(package, pkg);
         }
-      },
+      }
     });
 
     // angular & angular-server need to update their dist versions
@@ -271,7 +271,7 @@ function updatePackageVersions(tasks, packages, version) {
           const pkg = readPkg(distPackage);
           updateDependency(pkg, "@senna-ui/core", version);
           writePkg(distPackage, pkg);
-        },
+        }
       });
     }
 
@@ -284,7 +284,7 @@ function updatePackageVersions(tasks, packages, version) {
           const pkg = readPkg(package);
           updateDependency(pkg, "@senna-ui/react", version);
           writePkg(package, pkg);
-        },
+        }
       });
     }
   });
@@ -297,12 +297,12 @@ function updatePackageVersion(tasks, package, version) {
     title: `${package}: update package.json ${dim(`(${version})`)}`,
     task: async () => {
       await execa("npm", ["version", version], { cwd: projectRoot });
-    },
+    }
   });
 }
 
 function copyPackageToDist(tasks, packages) {
-  packages.forEach((package) => {
+  packages.forEach(package => {
     const projectRoot = projectPath(package);
 
     // angular and angular-server are the only packages that publish dist
@@ -314,15 +314,15 @@ function copyPackageToDist(tasks, packages) {
       title: `${package}: Copy package.json to dist`,
       task: () =>
         execa("node", ["copy-package.js", package], {
-          cwd: path.join(rootDir, ".scripts"),
-        }),
+          cwd: path.join(rootDir, ".scripts")
+        })
     });
   });
 }
 
 function publishPackages(tasks, packages, version, npmTag = "latest") {
   // first verify version
-  packages.forEach((package) => {
+  packages.forEach(package => {
     if (package === "core") {
       return;
     }
@@ -337,12 +337,12 @@ function publishPackages(tasks, packages, version, npmTag = "latest") {
             `${pkg.name} version ${pkg.version} must match ${version}`
           );
         }
-      },
+      }
     });
   });
 
   // Publish
-  packages.forEach((package) => {
+  packages.forEach(package => {
     let projectRoot = projectPath(package);
 
     if (package === "packages/angular-server" || package === "angular") {
@@ -352,8 +352,10 @@ function publishPackages(tasks, packages, version, npmTag = "latest") {
     tasks.push({
       title: `${package}: publish to ${npmTag} tag`,
       task: async () => {
-        await execa("npm", ["publish", "--tag", npmTag], { cwd: projectRoot });
-      },
+        await execa("npm", ["publish", "--access", "public", "--tag", npmTag], {
+          cwd: projectRoot
+        });
+      }
     });
   });
 }
@@ -395,5 +397,5 @@ module.exports = {
   updateDependency,
   updatePackageVersion,
   updatePackageVersions,
-  writePkg,
+  writePkg
 };

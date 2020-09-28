@@ -4,10 +4,7 @@
   "description": "Pre-packaged API documentation for the Senna docs.",
   "main": "core.json",
   "types": "core.d.ts",
-  "files": [
-    "core.json",
-    "core.d.ts"
-  ],
+  "files": ["core.json", "core.d.ts"],
   "author": "Senna UI",
   "license": "UNLICENSED",
   "repository": {
@@ -17,7 +14,6 @@
   },
   "homepage": "https://senna-ui.com/docs",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/",
-    "access": "restricted"
+    "registry": "https://registry.npmjs.org/"
   }
 }

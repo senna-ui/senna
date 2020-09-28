@@ -48,8 +48,7 @@
     "bootstrap": "^5.0.0-alpha1"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/",
-    "access": "restricted"
+    "registry": "https://registry.npmjs.org/"
   },
   "repository": {
     "type": "git",

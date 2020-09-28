@@ -18,9 +18,7 @@
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist/"
-  ],
+  "files": ["dist/"],
   "devDependencies": {
     "@types/jest": "23.3.9",
     "@types/node": "^14.0.13",
@@ -43,13 +41,9 @@
   "jest": {
     "preset": "ts-jest",
     "setupTestFrameworkScriptFile": "<rootDir>/jest.setup.js",
-    "testPathIgnorePatterns": [
-      "node_modules",
-      "dist"
-    ]
+    "testPathIgnorePatterns": ["node_modules", "dist"]
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/",
-    "access": "restricted"
+    "registry": "https://registry.npmjs.org/"
   }
 }
