@@ -5,15 +5,6 @@ module.exports = {
   stories: ["../src/**/*.stories.tsx"],
   addons: [
     "@storybook/addon-actions/register",
-    {
-      name: "@storybook/preset-typescript",
-      options: {
-        tsLoaderOptions: {
-          configFile: path.resolve(__dirname, "../tsconfig.json"),
-        },
-        include: [path.resolve(__dirname)],
-      },
-    },
     "@storybook/addon-notes/register",
   ],
   webpackFinal: (config) => {
