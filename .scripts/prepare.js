@@ -119,7 +119,7 @@ async function preparePackages(packages, version, install) {
 
   // update core readme with version number
   updateCoreReadme(tasks, version);
-  common.copyCDNLoader(tasks, version);
+  //common.copyCDNLoader(tasks, version);
 
   const listr = new Listr(tasks, { showSubtasks: true });
   await listr.run();
