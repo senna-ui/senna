@@ -8,7 +8,7 @@ const { bold, cyan, dim } = require("colorette");
 
 const rootDir = path.join(__dirname, "../");
 
-const packages = ["core", "packages/react"];
+const packages = ["core", "packages/react", "packages/docs"];
 
 function readPkg(project) {
   const packageJsonPath = packagePath(project);
@@ -140,7 +140,7 @@ function preparePackage(tasks, package, version, install) {
     }
   }
 
-  if (package !== "docs") {
+  if (package !== "packages/docs") {
     if (package !== "core") {
       projectTasks.push({
         title: `${pkg.name}: npm link @senna-ui/core`,
@@ -203,7 +203,7 @@ function prepareDevPackage(tasks, package, version) {
 
   const projectTasks = [];
 
-  if (package !== "docs") {
+  if (package !== "packages/docs") {
     if (package !== "core") {
       projectTasks.push({
         title: `${pkg.name}: npm link @senna-ui/core`,
