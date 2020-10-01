@@ -8,8 +8,8 @@ module.exports = {
     "@storybook/addon-notes/register",
   ],
   webpackFinal: (config) => {
-    // watch all revelant files in dist folder
-    const distDir = path.resolve(__dirname, "../dist");
+    // watch all relevant files in dist folder
+    const distDir = path.resolve(__dirname, "../www");
     const files = glob.sync(`${distDir}/**/*.entry.js`, {
       absolute: true,
       ignore: ["**/*.system.entry.js"],
