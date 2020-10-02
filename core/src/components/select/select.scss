@@ -1,0 +1,13 @@
+:host {
+  display: contents;
+
+  select {
+    box-sizing: border-box;
+    padding: $input-padding-y $input-padding-x;
+    font-size: $font-size-base;
+    font-family: $font-family-base;
+    border: $input-border-width solid $input-border-color;
+    background: $input-background;
+    line-height: $input-line-height;
+  }
+}
