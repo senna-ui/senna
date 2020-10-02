@@ -312,6 +312,10 @@ export namespace Components {
     }
     interface SenText {
         /**
+          * The text alignment  Default is left
+         */
+        "align": "left" | "right" | "center" | "justify";
+        /**
           * The text block type  One of `p`, `h1`, `h2`, `h3`, `h4`, `h5`
          */
         "kind": TextKind;
@@ -781,6 +785,10 @@ declare namespace LocalJSX {
         "headers"?: TableHeaders;
     }
     interface SenText {
+        /**
+          * The text alignment  Default is left
+         */
+        "align"?: "left" | "right" | "center" | "justify";
         /**
           * The text block type  One of `p`, `h1`, `h2`, `h3`, `h4`, `h5`
          */

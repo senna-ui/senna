@@ -22,10 +22,19 @@ export class Text implements ComponentInterface {
    */
   @Prop() weight: "regular" | "bold" | "light" = "regular";
 
+
+  /**
+   * The text alignment
+   *
+   * Default is left
+   */
+  @Prop() align: "left" | "right" | "center" | "justify" = "left";
+
   render() {
     const TextTag = this.kind;
     const classes = {
-      [`font-weight-${this.weight}`]: true
+      [`font-weight-${this.weight}`]: true,
+      [`text-align-${this.align}`]: true
     };
 
     return (

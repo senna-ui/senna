@@ -48,3 +48,12 @@ export const FontWeights = () => `
     <sen-text weight="bold" kind="h6">Element h6 bold</sen-text>
   </sen-app>
 `;
+
+export const TextAlignment = () => `
+  <sen-app>
+    <sen-text align="left">Left aligned text.</sen-text>
+    <sen-text align="right">Right aligned text.</sen-text>
+    <sen-text align="center">Center aligned text.</sen-text>
+    <sen-text align="justify">Justify aligned text.</sen-text>
+  </sen-app>
+`;
