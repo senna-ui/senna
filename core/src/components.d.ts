@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { AutocompleteTypes, Color, InputChangeEventDetail, MenuItem, OptionSelectedEvent, TableHeaders, TextFieldTypes, TextKind, TypeaheadOption } from "./interface";
+import { AutocompleteTypes, Color, FontWeight, InputChangeEventDetail, MenuItem, OptionSelectedEvent, TableHeaders, TextAlign, TextFieldTypes, TextTag, TextTransform, TypeaheadOption } from "./interface";
 export namespace Components {
     interface SenAlert {
         /**
@@ -312,21 +312,25 @@ export namespace Components {
     }
     interface SenText {
         /**
-          * The text alignment  Default is left
+          * [Text align](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align)
          */
-        "align": "left" | "right" | "center" | "justify";
+        "align": TextAlign | "justify";
         /**
-          * The text block type  One of `p`, `h1`, `h2`, `h3`, `h4`, `h5`
-         */
-        "kind": TextKind;
-        /**
-          * Leter spacing in any html unit (px, rem, ex, etc.)  Default is normal
+          * [Leter spacing](https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing)
          */
         "letterSpacing": string;
         /**
-          * The font weight  One of `regular`, `bold`, `light`
+          * Element Tag
          */
-        "weight": "regular" | "bold" | "light";
+        "tag": TextTag;
+        /**
+          * [Text transform](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform)
+         */
+        "textTransform": TextTransform;
+        /**
+          * Font weight
+         */
+        "weight": FontWeight;
     }
     interface SenTypeahead {
         /**
@@ -790,21 +794,25 @@ declare namespace LocalJSX {
     }
     interface SenText {
         /**
-          * The text alignment  Default is left
+          * [Text align](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align)
          */
-        "align"?: "left" | "right" | "center" | "justify";
+        "align"?: TextAlign | "justify";
         /**
-          * The text block type  One of `p`, `h1`, `h2`, `h3`, `h4`, `h5`
-         */
-        "kind"?: TextKind;
-        /**
-          * Leter spacing in any html unit (px, rem, ex, etc.)  Default is normal
+          * [Leter spacing](https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing)
          */
         "letterSpacing"?: string;
         /**
-          * The font weight  One of `regular`, `bold`, `light`
+          * Element Tag
          */
-        "weight"?: "regular" | "bold" | "light";
+        "tag"?: TextTag;
+        /**
+          * [Text transform](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform)
+         */
+        "textTransform"?: TextTransform;
+        /**
+          * Font weight
+         */
+        "weight"?: FontWeight;
     }
     interface SenTypeahead {
         /**

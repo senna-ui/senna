@@ -1,7 +1,9 @@
 import { Component, ComponentInterface, Host, h, Prop } from "@stencil/core";
-import { TextKind } from "../../interface";
+import { FontWeight, TextAlign, TextTag, TextTransform } from "../../interface";
 
-
+/**
+ * Text typography component
+ */
 @Component({
   tag: "sen-text",
   styleUrl: "text.scss",
@@ -9,49 +11,45 @@ import { TextKind } from "../../interface";
 })
 export class Text implements ComponentInterface {
   /**
-   * The text block type
-   *
-   * One of `p`, `h1`, `h2`, `h3`, `h4`, `h5`
+   * Element Tag
    */
-  @Prop() kind: TextKind = 'p';
+  @Prop() tag: TextTag = 'p';
 
   /**
-   * The font weight
-   *
-   * One of `regular`, `bold`, `light`
+   * Font weight
    */
-  @Prop() weight: "regular" | "bold" | "light" = "regular";
+  @Prop() weight: FontWeight = "regular";
 
 
   /**
-   * The text alignment
-   *
-   * Default is left
+   * [Text align](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align)
    */
-  @Prop() align: "left" | "right" | "center" | "justify" = "left";
+  @Prop() align: TextAlign | "justify" = "left";
 
   /**
-   * Leter spacing in any html unit (px, rem, ex, etc.)
-   *
-   * Default is normal
+   * [Leter spacing](https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing)
    */
-  @Prop() letterSpacing = 'normal';
+  @Prop() letterSpacing = "normal";
 
-
+  /**
+   * [Text transform](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform)
+   */
+  @Prop() textTransform: TextTransform = "none";
 
   render() {
-    const TextTag = this.kind;
+    const TextTag = this.tag;
     const classes = {
       [`font-weight-${this.weight}`]: true,
       [`text-align-${this.align}`]: true
     };
-    const inlineStyles = {
-      letterSpacing: this.letterSpacing
-    }
+    const { letterSpacing, textTransform } = this;
 
     return (
       <Host>
-        <TextTag class={classes} style={inlineStyles}>
+        <TextTag
+          class={classes}
+          style={{ letterSpacing, textTransform }}
+        >
           <slot />
         </TextTag>
       </Host>

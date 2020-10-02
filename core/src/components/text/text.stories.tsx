@@ -6,13 +6,13 @@ export default {
 export const HtmlElements = () => `
   <sen-app>
     <sen-text>Element default is a p element</sen-text>
-    <sen-text kind="p">Element p</sen-text>
-    <sen-text kind="h1">Element h1</sen-text>
-    <sen-text kind="h2">Element h2</sen-text>
-    <sen-text kind="h3">Element h3</sen-text>
-    <sen-text kind="h4">Element h4</sen-text>
-    <sen-text kind="h5">Element h5</sen-text>
-    <sen-text kind="h6">Element h6</sen-text>
+    <sen-text tag="p">Element p</sen-text>
+    <sen-text tag="h1">Element h1</sen-text>
+    <sen-text tag="h2">Element h2</sen-text>
+    <sen-text tag="h3">Element h3</sen-text>
+    <sen-text tag="h4">Element h4</sen-text>
+    <sen-text tag="h5">Element h5</sen-text>
+    <sen-text tag="h6">Element h6</sen-text>
   </sen-app>
 `;
 
@@ -65,5 +65,15 @@ export const LetterSpacing = () => `
     <sen-text letter-spacing="2px">2px letter spacing</sen-text>
     <sen-text letter-spacing="3px">3px letter spacing</sen-text>
     <sen-text letter-spacing="4px">4px letter spacing</sen-text>
+  </sen-app>
+`;
+
+export const TextTransform = () => `
+  <sen-app>
+    <sen-text>normal Text transform</sen-text>
+    <sen-text text-transform="capitalize">capitalize Text transform</sen-text>
+    <sen-text text-transform="uppercase">uppercase Text transform</sen-text>
+    <sen-text text-transform="lowercase">lowercase Text transform</sen-text>
+    <sen-text text-transform="full-width">full-width Text transform</sen-text>
   </sen-app>
 `;

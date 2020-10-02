@@ -1,4 +1,4 @@
-export type TextKind = "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
 
 export type Color = "primary" | "secondary" | "success" | "warning" | "danger";
 
@@ -77,7 +77,11 @@ export type TypeaheadOption = {
   shortcut?: string | undefined | null;
 };
 
+export type TextTag = "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 export type TextAlign = "right" | "center" | "left";
+export type TextAligns = TextAlign | "justify";
+export type TextTransform = "none" | "capitalize" | "uppercase" | "lowercase" | "full-width";
+export type FontWeight = "regular" | "bold" | "light";
 
 export interface InputChangeEventDetail {
   value: string | undefined | null;
