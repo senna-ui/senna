@@ -30,16 +30,28 @@ export class Text implements ComponentInterface {
    */
   @Prop() align: "left" | "right" | "center" | "justify" = "left";
 
+  /**
+   * Leter spacing in any html unit (px, rem, ex, etc.)
+   *
+   * Default is normal
+   */
+  @Prop() letterSpacing = 'normal';
+
+
+
   render() {
     const TextTag = this.kind;
     const classes = {
       [`font-weight-${this.weight}`]: true,
       [`text-align-${this.align}`]: true
     };
+    const inlineStyles = {
+      letterSpacing: this.letterSpacing
+    }
 
     return (
       <Host>
-        <TextTag class={classes}>
+        <TextTag class={classes} style={inlineStyles}>
           <slot />
         </TextTag>
       </Host>

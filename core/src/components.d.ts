@@ -320,6 +320,10 @@ export namespace Components {
          */
         "kind": TextKind;
         /**
+          * Leter spacing in any html unit (px, rem, ex, etc.)  Default is normal
+         */
+        "letterSpacing": string;
+        /**
           * The font weight  One of `regular`, `bold`, `light`
          */
         "weight": "regular" | "bold" | "light";
@@ -793,6 +797,10 @@ declare namespace LocalJSX {
           * The text block type  One of `p`, `h1`, `h2`, `h3`, `h4`, `h5`
          */
         "kind"?: TextKind;
+        /**
+          * Leter spacing in any html unit (px, rem, ex, etc.)  Default is normal
+         */
+        "letterSpacing"?: string;
         /**
           * The font weight  One of `regular`, `bold`, `light`
          */

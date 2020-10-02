@@ -5,7 +5,7 @@ export default {
 
 export const HtmlElements = () => `
   <sen-app>
-    <sen-text>Element default</sen-text>
+    <sen-text>Element default is a p element</sen-text>
     <sen-text kind="p">Element p</sen-text>
     <sen-text kind="h1">Element h1</sen-text>
     <sen-text kind="h2">Element h2</sen-text>
@@ -55,5 +55,15 @@ export const TextAlignment = () => `
     <sen-text align="right">Right aligned text.</sen-text>
     <sen-text align="center">Center aligned text.</sen-text>
     <sen-text align="justify">Justify aligned text.</sen-text>
+  </sen-app>
+`;
+
+export const LetterSpacing = () => `
+  <sen-app>
+    <sen-text>normal letter spacing</sen-text>
+    <sen-text letter-spacing="1px">1px letter spacing</sen-text>
+    <sen-text letter-spacing="2px">2px letter spacing</sen-text>
+    <sen-text letter-spacing="3px">3px letter spacing</sen-text>
+    <sen-text letter-spacing="4px">4px letter spacing</sen-text>
   </sen-app>
 `;
