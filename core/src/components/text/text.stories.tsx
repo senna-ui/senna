@@ -2,18 +2,17 @@ export default {
   title: "Text",
 };
 
-export const Default = () =>
-  '<sen-text>if no kind given it will be a p element.</sen-text>';
 
 export const HtmlElements = () => `
   <sen-app>
+    <sen-text>Element default</sen-text>
     <sen-text kind="p">Element p</sen-text>
     <sen-text kind="h1">Element h1</sen-text>
     <sen-text kind="h2">Element h2</sen-text>
     <sen-text kind="h3">Element h3</sen-text>
     <sen-text kind="h4">Element h4</sen-text>
     <sen-text kind="h5">Element h5</sen-text>
-    <sen-text kind="h6">Element h5</sen-text>
+    <sen-text kind="h6">Element h6</sen-text>
   </sen-app>
 `;
 
