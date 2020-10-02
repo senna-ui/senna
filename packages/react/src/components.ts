@@ -11,6 +11,7 @@ export const SenAlert = /*@__PURE__*/createReactComponent<JSX.SenAlert, HTMLSenA
 export const SenApp = /*@__PURE__*/createReactComponent<JSX.SenApp, HTMLSenAppElement>('sen-app');
 export const SenButton = /*@__PURE__*/createReactComponent<JSX.SenButton, HTMLSenButtonElement>('sen-button');
 export const SenButtonGroup = /*@__PURE__*/createReactComponent<JSX.SenButtonGroup, HTMLSenButtonGroupElement>('sen-button-group');
+export const SenCardActions = /*@__PURE__*/createReactComponent<JSX.SenCardActions, HTMLSenCardActionsElement>('sen-card-actions');
 export const SenCardBody = /*@__PURE__*/createReactComponent<JSX.SenCardBody, HTMLSenCardBodyElement>('sen-card-body');
 export const SenCardTitle = /*@__PURE__*/createReactComponent<JSX.SenCardTitle, HTMLSenCardTitleElement>('sen-card-title');
 export const SenCol = /*@__PURE__*/createReactComponent<JSX.SenCol, HTMLSenColElement>('sen-col');

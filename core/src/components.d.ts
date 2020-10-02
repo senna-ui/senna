@@ -31,6 +31,8 @@ export namespace Components {
     }
     interface SenButtonGroup {
     }
+    interface SenCardActions {
+    }
     interface SenCardBody {
     }
     interface SenCardTitle {
@@ -327,6 +329,12 @@ declare global {
     var HTMLSenCardTitleElement: {
         prototype: HTMLSenCardTitleElement;
         new (): HTMLSenCardTitleElement;
+    };
+    interface HTMLSenCardActionsElement extends Components.SenCardActions, HTMLStencilElement {
+    }
+    var HTMLSenCardActionsElement: {
+        prototype: HTMLSenCardActionsElement;
+        new (): HTMLSenCardActionsElement;
     };
     interface HTMLSenColElement extends Components.SenCol, HTMLStencilElement {
     }
