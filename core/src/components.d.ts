@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { AutocompleteTypes, Color, InputChangeEventDetail, MenuItem, OptionSelectedEvent, TableHeaders, TextFieldTypes, TypeaheadOption } from "./interface";
+import { AutocompleteTypes, Color, InputChangeEventDetail, MenuItem, OptionSelectedEvent, TableHeaders, TextFieldTypes, TextKind, TypeaheadOption } from "./interface";
 export namespace Components {
     interface SenAlert {
         /**
@@ -310,6 +310,16 @@ export namespace Components {
          */
         "headers": TableHeaders;
     }
+    interface SenText {
+        /**
+          * The text block type  One of `p`, `h1`, `h2`, `h3`, `h4`, `h5`
+         */
+        "kind": TextKind;
+        /**
+          * The font weight  One of `regular`, `bold`, `light`
+         */
+        "weight": "regular" | "bold" | "light";
+    }
     interface SenTypeahead {
         /**
           * Options to display in typeahead
@@ -424,6 +434,12 @@ declare global {
         prototype: HTMLSenTableElement;
         new (): HTMLSenTableElement;
     };
+    interface HTMLSenTextElement extends Components.SenText, HTMLStencilElement {
+    }
+    var HTMLSenTextElement: {
+        prototype: HTMLSenTextElement;
+        new (): HTMLSenTextElement;
+    };
     interface HTMLSenTypeaheadElement extends Components.SenTypeahead, HTMLStencilElement {
     }
     var HTMLSenTypeaheadElement: {
@@ -448,6 +464,7 @@ declare global {
         "sen-menu-item": HTMLSenMenuItemElement;
         "sen-row": HTMLSenRowElement;
         "sen-table": HTMLSenTableElement;
+        "sen-text": HTMLSenTextElement;
         "sen-typeahead": HTMLSenTypeaheadElement;
     }
 }
@@ -763,6 +780,16 @@ declare namespace LocalJSX {
          */
         "headers"?: TableHeaders;
     }
+    interface SenText {
+        /**
+          * The text block type  One of `p`, `h1`, `h2`, `h3`, `h4`, `h5`
+         */
+        "kind"?: TextKind;
+        /**
+          * The font weight  One of `regular`, `bold`, `light`
+         */
+        "weight"?: "regular" | "bold" | "light";
+    }
     interface SenTypeahead {
         /**
           * Emitted when input is changed
@@ -799,6 +826,7 @@ declare namespace LocalJSX {
         "sen-menu-item": SenMenuItem;
         "sen-row": SenRow;
         "sen-table": SenTable;
+        "sen-text": SenText;
         "sen-typeahead": SenTypeahead;
     }
 }
@@ -823,6 +851,7 @@ declare module "@stencil/core" {
             "sen-menu-item": LocalJSX.SenMenuItem & JSXBase.HTMLAttributes<HTMLSenMenuItemElement>;
             "sen-row": LocalJSX.SenRow & JSXBase.HTMLAttributes<HTMLSenRowElement>;
             "sen-table": LocalJSX.SenTable & JSXBase.HTMLAttributes<HTMLSenTableElement>;
+            "sen-text": LocalJSX.SenText & JSXBase.HTMLAttributes<HTMLSenTextElement>;
             "sen-typeahead": LocalJSX.SenTypeahead & JSXBase.HTMLAttributes<HTMLSenTypeaheadElement>;
         }
     }

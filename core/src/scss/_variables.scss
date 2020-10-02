@@ -64,7 +64,18 @@ $font-family-base: var(--sen-font-family, $font-family) !default;
 $font-family-code: var(--sen-font-monospace, $font-family-monospace) !default;
 
 $font-color-base: $black !default;
+$font-weight-light: 300 !default;
+$font-weight-regular: 500 !default;
 $font-weight-bold: 700 !default;
+$font-weights: () !default;
+$font-weights: map-merge(
+  (
+    light: $font-weight-light,
+    regular: $font-weight-regular,
+    bold: $font-weight-bold
+  ),
+  $font-weights
+);
 
 $font-size-base: 13px !default; // Assumes the browser default, typically `16px`
 $font-size-sm: $font-size-base * 0.875 !default;
