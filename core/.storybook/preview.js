@@ -1,4 +1,4 @@
-import { addDecorator } from "@storybook/html";
+import { addDecorator, addParameters } from "@storybook/html";
 
 /**
  * @param {String} HTML representing a single element
@@ -10,6 +10,12 @@ function htmlToElement(html) {
   template.innerHTML = html;
   return template.content.firstChild;
 }
+
+addParameters({
+  options: {
+    enableShortcuts: false,
+  },
+});
 
 addDecorator(
   (storyFn) => {

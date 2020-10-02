@@ -1,0 +1,20 @@
+:host {
+  display: block;
+}
+
+a {
+  cursor: pointer;
+  display: block;
+  padding: var(--sen-spacer, $spacer);
+  color: var(--sen-menu-item-color, $menu-item-color);
+  background: var(--sen-menu-item-bg, $gray-700);
+  margin-bottom: 1px;
+
+  &:hover {
+    background: var(--sen-menu-item-hover-bg, $gray-600);
+  }
+
+  &.active {
+    color: var(--sen-menu-item-active-color, $menu-item-active-color);
+  }
+}
