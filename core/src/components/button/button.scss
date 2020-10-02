@@ -15,6 +15,10 @@
     border-bottom-left-radius: var(--border-left-radius);
     border-top-right-radius: var(--border-right-radius);
     border-bottom-right-radius: var(--border-right-radius);
+
+    &[disabled] {
+      opacity: 0.4;
+    }
   }
 
   .btn {
