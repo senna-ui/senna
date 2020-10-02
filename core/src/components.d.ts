@@ -31,6 +31,8 @@ export namespace Components {
     }
     interface SenButtonGroup {
     }
+    interface SenCardBody {
+    }
     interface SenCol {
         /**
           * The amount to offset the column, in terms of how many columns it should shift to the end of the total available.
@@ -311,6 +313,12 @@ declare global {
     var HTMLSenButtonGroupElement: {
         prototype: HTMLSenButtonGroupElement;
         new (): HTMLSenButtonGroupElement;
+    };
+    interface HTMLSenCardBodyElement extends Components.SenCardBody, HTMLStencilElement {
+    }
+    var HTMLSenCardBodyElement: {
+        prototype: HTMLSenCardBodyElement;
+        new (): HTMLSenCardBodyElement;
     };
     interface HTMLSenColElement extends Components.SenCol, HTMLStencilElement {
     }

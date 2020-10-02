@@ -1,0 +1,18 @@
+// Card Body
+// --------------------------------------------------
+
+:host {
+  display: block;
+  flex: 0 0 100%;
+
+  p {
+    // Responsive font sizes
+    font-size: $font-size-sm;
+    @include media-breakpoint-up('md') {
+      font-size: $font-size-base;
+    }
+    @include media-breakpoint-up('lg') {
+      font-size: $font-size-lg;
+    }
+  }
+}
