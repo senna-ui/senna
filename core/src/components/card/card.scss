@@ -1,0 +1,18 @@
+// Card
+// --------------------------------------------------
+
+:host {
+  --card-border-color: #{$border-color};
+  --card-border-radius: #{$border-radius};
+  --card-padding: #{$spacer};
+  --card-margin: #{$spacer};
+
+  article {
+    display: flex;
+    flex-wrap: wrap;
+    padding: var(--card-padding);
+    margin: var(--card-margin);
+    border: 1px solid var(--card-border-color);
+    border-radius: var(--card-border-radius);
+  }
+}

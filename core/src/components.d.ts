@@ -31,6 +31,8 @@ export namespace Components {
     }
     interface SenButtonGroup {
     }
+    interface SenCard {
+    }
     interface SenCardActions {
     }
     interface SenCardBody {
@@ -318,6 +320,18 @@ declare global {
         prototype: HTMLSenButtonGroupElement;
         new (): HTMLSenButtonGroupElement;
     };
+    interface HTMLSenCardElement extends Components.SenCard, HTMLStencilElement {
+    }
+    var HTMLSenCardElement: {
+        prototype: HTMLSenCardElement;
+        new (): HTMLSenCardElement;
+    };
+    interface HTMLSenCardActionsElement extends Components.SenCardActions, HTMLStencilElement {
+    }
+    var HTMLSenCardActionsElement: {
+        prototype: HTMLSenCardActionsElement;
+        new (): HTMLSenCardActionsElement;
+    };
     interface HTMLSenCardBodyElement extends Components.SenCardBody, HTMLStencilElement {
     }
     var HTMLSenCardBodyElement: {
@@ -329,12 +343,6 @@ declare global {
     var HTMLSenCardTitleElement: {
         prototype: HTMLSenCardTitleElement;
         new (): HTMLSenCardTitleElement;
-    };
-    interface HTMLSenCardActionsElement extends Components.SenCardActions, HTMLStencilElement {
-    }
-    var HTMLSenCardActionsElement: {
-        prototype: HTMLSenCardActionsElement;
-        new (): HTMLSenCardActionsElement;
     };
     interface HTMLSenColElement extends Components.SenCol, HTMLStencilElement {
     }
@@ -383,6 +391,10 @@ declare global {
         "sen-app": HTMLSenAppElement;
         "sen-button": HTMLSenButtonElement;
         "sen-button-group": HTMLSenButtonGroupElement;
+        "sen-card": HTMLSenCardElement;
+        "sen-card-actions": HTMLSenCardActionsElement;
+        "sen-card-body": HTMLSenCardBodyElement;
+        "sen-card-title": HTMLSenCardTitleElement;
         "sen-col": HTMLSenColElement;
         "sen-fieldset": HTMLSenFieldsetElement;
         "sen-form-field": HTMLSenFormFieldElement;
@@ -416,6 +428,14 @@ declare namespace LocalJSX {
         "disabled"?: boolean;
     }
     interface SenButtonGroup {
+    }
+    interface SenCard {
+    }
+    interface SenCardActions {
+    }
+    interface SenCardBody {
+    }
+    interface SenCardTitle {
     }
     interface SenCol {
         /**
@@ -681,6 +701,10 @@ declare namespace LocalJSX {
         "sen-app": SenApp;
         "sen-button": SenButton;
         "sen-button-group": SenButtonGroup;
+        "sen-card": SenCard;
+        "sen-card-actions": SenCardActions;
+        "sen-card-body": SenCardBody;
+        "sen-card-title": SenCardTitle;
         "sen-col": SenCol;
         "sen-fieldset": SenFieldset;
         "sen-form-field": SenFormField;
@@ -698,6 +722,10 @@ declare module "@stencil/core" {
             "sen-app": LocalJSX.SenApp & JSXBase.HTMLAttributes<HTMLSenAppElement>;
             "sen-button": LocalJSX.SenButton & JSXBase.HTMLAttributes<HTMLSenButtonElement>;
             "sen-button-group": LocalJSX.SenButtonGroup & JSXBase.HTMLAttributes<HTMLSenButtonGroupElement>;
+            "sen-card": LocalJSX.SenCard & JSXBase.HTMLAttributes<HTMLSenCardElement>;
+            "sen-card-actions": LocalJSX.SenCardActions & JSXBase.HTMLAttributes<HTMLSenCardActionsElement>;
+            "sen-card-body": LocalJSX.SenCardBody & JSXBase.HTMLAttributes<HTMLSenCardBodyElement>;
+            "sen-card-title": LocalJSX.SenCardTitle & JSXBase.HTMLAttributes<HTMLSenCardTitleElement>;
             "sen-col": LocalJSX.SenCol & JSXBase.HTMLAttributes<HTMLSenColElement>;
             "sen-fieldset": LocalJSX.SenFieldset & JSXBase.HTMLAttributes<HTMLSenFieldsetElement>;
             "sen-form-field": LocalJSX.SenFormField & JSXBase.HTMLAttributes<HTMLSenFormFieldElement>;
