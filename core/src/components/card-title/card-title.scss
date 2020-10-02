@@ -1,0 +1,20 @@
+// Card Title
+// --------------------------------------------------
+
+:host {
+  flex: 0 0 100%;
+
+  h1 {
+    font-weight: $font-weight-bold;
+
+    // Responsive font sizes
+    font-size: $font-size-sm * 2;
+    @include media-breakpoint-up('md') {
+      font-size: $font-size-base * 2;
+    }
+    @include media-breakpoint-up('lg') {
+      font-size: $font-size-lg * 2;
+    }
+  }
+}
+

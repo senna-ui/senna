@@ -1,0 +1,32 @@
+@import "../../scss/mixins";
+
+// Card Actions
+// --------------------------------------------------
+:host {
+  &,
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 0 0 100%;
+
+    @include media-breakpoint-up('md') {
+      // md up devices have buttons in one row to the right
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+    }
+  }
+}
+
+
+::slotted(sen-button) {
+  // phone buttons take up full width
+  display: block;
+  flex: 0 0 100%;
+  margin: $spacer / 2;
+
+  @include media-breakpoint-up('md') {
+    // tablet up buttons are inline
+    flex: 0 0 auto;
+  }
+}
