@@ -1,0 +1,34 @@
+:host {
+  background: var(--sen-typeahead-bg, $typeahead-bg);
+  position: relative;
+  display: block;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  border: 1px solid $select-border-color;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  display: block;
+  padding: 4px $spacer;
+  background-color: var(--sen-select-item-bg, $select-item-bg);
+  color: var(--sen-select-item-color, $select-item-text-color);
+}
+
+.highlight {
+  font-weight: var(--sen-highlight-font-weight, 700);
+  color: var(--sen-hightlight-color, $highlight-color);
+}
+
+.selected a {
+  background: $select-item-selected-bg;
+}

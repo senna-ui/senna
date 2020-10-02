@@ -5,7 +5,7 @@
 
   button {
     color: $white;
-    background: $primary;
+    background: var(--btn-primary-bg, $primary);
     border-radius: $btn-border-radius;
     border-width: 0;
     padding: $btn-padding-y $btn-padding-x;

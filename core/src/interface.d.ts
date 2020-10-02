@@ -69,10 +69,20 @@ export type TextFieldTypes =
   | "url"
   | "time";
 
+export type TypeaheadOption = {
+  id: string | number;
+  label: string;
+  shortcut?: string | undefined | null;
+};
+
 export type TextAlign = "right" | "center" | "left";
 
 export interface InputChangeEventDetail {
   value: string | undefined | null;
+}
+
+export interface OptionSelectedEvent {
+  option: TypeaheadOption;
 }
 
 export type TableHeaders = TableHeader[];
@@ -80,6 +90,10 @@ export type TableHeaders = TableHeader[];
 export type TableHeader = {
   value: string;
   textAlign?: TextAlign;
-  key: string
+  key: string;
 };
 
+export type MenuItem = {
+  label: string;
+  [x: string]: unknown;
+};

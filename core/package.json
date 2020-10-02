@@ -10,17 +10,14 @@
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/senna/senna.js",
-  "files": [
-    "dist/",
-    "loader/"
-  ],
+  "files": ["dist/", "loader/"],
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "storybook": "start-storybook -p 6006 -s ./dist",
+    "storybook": "start-storybook -p 6006 -s ./www",
     "build-storybook": "build-storybook",
     "lint": "eslint src/**/*{.ts,.tsx}"
   },

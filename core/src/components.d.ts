@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { AutocompleteTypes, Color, InputChangeEventDetail, TableHeaders, TextFieldTypes } from "./interface";
+import { AutocompleteTypes, Color, InputChangeEventDetail, MenuItem, OptionSelectedEvent, TableHeaders, TextFieldTypes, TypeaheadOption } from "./interface";
 export namespace Components {
     interface SenAlert {
         /**
@@ -282,6 +282,22 @@ export namespace Components {
          */
         "value"?: string | number | null;
     }
+    interface SenMenu {
+        /**
+          * Menu items
+         */
+        "items": MenuItem[];
+    }
+    interface SenMenuItem {
+        /**
+          * Active state
+         */
+        "active": boolean;
+        /**
+          * Value to emit when clicked
+         */
+        "value": any;
+    }
     interface SenRow {
     }
     interface SenTable {
@@ -293,6 +309,16 @@ export namespace Components {
           * Table headers
          */
         "headers": TableHeaders;
+    }
+    interface SenTypeahead {
+        /**
+          * Options to display in typeahead
+         */
+        "options": TypeaheadOption[];
+        /**
+          * The value of the input.
+         */
+        "value": string;
     }
 }
 declare global {
@@ -374,6 +400,18 @@ declare global {
         prototype: HTMLSenInputElement;
         new (): HTMLSenInputElement;
     };
+    interface HTMLSenMenuElement extends Components.SenMenu, HTMLStencilElement {
+    }
+    var HTMLSenMenuElement: {
+        prototype: HTMLSenMenuElement;
+        new (): HTMLSenMenuElement;
+    };
+    interface HTMLSenMenuItemElement extends Components.SenMenuItem, HTMLStencilElement {
+    }
+    var HTMLSenMenuItemElement: {
+        prototype: HTMLSenMenuItemElement;
+        new (): HTMLSenMenuItemElement;
+    };
     interface HTMLSenRowElement extends Components.SenRow, HTMLStencilElement {
     }
     var HTMLSenRowElement: {
@@ -385,6 +423,12 @@ declare global {
     var HTMLSenTableElement: {
         prototype: HTMLSenTableElement;
         new (): HTMLSenTableElement;
+    };
+    interface HTMLSenTypeaheadElement extends Components.SenTypeahead, HTMLStencilElement {
+    }
+    var HTMLSenTypeaheadElement: {
+        prototype: HTMLSenTypeaheadElement;
+        new (): HTMLSenTypeaheadElement;
     };
     interface HTMLElementTagNameMap {
         "sen-alert": HTMLSenAlertElement;
@@ -400,8 +444,11 @@ declare global {
         "sen-form-field": HTMLSenFormFieldElement;
         "sen-grid": HTMLSenGridElement;
         "sen-input": HTMLSenInputElement;
+        "sen-menu": HTMLSenMenuElement;
+        "sen-menu-item": HTMLSenMenuItemElement;
         "sen-row": HTMLSenRowElement;
         "sen-table": HTMLSenTableElement;
+        "sen-typeahead": HTMLSenTypeaheadElement;
     }
 }
 declare namespace LocalJSX {
@@ -684,6 +731,26 @@ declare namespace LocalJSX {
          */
         "value"?: string | number | null;
     }
+    interface SenMenu {
+        /**
+          * Menu items
+         */
+        "items"?: MenuItem[];
+    }
+    interface SenMenuItem {
+        /**
+          * Active state
+         */
+        "active"?: boolean;
+        /**
+          * Emitted when a keyboard input occurred.
+         */
+        "onSenInput"?: (event: CustomEvent<any>) => void;
+        /**
+          * Value to emit when clicked
+         */
+        "value"?: any;
+    }
     interface SenRow {
     }
     interface SenTable {
@@ -695,6 +762,24 @@ declare namespace LocalJSX {
           * Table headers
          */
         "headers"?: TableHeaders;
+    }
+    interface SenTypeahead {
+        /**
+          * Emitted when input is changed
+         */
+        "onSenChange"?: (event: CustomEvent<OptionSelectedEvent>) => void;
+        /**
+          * Emitted when a keyboard input occurred.
+         */
+        "onSenInput"?: (event: CustomEvent<KeyboardEvent>) => void;
+        /**
+          * Options to display in typeahead
+         */
+        "options"?: TypeaheadOption[];
+        /**
+          * The value of the input.
+         */
+        "value"?: string;
     }
     interface IntrinsicElements {
         "sen-alert": SenAlert;
@@ -710,8 +795,11 @@ declare namespace LocalJSX {
         "sen-form-field": SenFormField;
         "sen-grid": SenGrid;
         "sen-input": SenInput;
+        "sen-menu": SenMenu;
+        "sen-menu-item": SenMenuItem;
         "sen-row": SenRow;
         "sen-table": SenTable;
+        "sen-typeahead": SenTypeahead;
     }
 }
 export { LocalJSX as JSX };
@@ -731,8 +819,11 @@ declare module "@stencil/core" {
             "sen-form-field": LocalJSX.SenFormField & JSXBase.HTMLAttributes<HTMLSenFormFieldElement>;
             "sen-grid": LocalJSX.SenGrid & JSXBase.HTMLAttributes<HTMLSenGridElement>;
             "sen-input": LocalJSX.SenInput & JSXBase.HTMLAttributes<HTMLSenInputElement>;
+            "sen-menu": LocalJSX.SenMenu & JSXBase.HTMLAttributes<HTMLSenMenuElement>;
+            "sen-menu-item": LocalJSX.SenMenuItem & JSXBase.HTMLAttributes<HTMLSenMenuItemElement>;
             "sen-row": LocalJSX.SenRow & JSXBase.HTMLAttributes<HTMLSenRowElement>;
             "sen-table": LocalJSX.SenTable & JSXBase.HTMLAttributes<HTMLSenTableElement>;
+            "sen-typeahead": LocalJSX.SenTypeahead & JSXBase.HTMLAttributes<HTMLSenTypeaheadElement>;
         }
     }
 }

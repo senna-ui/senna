@@ -27,7 +27,7 @@ $grays: map-merge(
   $grays
 );
 
-$blue: #007bff !default;
+$blue: #3B5F97 !default;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink: #e83e8c !default;
@@ -38,7 +38,7 @@ $green: #28a745 !default;
 $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
 
-$primary: $red !default;
+$primary: $blue !default;
 $secondary: $gray-600 !default;
 $success: $green !default;
 $info: $cyan !default;
@@ -104,6 +104,8 @@ $table-border-color:          $border-color !default;
 
 $table-row-active-bg: $gray-200 !default;
 
+$menu-bg: $gray-800;
+
 // The minimum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries
 $screen-breakpoints: (
@@ -126,3 +128,14 @@ $theme-colors: (
   "light": $light,
   "dark": $dark,
 ) !default;
+
+$typeahead-bg: $gray-700;
+$select-item-bg: $white;
+$select-item-text-color: $text-color;
+$select-border-color: $gray-200;
+$select-item-selected-bg: lighten($primary, 50);
+
+$highlight-color: $primary;
+
+$menu-item-color: $white;
+$menu-item-active-color: $gray-300;
