@@ -81,11 +81,40 @@ $font-family-base: var(--sen-font-family, $font-family) !default;
 $font-family-code: var(--sen-font-monospace, $font-family-monospace) !default;
 
 $font-color-base: $black !default;
+$font-weight-light: 300 !default;
+$font-weight-regular: 500 !default;
 $font-weight-bold: 700 !default;
+$font-weights: () !default;
+$font-weights: map-merge(
+  (
+    light: $font-weight-light,
+    regular: $font-weight-regular,
+    bold: $font-weight-bold
+  ),
+  $font-weights
+);
 
 $font-size-base: 13px !default; // Assumes the browser default, typically `16px`
 $font-size-sm: $font-size-base * 0.875 !default;
 $font-size-lg: $font-size-base * 1.25 !default;
+// factor applied for each vieport (media query) `sm`, `md`, `lg`
+$text-element-factor-p: 1 !default;
+$text-element-factor-h1: 2.6 !default;
+$text-element-factor-h2: 2.1 !default;
+$text-element-factor-h3: 1.8 !default;
+$text-element-factor-h4: 1.4 !default;
+$text-element-factor-h5: 1.2 !default;
+$text-element-factor-h6: 1.1 !default;
+$text-element-size-factors: (
+ p: $text-element-factor-p,
+ h1: $text-element-factor-h1,
+ h2: $text-element-factor-h2,
+ h3: $text-element-factor-h3,
+ h4: $text-element-factor-h4,
+ h5: $text-element-factor-h5,
+ h6: $text-element-factor-h6
+);
+
 
 $btn-padding-y: $spacer / 2 !default;
 $btn-padding-x: $spacer !default;

@@ -1,0 +1,22 @@
+:host {
+
+  @each $tag-name, $factor in  $text-element-size-factors {
+    #{$tag-name} {
+      font-size: $font-size-base * $factor;
+    }
+  }
+  .font-weight {
+    @each $name, $weight in $font-weights {
+      &-#{$name} {
+        font-weight: $weight;
+      }
+    }
+  }
+  .text-align {
+    @each $alignment in ("left", "right", "center", "justify") {
+      &-#{$alignment} {
+        text-align: #{$alignment};
+      }
+    }
+  }
+}
