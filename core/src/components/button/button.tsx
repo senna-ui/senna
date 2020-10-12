@@ -23,7 +23,7 @@ export class Button implements ComponentInterface {
   render() {
     const classes = {
       btn: true,
-      ["btn-" + this.color]: true
+      [`btn-${this.color || 'secondary'}`]: true
     };
 
     return (

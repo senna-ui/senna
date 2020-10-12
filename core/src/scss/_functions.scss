@@ -1,0 +1,16 @@
+// returns new map with the keys in keys if they exist in $map
+//
+// $themap: (a: 12px, b: 10px, c: 8px);
+// @debug map-pick-keys($themap, ("a", "c", "x")); => (a: 12px, c: 8px)
+@function map-pick-keys($map: (), $keys: ()) {
+  $result: ();
+  @each $key in $keys {
+    @if map-has-key($map, $key) {
+      $result: map-merge(
+        $result,
+        ( #{$key}: map-get($map, $key) )
+      );
+    }
+  }
+  @return $result;
+}

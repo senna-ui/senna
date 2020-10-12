@@ -16,17 +16,17 @@
     border-top-right-radius: var(--border-right-radius);
     border-bottom-right-radius: var(--border-right-radius);
 
-    &.btn-secondary {
-      background: $secondary;
-    }
-    &.btn-warning {
-      background: $warning;
-    }
-    &.btn-danger {
-      background: $danger;
+    &[disabled] {
+      opacity: 0.4;
     }
   }
-  &.btn-secondary {
-    background: $secondary;
+
+  .btn {
+    @each $name, $btn-color in $btn-colors {
+      &-#{$name} {
+        background: $btn-color;
+
+      }
+    }
   }
 }

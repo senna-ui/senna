@@ -1,3 +1,5 @@
+@import "./functions";
+
 $white: #fff !default;
 $gray-100: #F8F6F6 !default;
 $gray-200: #E9E6E6 !default;
@@ -47,6 +49,21 @@ $danger: $red !default;
 $light: $gray-100 !default;
 $dark: $gray-800 !default;
 
+$named-colors: () !default;
+$named-colors: map-merge(
+  (
+    primary: $primary,
+    secondary: $secondary,
+    success: $success,
+    info: $info,
+    warning: $warning,
+    danger: $danger,
+    light: $light,
+    dark: $dark
+  ),
+  $named-colors
+);
+
 $text-color: $black;
 $font-family: "Source Sans Pro", Helvetica, sans-serif;
 $font-family-monospace: "Consolas", monospace;
@@ -74,6 +91,10 @@ $btn-padding-y: $spacer / 2 !default;
 $btn-padding-x: $spacer !default;
 $btn-border-width: $border-width;
 $btn-border-radius: 3px;
+$btn-color-names: (
+  "primary", "secondary", "success", "warning", "danger", "info"
+) !default;
+$btn-colors: map-pick-keys($named-colors, $btn-color-names) !default;
 
 $input-border-width: $border-width !default;
 $input-border-color: $gray-200 !default;
