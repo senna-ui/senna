@@ -1,6 +1,12 @@
 :host {
   display: inline-block;
+  /**
+  * @prop --border-left-radius: Border radius of left bottom and top edge - default `3px`
+  */
   --border-left-radius: #{$btn-border-radius};
+  /**
+  * @prop --border-right-radius: Border radius of right bottom and top edge - default `3px`
+  */
   --border-right-radius: #{$btn-border-radius};
 
   button {

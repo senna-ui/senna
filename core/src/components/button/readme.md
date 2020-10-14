@@ -1,12 +1,20 @@
 # sen-button
 
-<p class="codepen" data-height="309" data-theme-id="dark" data-default-tab="html,result" data-user="casaper" data-slug-hash="bGpXKWx" style="height: 309px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Senna-UI Button Example">
-  <span><a href="https://codepen.io/casaper/pen/bGpXKWx">
-  Senna-UI Button Example on CodePen</a> </span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
 <!-- Auto Generated Below -->
+
+
+## Usage
+
+### Examples
+
+```html
+<sen-button>Default</sen-button>
+
+<sen-button color="primary">Primary</sen-button>
+
+<sen-button color="primary" disabled>Primary</sen-button>
+```
+
 
 
 ## Properties
@@ -16,6 +24,14 @@
 | `buttonType` | `button-type` | Button type         | `"button" \| "reset" \| "submit"`                                             | `"button"`  |
 | `color`      | `color`       | Button variant      | `"danger" \| "primary" \| "secondary" \| "success" \| "warning" \| undefined` | `undefined` |
 | `disabled`   | `disabled`    | Disables the button | `boolean`                                                                     | `false`     |
+
+
+## CSS Custom Properties
+
+| Name                    | Description                                                |
+| ----------------------- | ---------------------------------------------------------- |
+| `--border-left-radius`  | Border radius of left bottom and top edge - default `3px`  |
+| `--border-right-radius` | Border radius of right bottom and top edge - default `3px` |
 
 
 ----------------------------------------------

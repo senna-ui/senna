@@ -2,9 +2,21 @@
 // --------------------------------------------------
 
 :host {
+  /**
+  * @prop --card-border-color: The outer border color - default `#DEDCDC`
+  */
   --card-border-color: #{$border-color};
+  /**
+  * @prop --card-border-radius: The border radius - default `0`
+  */
   --card-border-radius: #{$border-radius};
+  /**
+  * @prop --card-padding: The inner padding - default `8px`
+  */
   --card-padding: #{$spacer};
+  /**
+  * @prop --card-margin: The outer margin - default `8px`
+  */
   --card-margin: #{$spacer};
 
   article {
