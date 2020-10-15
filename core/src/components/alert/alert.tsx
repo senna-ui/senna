@@ -8,6 +8,12 @@ import {
 } from "@stencil/core";
 import { Color } from "../../interface";
 
+/**
+ * Docs page options
+ * @docsCodePen { "user": "casaper", "id": "MWeKZmM" }
+ * @docsMenu { "group": "app" }
+ */
+
 @Component({
   tag: "sen-alert",
   styleUrl: "alert.scss",
@@ -27,6 +33,9 @@ export class Alert implements ComponentInterface {
     this.hasTitleSlot = !!this.el.querySelector('[slot="title"]');
   }
 
+  /**
+   * @slot title - optional alert title slot
+   */
   render() {
     const classes = {
       ["alert-" + this.color]: true,

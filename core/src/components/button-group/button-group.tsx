@@ -1,5 +1,9 @@
 import { Component, ComponentInterface, Host, h } from "@stencil/core";
 
+/**
+ * @docsCodePen { "user": "casaper", "id": "xxOZQqB" }
+ * @docsMenu { "group": "buttons" }
+ */
 @Component({
   tag: "sen-button-group",
   styleUrl: "button-group.scss",

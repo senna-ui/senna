@@ -1,5 +1,9 @@
 import { Component, ComponentInterface, Host, Prop, h } from "@stencil/core";
 
+/**
+ * @docsCodePen { "user": "casaper", "id": "ExyPZBx" }
+ * @docsMenu { "group": "forms" }
+ */
 @Component({
   tag: "sen-form-field",
   styleUrl: "form-field.scss",
