@@ -1,11 +1,20 @@
 :host {
+  /**
+  * @prop --buttons-border-radius: Border radius of button group - default `3px`
+  */
+  --buttons-border-radius: #{$btn-border-radius};
   display: flex;
 }
 
-::slotted(sen-button:first-child) {
+::slotted(sen-button) {
+  --border-left-radius: 0;
   --border-right-radius: 0;
 }
 
+::slotted(sen-button:first-child) {
+  --border-left-radius: var(--buttons-border-radius);
+}
+
 ::slotted(sen-button:last-child) {
-  --border-left-radius: 0;
+  --border-right-radius: var(--buttons-border-radius);
 }
