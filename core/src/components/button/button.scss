@@ -21,9 +21,11 @@
     border-bottom-left-radius: var(--border-left-radius);
     border-top-right-radius: var(--border-right-radius);
     border-bottom-right-radius: var(--border-right-radius);
+    cursor: pointer;
 
     &[disabled] {
       opacity: 0.4;
+      cursor: default;
     }
   }
 
@@ -31,7 +33,6 @@
     @each $name, $btn-color in $btn-colors {
       &-#{$name} {
         background: $btn-color;
-
       }
     }
   }
