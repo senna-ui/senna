@@ -1,0 +1,44 @@
+@mixin set-var-prefix($var: '', $value: 0, $prefix: 'sen', $inherit: 'sen', $vars-to-set: ()) {
+  @if index($vars-to-set, $var) != null {
+    @if $prefix == $inherit {
+      --#{$prefix}-#{$var}: #{$value};
+    } @else {
+      --#{$prefix}-#{$var}: var(--#{$inherit}-#{$var}, #{$value});
+    }
+  }
+}
+
+@mixin global-var-inheritance(
+  $prefix: 'sen',
+  $inherit: 'sen',
+  $only: (),
+  $set-vars: (font-family-base, font-color-base, bg-color-base, font-size-base)
+) {
+  $vars-to-set: ();
+  @if length($only) > 0 {
+    $vars-to-set: $only;
+  } @else {
+    $vars-to-set: $set-vars;
+  }
+
+  @include set-var-prefix(font-family-base, $font-family, $prefix, $inherit, $vars-to-set);
+  @include set-var-prefix(font-color-base, $font-color-base, $prefix, $inherit, $vars-to-set);
+  @include set-var-prefix(bg-color-base, $body-bg, $prefix, $inherit, $vars-to-set);
+
+  @if index($vars-to-set, font-size-base) != null {
+    // Responsive font size setup
+    @include set-var-prefix(font-size-base, $font-size-xs, $prefix, $inherit, $vars-to-set);
+    @include media-query(sm-up) {
+      @include set-var-prefix(font-size-base, $font-size-sm, $prefix, $inherit, $vars-to-set);
+    }
+    @include media-query(md-up) {
+      @include set-var-prefix(font-size-base, $font-size-md, $prefix, $inherit, $vars-to-set);
+    }
+    @include media-query(lg-up) {
+      @include set-var-prefix(font-size-base, $font-size-lg, $prefix, $inherit, $vars-to-set);
+    }
+    @include media-query(xl) {
+      @include set-var-prefix(font-size-base, $font-size-xl, $prefix, $inherit, $vars-to-set);
+    }
+  }
+}

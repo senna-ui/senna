@@ -13,9 +13,9 @@ export class CardBody implements ComponentInterface {
   render() {
     return (
       <Host>
-        <p>
+        <div class="card-body">
           <slot></slot>
-        </p>
+        </div>
       </Host>
     );
   }

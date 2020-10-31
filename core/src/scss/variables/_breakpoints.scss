@@ -1,0 +1,28 @@
+// The minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries
+$screen-breakpoint-xs: 0 !default;
+$screen-breakpoint-sm: 576px !default;
+$screen-breakpoint-md: 768px !default;
+$screen-breakpoint-lg: 992px !default;
+$screen-breakpoint-xl: 1200px !default;
+$screen-breakpoints: (
+  xs: $screen-breakpoint-xs,
+  sm: $screen-breakpoint-sm,
+  md: $screen-breakpoint-md,
+  lg: $screen-breakpoint-lg,
+  xl: $screen-breakpoint-xl,
+);
+
+$screen-media-query-values: (
+  xs: '(max-width: #{$screen-breakpoint-sm - 1})',
+  sm-down: '(max-width: #{$screen-breakpoint-md - 1})',
+  sm: '(min-width: #{$screen-breakpoint-sm}) and (max-width: #{$screen-breakpoint-md - 1})',
+  sm-up: '(min-width: #{$screen-breakpoint-sm})',
+  md-down: '(max-width: #{$screen-breakpoint-lg - 1})',
+  md: '(min-width: #{$screen-breakpoint-md}) and (max-width: #{$screen-breakpoint-lg - 1})',
+  md-up: '(min-width: #{$screen-breakpoint-md})',
+  lg-down: '(max-width: #{$screen-breakpoint-xl - 1})',
+  lg: '(min-width: #{$screen-breakpoint-lg}) and (max-width: #{$screen-breakpoint-xl - 1})',
+  lg-up: '(min-width: #{$screen-breakpoint-lg})',
+  xl: '(min-width: #{$screen-breakpoint-xl})'
+);

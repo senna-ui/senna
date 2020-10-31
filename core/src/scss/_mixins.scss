@@ -1,3 +1,5 @@
+@import './global_var_inheritance';
+
 // Get the key from a map based on the index
 @function index-to-key($map, $index) {
   $keys: map-keys($map);
@@ -140,4 +142,13 @@
 // ----------------------------------------------------------
 @mixin margin($top, $end: $top, $bottom: $top, $start: $end) {
   @include property(margin, $top, $end, $bottom, $start);
+}
+
+@mixin media-query($query: md-down) {
+  @if not map-has-key($screen-media-query-values, $query) {
+    @error 'There is no query with that name', $query;
+  }
+  @media screen and #{map-get($screen-media-query-values, $query)} {
+    @content;
+  }
 }

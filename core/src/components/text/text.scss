@@ -1,8 +1,57 @@
-:host {
 
-  @each $tag-name, $factor in  $text-element-size-factors {
-    #{$tag-name} {
-      font-size: $font-size-base * $factor;
+/**
+* @prop --text-font-size-p: set relative (em) size of p tag - default `1em`
+* @prop --text-font-size-h1: set relative (em) size of h1 tag - default `2.6em`
+* @prop --text-font-size-h2: set relative (em) size of h2 tag - default `2.1em`
+* @prop --text-font-size-h3: set relative (em) size of h3 tag - default `1.8em`
+* @prop --text-font-size-h4: set relative (em) size of h4 tag - default `1.4em`
+* @prop --text-font-size-h5: set relative (em) size of h5 tag - default `1.2em`
+* @prop --text-font-size-h6: set relative (em) size of h6 tag - default `1.1em`
+*
+* @prop --text-line-height-p: set line-height of p tag - default `1.4`
+* @prop --text-line-height-h1: set line-height of h1 tag - default `1.2`
+* @prop --text-line-height-h2: set line-height of h2 tag - default `1.3`
+* @prop --text-line-height-h3: set line-height of h3 tag - default `1.3`
+* @prop --text-line-height-h4: set line-height of h4 tag - default `1.3`
+* @prop --text-line-height-h5: set line-height of h5 tag - default `1.2`
+* @prop --text-line-height-h6: set line-height of h6 tag - default `1.2`
+*
+* @prop --text-font-family-p: set font-family of p tag - default inherits --text-font-family-base
+* @prop --text-font-family-h1: set font-family of h1 tag - default inherits --text-font-family-base
+* @prop --text-font-family-h2: set font-family of h2 tag - default inherits --text-font-family-base
+* @prop --text-font-family-h3: set font-family of h3 tag - default inherits --text-font-family-base
+* @prop --text-font-family-h4: set font-family of h4 tag - default inherits --text-font-family-base
+* @prop --text-font-family-h5: set font-family of h5 tag - default inherits --text-font-family-base
+* @prop --text-font-family-h6: set font-family of h6 tag - default inherits --text-font-family-base
+*
+* @prop --text-color-p: set color of p tag - default inherits --text-font-color-base or `#211010`
+* @prop --text-color-h1: set color of h1 tag - default inherits --text-font-color-base or `#211010`
+* @prop --text-color-h2: set color of h2 tag - default inherits --text-font-color-base or `#211010`
+* @prop --text-color-h3: set color of h3 tag - default inherits --text-font-color-base or `#211010`
+* @prop --text-color-h4: set color of h4 tag - default inherits --text-font-color-base or `#211010`
+* @prop --text-color-h5: set color of h5 tag - default inherits --text-font-color-base or `#211010`
+* @prop --text-color-h6: set color of h6 tag - default inherits --text-font-color-base or `#211010`
+*
+* @prop --text-font-family-base: the font family - default inherits --sen-font-family-base or `"Source Sans Pro", Helvetica, sans-serif`
+* @prop --text-font-color-base: color of sen-text - default inherits --sen-font-color-base or `#211010`
+* @prop --text-font-size-xs: responsive base font size in breakpoint xs (<576px) - default inherits --sen-font-size-xs or `11px`
+* @prop --text-font-size-sm: responsive base font size in breakpoint sm (<768px) - default inherits --sen-font-size-sm or `11px`
+* @prop --text-font-size-md: responsive base font size in breakpoint md (<992px) - default inherits --sen-font-size-md or `13px`
+* @prop --text-font-size-lg: responsive base font size in breakpoint lg (<1200px) - default inherits --sen-font-size-lg or `16px`
+* @prop --text-font-size-xl: responsive base font size in breakpoint xl (>=1200px) - default inherits --sen-font-size-xl or `16px`
+*/
+:host {
+  @include global-var-inheritance('text', 'sen');
+  font-size: var(--text-font-size-base, #{$font-size-md});
+  font-family: var(--text-font-family-base, #{$font-family});
+  color: var(--text-font-color-base, #{$font-color-base});
+
+  @each $element, $font-size in $font-sizes {
+    #{$element} {
+      font-size: var(--text-font-size-#{$element}, #{$font-size});
+      line-height: var(--text-line-height-#{$element}, #{map-get($line-heights, $element)});
+      font-family: var(--text-font-family-#{$element}, var(--text-font-family-base, #{$font-family}));
+      color: var(--text-color-#{$element}, var(--text-font-color-base, #{$font-color-base}));
     }
   }
   .font-weight {
