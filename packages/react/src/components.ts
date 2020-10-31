@@ -15,6 +15,7 @@ export const SenCard = /*@__PURE__*/createReactComponent<JSX.SenCard, HTMLSenCar
 export const SenCardActions = /*@__PURE__*/createReactComponent<JSX.SenCardActions, HTMLSenCardActionsElement>('sen-card-actions');
 export const SenCardBody = /*@__PURE__*/createReactComponent<JSX.SenCardBody, HTMLSenCardBodyElement>('sen-card-body');
 export const SenCardTitle = /*@__PURE__*/createReactComponent<JSX.SenCardTitle, HTMLSenCardTitleElement>('sen-card-title');
+export const SenCheckbox = /*@__PURE__*/createReactComponent<JSX.SenCheckbox, HTMLSenCheckboxElement>('sen-checkbox');
 export const SenCol = /*@__PURE__*/createReactComponent<JSX.SenCol, HTMLSenColElement>('sen-col');
 export const SenFieldset = /*@__PURE__*/createReactComponent<JSX.SenFieldset, HTMLSenFieldsetElement>('sen-fieldset');
 export const SenFormField = /*@__PURE__*/createReactComponent<JSX.SenFormField, HTMLSenFormFieldElement>('sen-form-field');

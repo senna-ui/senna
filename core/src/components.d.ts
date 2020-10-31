@@ -43,6 +43,28 @@ export namespace Components {
     }
     interface SenCardTitle {
     }
+    interface SenCheckbox {
+        /**
+          * If `true`, the user cannot interact with the checkbox.
+         */
+        "disabled": boolean;
+        /**
+          * The name of the control, which is submitted with the form data.
+         */
+        "name": string;
+        /**
+          * If `true`, the user cannot modify the value.
+         */
+        "readonly": boolean;
+        /**
+          * Sets focus on the specified `ion-input`. Use this method instead of the global `input.focus()`.
+         */
+        "setFocus": () => Promise<void>;
+        /**
+          * The value of the input.
+         */
+        "value"?: boolean;
+    }
     interface SenCol {
         /**
           * The amount to offset the column, in terms of how many columns it should shift to the end of the total available.
@@ -411,6 +433,12 @@ declare global {
         prototype: HTMLSenCardTitleElement;
         new (): HTMLSenCardTitleElement;
     };
+    interface HTMLSenCheckboxElement extends Components.SenCheckbox, HTMLStencilElement {
+    }
+    var HTMLSenCheckboxElement: {
+        prototype: HTMLSenCheckboxElement;
+        new (): HTMLSenCheckboxElement;
+    };
     interface HTMLSenColElement extends Components.SenCol, HTMLStencilElement {
     }
     var HTMLSenColElement: {
@@ -492,6 +520,7 @@ declare global {
         "sen-card-actions": HTMLSenCardActionsElement;
         "sen-card-body": HTMLSenCardBodyElement;
         "sen-card-title": HTMLSenCardTitleElement;
+        "sen-checkbox": HTMLSenCheckboxElement;
         "sen-col": HTMLSenColElement;
         "sen-fieldset": HTMLSenFieldsetElement;
         "sen-form-field": HTMLSenFormFieldElement;
@@ -542,6 +571,32 @@ declare namespace LocalJSX {
     interface SenCardBody {
     }
     interface SenCardTitle {
+    }
+    interface SenCheckbox {
+        /**
+          * If `true`, the user cannot interact with the checkbox.
+         */
+        "disabled"?: boolean;
+        /**
+          * The name of the control, which is submitted with the form data.
+         */
+        "name"?: string;
+        /**
+          * Emitted when input is changed
+         */
+        "onSenChange"?: (event: CustomEvent<{ value: boolean }>) => void;
+        /**
+          * Emitted when a keyboard input occurred.
+         */
+        "onSenInput"?: (event: CustomEvent<MouseEvent>) => void;
+        /**
+          * If `true`, the user cannot modify the value.
+         */
+        "readonly"?: boolean;
+        /**
+          * The value of the input.
+         */
+        "value"?: boolean;
     }
     interface SenCol {
         /**
@@ -886,6 +941,7 @@ declare namespace LocalJSX {
         "sen-card-actions": SenCardActions;
         "sen-card-body": SenCardBody;
         "sen-card-title": SenCardTitle;
+        "sen-checkbox": SenCheckbox;
         "sen-col": SenCol;
         "sen-fieldset": SenFieldset;
         "sen-form-field": SenFormField;
@@ -912,6 +968,7 @@ declare module "@stencil/core" {
             "sen-card-actions": LocalJSX.SenCardActions & JSXBase.HTMLAttributes<HTMLSenCardActionsElement>;
             "sen-card-body": LocalJSX.SenCardBody & JSXBase.HTMLAttributes<HTMLSenCardBodyElement>;
             "sen-card-title": LocalJSX.SenCardTitle & JSXBase.HTMLAttributes<HTMLSenCardTitleElement>;
+            "sen-checkbox": LocalJSX.SenCheckbox & JSXBase.HTMLAttributes<HTMLSenCheckboxElement>;
             "sen-col": LocalJSX.SenCol & JSXBase.HTMLAttributes<HTMLSenColElement>;
             "sen-fieldset": LocalJSX.SenFieldset & JSXBase.HTMLAttributes<HTMLSenFieldsetElement>;
             "sen-form-field": LocalJSX.SenFormField & JSXBase.HTMLAttributes<HTMLSenFormFieldElement>;
