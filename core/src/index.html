@@ -1,19 +1,141 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-  <title>Stencil Component Starter</title>
-  <link rel=stylesheet href="/build/senna.css">
-  <script type="module" src="/build/senna.esm.js"></script>
-  <script nomodule src="/build/senna.js"></script>
-</head>
-
-<body>
-  <sen-app>
-    <sen-button color="primary">My button</sen-button>
-  </sen-app>
-</body>
-
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+    <link rel=stylesheet href="/build/senna.css">
+    <script type="module" src="/build/senna.esm.js"></script>
+    <script nomodule src="/build/senna.js"></script>
+  </head>
+  <body>
+    <sen-app>
+      <header>
+        <sen-text tag="h1">Senna main elements</sen-text>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="#sen-button">sen-button</a></li>
+          <li><a href="#sen-button-group">sen-button-group</a></li>
+          <li><a href="#sen-card">sen-card</a></li>
+        </ul>
+      </nav>
+      <article>
+        <header id="sen-button">
+          <sen-text tag="h2">sen-button</sen-text>
+        </header>
+        <sen-grid>
+          <sen-row>
+            <sen-col>
+              <sen-button color="primary">Primary</sen-button>
+            </sen-col>
+            <sen-col>
+              <sen-button color="secondary">Secondary</sen-button>
+            </sen-col>
+            <sen-col>
+              <sen-button>My button</sen-button>
+            </sen-col>
+            <sen-col>
+              <sen-button color="success">Success</sen-button>
+            </sen-col>
+            <sen-col>
+              <sen-button color="info">Info</sen-button>
+            </sen-col>
+            <sen-col>
+              <sen-button color="warning">Warning</sen-button>
+            </sen-col>
+          </sen-row>
+          <sen-row>
+            <sen-col>
+              <sen-button color="primary" disabled>Primary disabled</sen-button>
+            </sen-col>
+            <sen-col>
+              <sen-button color="secondary" disabled>Secondary disabled</sen-button>
+            </sen-col>
+            <sen-col>
+              <sen-button disabled>My button disabled</sen-button>
+            </sen-col>
+            <sen-col>
+              <sen-button color="success" disabled>Success disabled</sen-button>
+            </sen-col>
+            <sen-col>
+              <sen-button color="info" disabled>Info disabled</sen-button>
+            </sen-col>
+            <sen-col>
+              <sen-button color="warning" disabled>Warning disabled</sen-button>
+            </sen-col>
+          </sen-row>
+        </sen-grid>
+      </article>
+      <article>
+        <header id="sen-button-group">
+          <sen-text tag="h2">sen-button-group</sen-text>
+        </header>
+        <sen-grid>
+          <sen-row>
+            <sen-col>
+              <sen-button-group>
+                <sen-button color="primary">Button 1</sen-button>
+              </sen-button-group>
+            </sen-col>
+            <sen-col>
+              <sen-button-group>
+                <sen-button color="primary">Button 1</sen-button>
+                <sen-button color="secondary">Button 2</sen-button>
+              </sen-button-group>
+            </sen-col>
+            <sen-col>
+              <sen-button-group>
+                <sen-button color="primary">Button 1</sen-button>
+                <sen-button color="secondary">Button 2</sen-button>
+                <sen-button>Button 3</sen-button>
+              </sen-button-group>
+            </sen-col>
+            <sen-col>
+              <sen-button-group>
+                <sen-button color="primary">Button 1</sen-button>
+                <sen-button color="secondary">Button 2</sen-button>
+                <sen-button>Button 3</sen-button>
+                <sen-button>Button 4</sen-button>
+              </sen-button-group>
+            </sen-col>
+          </sen-row>
+        </sen-grid>
+      </article>
+      <article>
+        <header id="sen-card">
+          <sen-text tag="h2">sen-card</sen-text>
+        </header>
+        <sen-grid>
+          <sen-row>
+            <sen-col>
+              <sen-card>
+                <sen-card-title>
+                  An example Card Title
+                </sen-card-title>
+                <sen-card-body>
+                  The text content of the card
+                </sen-card-body>
+                <sen-card-actions>
+                  <sen-button color="primary">OK</sen-button>
+                  <sen-button>Abort</sen-button>
+                </sen-card-actions>
+              </sen-card>
+            </sen-col>
+            <sen-col>
+              <sen-card>
+                <sen-card-title>
+                  A card that has just title and body
+                </sen-card-title>
+                <sen-card-body>
+                  Incidunt voluptas suscipit. Nisi sunt at aut necessitatibus et. Et eos ducimus veniam aut vero.
+                  Mollitia ea excepturi veritatis dolorum quod ex at vitae. Ratione rem tempore explicabo. Et velit quibusdam tenetur mollitia error minus aspernatur dolorum odio.
+                </sen-card-body>
+              </sen-card>
+            </sen-col>
+          </sen-row>
+        </sen-grid>
+      </article>
+    </sen-app>
+  </body>
 </html>
