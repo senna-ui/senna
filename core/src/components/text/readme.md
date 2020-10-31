@@ -70,6 +70,47 @@
 | `weight`        | `weight`         | Font weight                                                                       | `"bold" \| "light" \| "regular"`                                       | `"regular"` |
 
 
+## CSS Custom Properties
+
+| Name                      | Description                                                                                             |
+| ------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `--text-color-h1`         | set color of h1 tag - default inherits --text-font-color-base or `#211010`                              |
+| `--text-color-h2`         | set color of h2 tag - default inherits --text-font-color-base or `#211010`                              |
+| `--text-color-h3`         | set color of h3 tag - default inherits --text-font-color-base or `#211010`                              |
+| `--text-color-h4`         | set color of h4 tag - default inherits --text-font-color-base or `#211010`                              |
+| `--text-color-h5`         | set color of h5 tag - default inherits --text-font-color-base or `#211010`                              |
+| `--text-color-h6`         | set color of h6 tag - default inherits --text-font-color-base or `#211010`                              |
+| `--text-color-p`          | set color of p tag - default inherits --text-font-color-base or `#211010`                               |
+| `--text-font-color-base`  | color of sen-text - default inherits --sen-font-color-base or `#211010`                                 |
+| `--text-font-family-base` | the font family - default inherits --sen-font-family-base or `"Source Sans Pro", Helvetica, sans-serif` |
+| `--text-font-family-h1`   | set font-family of h1 tag - default inherits --text-font-family-base                                    |
+| `--text-font-family-h2`   | set font-family of h2 tag - default inherits --text-font-family-base                                    |
+| `--text-font-family-h3`   | set font-family of h3 tag - default inherits --text-font-family-base                                    |
+| `--text-font-family-h4`   | set font-family of h4 tag - default inherits --text-font-family-base                                    |
+| `--text-font-family-h5`   | set font-family of h5 tag - default inherits --text-font-family-base                                    |
+| `--text-font-family-h6`   | set font-family of h6 tag - default inherits --text-font-family-base                                    |
+| `--text-font-family-p`    | set font-family of p tag - default inherits --text-font-family-base                                     |
+| `--text-font-size-h1`     | set relative (em) size of h1 tag - default `2.6em`                                                      |
+| `--text-font-size-h2`     | set relative (em) size of h2 tag - default `2.1em`                                                      |
+| `--text-font-size-h3`     | set relative (em) size of h3 tag - default `1.8em`                                                      |
+| `--text-font-size-h4`     | set relative (em) size of h4 tag - default `1.4em`                                                      |
+| `--text-font-size-h5`     | set relative (em) size of h5 tag - default `1.2em`                                                      |
+| `--text-font-size-h6`     | set relative (em) size of h6 tag - default `1.1em`                                                      |
+| `--text-font-size-lg`     | responsive base font size in breakpoint lg (<1200px) - default inherits --sen-font-size-lg or `16px`    |
+| `--text-font-size-md`     | responsive base font size in breakpoint md (<992px) - default inherits --sen-font-size-md or `13px`     |
+| `--text-font-size-p`      | set relative (em) size of p tag - default `1em`                                                         |
+| `--text-font-size-sm`     | responsive base font size in breakpoint sm (<768px) - default inherits --sen-font-size-sm or `11px`     |
+| `--text-font-size-xl`     | responsive base font size in breakpoint xl (>=1200px) - default inherits --sen-font-size-xl or `16px`   |
+| `--text-font-size-xs`     | responsive base font size in breakpoint xs (<576px) - default inherits --sen-font-size-xs or `11px`     |
+| `--text-line-height-h1`   | set line-height of h1 tag - default `1.2`                                                               |
+| `--text-line-height-h2`   | set line-height of h2 tag - default `1.3`                                                               |
+| `--text-line-height-h3`   | set line-height of h3 tag - default `1.3`                                                               |
+| `--text-line-height-h4`   | set line-height of h4 tag - default `1.3`                                                               |
+| `--text-line-height-h5`   | set line-height of h5 tag - default `1.2`                                                               |
+| `--text-line-height-h6`   | set line-height of h6 tag - default `1.2`                                                               |
+| `--text-line-height-p`    | set line-height of p tag - default `1.4`                                                                |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

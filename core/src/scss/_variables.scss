@@ -1,120 +1,17 @@
 @import "./functions";
-
-$white: #fff !default;
-$gray-100: #F8F6F6 !default;
-$gray-200: #E9E6E6 !default;
-$gray-300: #DEDCDC !default;
-$gray-400: #CECBCB !default;
-$gray-500: #ADAcAc !default;
-$gray-600: #6C6A6A !default;
-$gray-700: #494444 !default;
-$gray-800: #343030 !default;
-$gray-900: #211010 !default;
-$black: #211010 !default;
-
-$grays: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
-$grays: map-merge(
-  (
-    "100": $gray-100,
-    "200": $gray-200,
-    "300": $gray-300,
-    "400": $gray-400,
-    "500": $gray-500,
-    "600": $gray-600,
-    "700": $gray-700,
-    "800": $gray-800,
-    "900": $gray-900,
-  ),
-  $grays
-);
-
-$blue: #3B5F97 !default;
-$indigo: #6610f2 !default;
-$purple: #6f42c1 !default;
-$pink: #e83e8c !default;
-$red: #ea3c20 !default;
-$orange: #fd7e14 !default;
-$yellow: #ffc107 !default;
-$green: #28a745 !default;
-$teal: #20c997 !default;
-$cyan: #17a2b8 !default;
-
-$primary: $blue !default;
-$secondary: $gray-600 !default;
-$success: $green !default;
-$info: $cyan !default;
-$warning: $yellow !default;
-$danger: $red !default;
-$light: $gray-100 !default;
-$dark: $gray-800 !default;
-
-$named-colors: () !default;
-$named-colors: map-merge(
-  (
-    primary: $primary,
-    secondary: $secondary,
-    success: $success,
-    info: $info,
-    warning: $warning,
-    danger: $danger,
-    light: $light,
-    dark: $dark
-  ),
-  $named-colors
-);
-
-$text-color: $black;
-$font-family: "Source Sans Pro", Helvetica, sans-serif;
-$font-family-monospace: "Consolas", monospace;
+@import "./variables/colors";
+@import "./variables/breakpoints";
+@import "./variables/font-text";
 
 $body-bg: $white !default;
 $link-color: $primary !default;
+$text-color: $black;
 
 $spacer: 8px !default;
 
 $border-width: 0 !default;
 $border-color: $gray-300;
 $border-radius: 0 !default;
-
-$font-family-base: var(--sen-font-family, $font-family) !default;
-$font-family-code: var(--sen-font-monospace, $font-family-monospace) !default;
-
-$font-color-base: $black !default;
-$font-weight-light: 300 !default;
-$font-weight-regular: 500 !default;
-$font-weight-bold: 700 !default;
-$font-weights: () !default;
-$font-weights: map-merge(
-  (
-    light: $font-weight-light,
-    regular: $font-weight-regular,
-    bold: $font-weight-bold
-  ),
-  $font-weights
-);
-
-$font-size-base: 13px !default; // Assumes the browser default, typically `16px`
-$font-size-sm: $font-size-base * 0.875 !default;
-$font-size-lg: $font-size-base * 1.25 !default;
-// factor applied for each vieport (media query) `sm`, `md`, `lg`
-$text-element-factor-p: 1 !default;
-$text-element-factor-h1: 2.6 !default;
-$text-element-factor-h2: 2.1 !default;
-$text-element-factor-h3: 1.8 !default;
-$text-element-factor-h4: 1.4 !default;
-$text-element-factor-h5: 1.2 !default;
-$text-element-factor-h6: 1.1 !default;
-$text-element-size-factors: (
- p: $text-element-factor-p,
- h1: $text-element-factor-h1,
- h2: $text-element-factor-h2,
- h3: $text-element-factor-h3,
- h4: $text-element-factor-h4,
- h5: $text-element-factor-h5,
- h6: $text-element-factor-h6
-);
-
 
 $btn-padding-y: $spacer / 2 !default;
 $btn-padding-x: $spacer !default;
@@ -156,28 +53,7 @@ $table-row-active-bg: $gray-200 !default;
 
 $menu-bg: $gray-800;
 
-// The minimum dimensions at which your layout will change,
-// adapting to different screen sizes, for use in media queries
-$screen-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-) !default;
-
 $grid-column-padding: 5px;
-
-$theme-colors: (
-  "primary": $primary,
-  "secondary": $secondary,
-  "success": $success,
-  "info": $info,
-  "warning": $warning,
-  "danger": $danger,
-  "light": $light,
-  "dark": $dark,
-) !default;
 
 $typeahead-bg: $gray-700;
 $select-item-bg: $white;

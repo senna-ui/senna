@@ -3,5 +3,10 @@
 @import "reset";
 
 :root {
-  --sen-font-size: 13px;
+  //// would be setting the --sen- variables globally, but commented in order to
+  //// demonstrate the inheritance fallback scheme
+  // @include global-var-inheritance;
+
+  // demonstrate setting the color of `<sen-text tag="h2">` globally.
+  --text-color-h2: green;
 }
