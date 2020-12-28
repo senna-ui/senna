@@ -11,10 +11,6 @@ import { Component, ComponentInterface, Host, Element, h } from "@stencil/core";
 export class App implements ComponentInterface {
   @Element() el!: HTMLSenAppElement;
 
-  componentWillLoad() {
-    console.log("el", this.el.shadowRoot);
-  }
-
   render() {
     return (
       <Host>

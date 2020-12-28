@@ -2,7 +2,7 @@ import { Component, ComponentInterface, Host, h, Prop } from "@stencil/core";
 import { MenuItem } from "../../interface";
 
 /**
- * @docsMenu { "group": "Navigation", "subGroup": "menu" }
+ * @docsMenu { "group": "navigation", "subGroup": "menu" }
  */
 @Component({
   tag: "sen-menu",
