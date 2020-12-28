@@ -1,0 +1,90 @@
+:host {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  contain: strict;
+  fill: currentColor;
+  box-sizing: content-box !important;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+:host .sen-icon {
+  stroke: currentColor;
+}
+
+.sen-icon-fill-none {
+  fill: none;
+}
+
+.sen-icon-stroke-width {
+  stroke-width: 32px;
+  stroke-width: var(--sen-icon-stroke-width, 32px);
+}
+
+.icon-inner,
+.sen-icon,
+svg {
+  display: block;
+
+  height: 100%;
+  width: 100%;
+}
+
+
+/* Icon Sizes
+ * -----------------------------------------------------------
+ */
+
+:host(.icon-small) {
+  font-size: 18px !important;
+}
+
+:host(.icon-large){
+  font-size: 32px !important;
+}
+
+
+/* Icon Colors
+ * -----------------------------------------------------------
+ */
+
+:host(.sen-color) {
+  color: var(--sen-color-base) !important;
+}
+
+:host(.sen-color-primary) {
+  --sen-color-base: var(--sen-color-primary, #3880ff);
+}
+
+:host(.sen-color-secondary) {
+  --sen-color-base: var(--sen-color-secondary, #0cd1e8);
+}
+
+:host(.sen-color-tertiary) {
+  --sen-color-base: var(--sen-color-tertiary, #f4a942);
+}
+
+:host(.sen-color-success) {
+  --sen-color-base: var(--sen-color-success, #10dc60);
+}
+
+:host(.sen-color-warning) {
+  --sen-color-base: var(--sen-color-warning, #ffce00);
+}
+
+:host(.sen-color-danger) {
+  --sen-color-base: var(--sen-color-danger, #f14141);
+}
+
+:host(.sen-color-light) {
+  --sen-color-base: var(--sen-color-light, #f4f5f8);
+}
+
+:host(.sen-color-medium) {
+  --sen-color-base: var(--sen-color-medium, #989aa2);
+}
+
+:host(.sen-color-dark) {
+  --sen-color-base: var(--sen-color-dark, #222428);
+}

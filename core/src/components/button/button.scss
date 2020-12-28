@@ -14,16 +14,23 @@
     background: var(--btn-primary-bg, $primary);
     border-radius: $btn-border-radius;
     border-width: 0;
-    padding: $btn-padding-y $btn-padding-x;
     font-size: $font-size-base;
     font-family: $font-family-base;
     border-top-left-radius: var(--border-left-radius);
     border-bottom-left-radius: var(--border-left-radius);
     border-top-right-radius: var(--border-right-radius);
     border-bottom-right-radius: var(--border-right-radius);
+    cursor: pointer;
+    min-height: 24px;
+    position: relative;
 
     &[disabled] {
       opacity: 0.4;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -34,5 +41,14 @@
 
       }
     }
+  }
+
+  .btn-icon {
+    padding-left: 26px;
+  }
+
+  sen-icon {
+    position: absolute;
+    left: 6px;
   }
 }

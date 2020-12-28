@@ -28,6 +28,10 @@ export namespace Components {
           * Disables the button
          */
         "disabled": boolean;
+        /**
+          * Icon to show
+         */
+        "icon"?: string;
     }
     interface SenButtonGroup {
     }
@@ -154,6 +158,21 @@ export namespace Components {
           * If `true`, the grid will have a fixed width based on the screen size.
          */
         "fixed": boolean;
+    }
+    interface SenIcon {
+        /**
+          * The color to use for the background of the icon.
+         */
+        "color"?: string;
+        /**
+          * Icon to display.
+         */
+        "name": string;
+        /**
+          * When set to `false`, SVG content that is HTTP fetched will not be checked if the response SVG content has any `<script>` elements, or any attributes that start with `on`, such as `onclick`.
+          * @default true
+         */
+        "sanitize": boolean;
     }
     interface SenInput {
         /**
@@ -416,6 +435,12 @@ declare global {
         prototype: HTMLSenGridElement;
         new (): HTMLSenGridElement;
     };
+    interface HTMLSenIconElement extends Components.SenIcon, HTMLStencilElement {
+    }
+    var HTMLSenIconElement: {
+        prototype: HTMLSenIconElement;
+        new (): HTMLSenIconElement;
+    };
     interface HTMLSenInputElement extends Components.SenInput, HTMLStencilElement {
     }
     var HTMLSenInputElement: {
@@ -471,6 +496,7 @@ declare global {
         "sen-fieldset": HTMLSenFieldsetElement;
         "sen-form-field": HTMLSenFormFieldElement;
         "sen-grid": HTMLSenGridElement;
+        "sen-icon": HTMLSenIconElement;
         "sen-input": HTMLSenInputElement;
         "sen-menu": HTMLSenMenuElement;
         "sen-menu-item": HTMLSenMenuItemElement;
@@ -502,6 +528,10 @@ declare namespace LocalJSX {
           * Disables the button
          */
         "disabled"?: boolean;
+        /**
+          * Icon to show
+         */
+        "icon"?: string;
     }
     interface SenButtonGroup {
     }
@@ -628,6 +658,21 @@ declare namespace LocalJSX {
           * If `true`, the grid will have a fixed width based on the screen size.
          */
         "fixed"?: boolean;
+    }
+    interface SenIcon {
+        /**
+          * The color to use for the background of the icon.
+         */
+        "color"?: string;
+        /**
+          * Icon to display.
+         */
+        "name"?: string;
+        /**
+          * When set to `false`, SVG content that is HTTP fetched will not be checked if the response SVG content has any `<script>` elements, or any attributes that start with `on`, such as `onclick`.
+          * @default true
+         */
+        "sanitize"?: boolean;
     }
     interface SenInput {
         /**
@@ -845,6 +890,7 @@ declare namespace LocalJSX {
         "sen-fieldset": SenFieldset;
         "sen-form-field": SenFormField;
         "sen-grid": SenGrid;
+        "sen-icon": SenIcon;
         "sen-input": SenInput;
         "sen-menu": SenMenu;
         "sen-menu-item": SenMenuItem;
@@ -870,6 +916,7 @@ declare module "@stencil/core" {
             "sen-fieldset": LocalJSX.SenFieldset & JSXBase.HTMLAttributes<HTMLSenFieldsetElement>;
             "sen-form-field": LocalJSX.SenFormField & JSXBase.HTMLAttributes<HTMLSenFormFieldElement>;
             "sen-grid": LocalJSX.SenGrid & JSXBase.HTMLAttributes<HTMLSenGridElement>;
+            "sen-icon": LocalJSX.SenIcon & JSXBase.HTMLAttributes<HTMLSenIconElement>;
             "sen-input": LocalJSX.SenInput & JSXBase.HTMLAttributes<HTMLSenInputElement>;
             "sen-menu": LocalJSX.SenMenu & JSXBase.HTMLAttributes<HTMLSenMenuElement>;
             "sen-menu-item": LocalJSX.SenMenuItem & JSXBase.HTMLAttributes<HTMLSenMenuItemElement>;

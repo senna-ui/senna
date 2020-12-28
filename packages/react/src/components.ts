@@ -19,6 +19,7 @@ export const SenCol = /*@__PURE__*/createReactComponent<JSX.SenCol, HTMLSenColEl
 export const SenFieldset = /*@__PURE__*/createReactComponent<JSX.SenFieldset, HTMLSenFieldsetElement>('sen-fieldset');
 export const SenFormField = /*@__PURE__*/createReactComponent<JSX.SenFormField, HTMLSenFormFieldElement>('sen-form-field');
 export const SenGrid = /*@__PURE__*/createReactComponent<JSX.SenGrid, HTMLSenGridElement>('sen-grid');
+export const SenIcon = /*@__PURE__*/createReactComponent<JSX.SenIcon, HTMLSenIconElement>('sen-icon');
 export const SenInput = /*@__PURE__*/createReactComponent<JSX.SenInput, HTMLSenInputElement>('sen-input');
 export const SenMenu = /*@__PURE__*/createReactComponent<JSX.SenMenu, HTMLSenMenuElement>('sen-menu');
 export const SenMenuItem = /*@__PURE__*/createReactComponent<JSX.SenMenuItem, HTMLSenMenuItemElement>('sen-menu-item');

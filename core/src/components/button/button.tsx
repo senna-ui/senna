@@ -24,16 +24,25 @@ export class Button implements ComponentInterface {
    */
   @Prop({ reflect: true }) disabled = false;
 
+  /**
+   * Icon to show
+   */
+  @Prop() icon?: string;
+
   render() {
     const classes = {
       btn: true,
-      [`btn-${this.color || 'secondary'}`]: true
+      'btn-icon': !!this.icon,
+      [`btn-${this.color || 'secondary'}`]: true,
     };
 
     return (
       <Host>
         <button class={classes} type={this.buttonType} disabled={this.disabled}>
-          <slot />
+          <span>
+            {this.icon && <sen-icon name={this.icon}></sen-icon>}
+            <slot />
+          </span>
         </button>
       </Host>
     );
