@@ -1,6 +1,9 @@
 import { Component, ComponentInterface, Host, h, Prop } from "@stencil/core";
 import { TableHeaders } from "../../interface";
 
+/**
+ * @docsMenu { "group": "table" }
+ */
 @Component({
   tag: "sen-table",
   styleUrl: "table.scss",

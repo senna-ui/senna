@@ -11,6 +11,9 @@ function getHighlightedText(text: string, highlight: string) {
   } </span>;
 }
 
+/**
+ * @docsMenu { "group": "forms", "subGroup": "input" }
+ */
 @Component({
   tag: "sen-typeahead",
   styleUrl: "typeahead.scss",

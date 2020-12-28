@@ -21,6 +21,10 @@ import {
 
 let inputIds = 0;
 
+/**
+ * @docsCodePen { "user": "senna-ui", "id": "qBapaVj" }
+ * @docsMenu { "group": "forms", "subGroup": "input" }
+ */
 @Component({
   tag: "sen-input",
   styleUrl: "input.scss",

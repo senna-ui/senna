@@ -18,6 +18,12 @@ const SUPPORTS_VARS = !!(
 );
 const BREAKPOINTS = ["", "xs", "sm", "md", "lg", "xl"];
 
+
+/**
+ *
+ * @docsCodePen { "user": "senna-ui", "id": "eYdydGJ" }
+ * @docsMenu { "group": "layout", "subGroup": "grid" }
+ */
 @Component({
   tag: "sen-col",
   styleUrl: "col.scss",

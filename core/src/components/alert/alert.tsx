@@ -10,8 +10,8 @@ import { Color } from "../../interface";
 
 /**
  * Docs page options
- * @docsCodePen { "user": "casaper", "id": "MWeKZmM" }
- * @docsMenu { "group": "app" }
+ * @docsCodePen { "user": "senna-ui", "id": "MWjrJEz" }
+ * @docsMenu { "group": "alert" }
  */
 
 @Component({

@@ -1,8 +1,8 @@
 import { Component, ComponentInterface, Host, h } from "@stencil/core";
 
 /**
- * @docsCodePen { "user": "casaper", "id": "LYZGXeP" }
- * @docsMenu { "group": "layout", "subGroup": "card" }
+ * @docsCodePen { "user": "senna-ui", "id": "wvzpgoe" }
+ * @docsMenu { "group": "card" }
  */
 @Component({
   tag: "sen-card-body",

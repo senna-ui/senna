@@ -2,7 +2,7 @@ import { Component, ComponentInterface, Host, h, Prop } from "@stencil/core";
 import { Color } from "../../interface";
 
 /**
- * @docsCodePen { "user": "casaper", "id": "abZdpJx" }
+ * @docsCodePen { "user": "senna-ui", "id": "YzGYNEW" }
  * @docsMenu { "group": "buttons" }
  */
 @Component({

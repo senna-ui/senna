@@ -1,7 +1,7 @@
 import { Component, ComponentInterface, Host, h } from "@stencil/core";
 
 /**
- * @docsCodePen { "user": "casaper", "id": "xxOZQqB" }
+ * @docsCodePen { "user": "senna-ui", "id": "wvzpgPP" }
  * @docsMenu { "group": "buttons" }
  */
 @Component({

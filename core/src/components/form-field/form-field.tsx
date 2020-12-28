@@ -1,8 +1,8 @@
 import { Component, ComponentInterface, Host, Prop, h } from "@stencil/core";
 
 /**
- * @docsCodePen { "user": "casaper", "id": "ExyPZBx" }
- * @docsMenu { "group": "forms" }
+ * @docsCodePen { "user": "senna-ui", "id": "qBapaVj" }
+ * @docsMenu { "group": "forms", "subGroup": "formField" }
  */
 @Component({
   tag: "sen-form-field",

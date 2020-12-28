@@ -1,5 +1,9 @@
 import { Component, ComponentInterface, Host, h, Prop } from "@stencil/core";
 
+/**
+ * @docsCodePen { "user": "senna-ui", "id": "qBapaVj" }
+ * @docsMenu { "group": "forms", subGroup: "fieldset" }
+ */
 @Component({
   tag: "sen-fieldset",
   styleUrl: "fieldset.scss",

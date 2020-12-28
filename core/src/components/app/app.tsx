@@ -1,5 +1,8 @@
 import { Component, ComponentInterface, Host, Element, h } from "@stencil/core";
 
+/**
+ * @docsMenu { "group": "app" }
+ */
 @Component({
   tag: "sen-app",
   styleUrl: "app.scss",

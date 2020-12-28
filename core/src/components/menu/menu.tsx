@@ -1,6 +1,9 @@
 import { Component, ComponentInterface, Host, h, Prop } from "@stencil/core";
 import { MenuItem } from "../../interface";
 
+/**
+ * @docsMenu { "group": "Navigation", "subGroup": "menu" }
+ */
 @Component({
   tag: "sen-menu",
   styleUrl: "menu.scss",

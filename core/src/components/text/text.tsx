@@ -2,7 +2,7 @@ import { Component, ComponentInterface, Host, h, Prop } from "@stencil/core";
 import { FontWeight, TextAlign, TextTag, TextTransform } from "../../interface";
 
 /**
- * Text typography component
+ * @docsMenu { "group": "typography" }
  */
 @Component({
   tag: "sen-text",

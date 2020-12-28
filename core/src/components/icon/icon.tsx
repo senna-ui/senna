@@ -3,6 +3,10 @@ import { Component, ComponentInterface, Host, h, Prop, State, Watch  } from "@st
 import { getSvgContent, senIconContent } from './request';
 import { getUrl } from './utils';
 
+/**
+ * @docsCodePen { "user": "senna-ui", "id": "KKgZgNj" }
+ * @docsMenu { "group": "icons" }
+ */
 @Component({
   tag: "sen-icon",
   styleUrl: "icon.scss",

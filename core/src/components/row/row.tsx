@@ -1,5 +1,10 @@
 import { Component, ComponentInterface, Host, h } from "@stencil/core";
 
+/**
+ *
+ * @docsCodePen { "user": "senna-ui", "id": "eYdydGJ" }
+ * @docsMenu { "group": "layout", "subGroup": "grid" }
+ */
 @Component({
   tag: "sen-row",
   styleUrl: "row.scss",

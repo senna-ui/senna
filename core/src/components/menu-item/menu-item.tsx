@@ -1,5 +1,8 @@
 import { Component, Host, h, Prop, Event, EventEmitter } from "@stencil/core";
 
+/**
+ * @docsMenu { "group": "navigation", "subGroup": "menu" }
+ */
 @Component({
   tag: "sen-menu-item",
   styleUrl: "menu-item.scss",
