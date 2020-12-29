@@ -20,20 +20,15 @@
     align-items: center;
     cursor: pointer;
 
-    .label-text {
-      display: block;
-      color: var(--sen-font-color-base, #{$text-color});
-    }
-
     svg {
-      width: 18px;
-      height: 18px;
-      margin: $spacer / 2;
+      width: 16px;
+      height: 16px;
+      margin-right: $spacer / 2;
       path {
         fill: var(--sen-font-color-base, #{$text-color});
       }
     }
-    
+
     &.disabled {
       cursor: default;
       .label-text {

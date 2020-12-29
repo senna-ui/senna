@@ -23,6 +23,11 @@ export class Checkbox implements ComponentInterface  {
   @Prop() disabled = false;
 
   /**
+   * Label for the checkbox
+   */
+  @Prop() label = "";
+
+  /**
    * The name of the control, which is submitted with the form data.
    */
   @Prop() name: string = this.checkboxId;
@@ -87,7 +92,7 @@ export class Checkbox implements ComponentInterface  {
 
   private checkbox() {
     return (
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="1 1 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g>
           <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4a3 3 0 0 1 3-3h16a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H4a3 3 0 0 1-3-3V4zm3-1a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4z"/>
           {this.value && this.checkMark()}
@@ -110,16 +115,16 @@ export class Checkbox implements ComponentInterface  {
     }
     return (
       <Host>
-        <label 
+        <label
           id={`${this.checkboxId}-label`}
           onClick={this.toggle}
           class={labelClass}
         >
           {this.checkbox()}
           <span class="label-text">
-            <slot></slot>
+            {this.label ? this.label : <slot></slot>}
           </span>
-          <input 
+          <input
             class="native-checkbox"
             id={this.checkboxId}
             name={this.name}

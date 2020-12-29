@@ -38,6 +38,9 @@ export const FullForm = () => `
         <sen-input type="text" disabled value="127.0.0.1"></sen-input>
       </sen-form-field>
       <sen-form-field>
+        <sen-checkbox label="Subscribe to newsletter"></sen-checkbox>
+      </sen-form-field>
+      <sen-form-field>
         <sen-button type="submit">Submit</sen-button>
         <sen-button color="secondary" type="button">Abort</sen-button>
       </sen-form-field>

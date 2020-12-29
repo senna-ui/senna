@@ -49,6 +49,10 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * Label for the checkbox
+         */
+        "label": string;
+        /**
           * The name of the control, which is submitted with the form data.
          */
         "name": string;
@@ -577,6 +581,10 @@ declare namespace LocalJSX {
           * If `true`, the user cannot interact with the checkbox.
          */
         "disabled"?: boolean;
+        /**
+          * Label for the checkbox
+         */
+        "label"?: string;
         /**
           * The name of the control, which is submitted with the form data.
          */
