@@ -1,19 +1,18 @@
 :host {
   display: block;
-
   padding: $alert-padding;
   border: $alert-border-width solid transparent;
-
-  .alert-title {
-    font-weight: $font-weight-bold;
-    margin-bottom: $spacer/2;
-  }
-
   margin-bottom: $spacer;
-}
-
-@each $color, $value in $theme-colors {
-  :host(.alert-#{$color}) {
-    background: lighten($value, 35%);
+  
+  .alert {
+    &-title {
+      font-weight: $font-weight-bold;
+      margin-bottom: $spacer/2;
+    }
+    @each $color, $value in $theme-colors {
+      &-#{$color} {
+        background: lighten($value, 35%);
+      }
+    }
   }
 }

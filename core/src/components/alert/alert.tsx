@@ -38,7 +38,7 @@ export class Alert implements ComponentInterface {
    */
   render() {
     const classes = {
-      ["alert-" + this.color]: true,
+      [`alert-${this.color || 'secondary'}`]: true,
     };
     return (
       <Host class={classes}>
