@@ -1,23 +1,12 @@
-import {
-  Component,
-  ComponentInterface,
-  Host,
-  Listen,
-  Prop,
-  forceUpdate,
-  h,
-} from "@stencil/core";
+import type { ComponentInterface } from "@stencil/core";
+import { Component, Host, Listen, Prop, forceUpdate, h } from "@stencil/core";
 
 import { matchBreakpoint } from "../../utils/media";
 
 const win = window as any;
-const SUPPORTS_VARS = !!(
-  win.CSS &&
-  win.CSS.supports &&
-  win.CSS.supports("--a: 0")
-);
-const BREAKPOINTS = ["", "xs", "sm", "md", "lg", "xl"];
+const SUPPORTS_VARS = !!win?.CSS?.supports("--a: 0");
 
+const BREAKPOINTS = ["", "xs", "sm", "md", "lg", "xl"];
 
 /**
  *

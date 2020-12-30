@@ -1,5 +1,7 @@
-import { Component, ComponentInterface, Host, h, Prop } from "@stencil/core";
-import { TableHeaders } from "../../interface";
+import type { ComponentInterface } from "@stencil/core";
+import { Component, Host, h, Prop } from "@stencil/core";
+
+import type { TableHeaders } from "../../interface";
 
 /**
  * @docsMenu { "group": "table" }
@@ -31,7 +33,13 @@ export class Table implements ComponentInterface {
             {this.data.map((row) => (
               <tr>
                 {this.headers.map((header) => (
-                  <td style={{ textAlign: row[header.key].textAlign || header.textAlign }}>{row[header.key]}</td>
+                  <td
+                    style={{
+                      textAlign: row[header.key].textAlign || header.textAlign,
+                    }}
+                  >
+                    {row[header.key]}
+                  </td>
                 ))}
               </tr>
             ))}

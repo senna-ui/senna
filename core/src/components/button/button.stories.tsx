@@ -2,9 +2,7 @@ export default {
   title: "Button",
 };
 
-export const Default = () =>
-  '<sen-button>My Button</sen-button>';
-
+export const Default = () => "<sen-button>My Button</sen-button>";
 
 export const Colors = () => `
   <sen-app>
@@ -15,7 +13,6 @@ export const Colors = () => `
     <sen-button color="warning">Warning</sen-button>
   </sen-app>
 `;
-
 
 export const Disabled = () => `
   <sen-app>
@@ -44,4 +41,4 @@ export const Disabled = () => `
     <sen-button color="warning" disabled>Warning disabled</sen-button>
     <br><br>
   </sen-app>
-`
+`;

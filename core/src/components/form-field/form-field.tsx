@@ -1,4 +1,5 @@
-import { Component, ComponentInterface, Host, Prop, h } from "@stencil/core";
+import type { ComponentInterface } from "@stencil/core";
+import { Component, Host, Prop, h } from "@stencil/core";
 
 /**
  * @docsCodePen { "user": "senna-ui", "id": "qBapaVj" }
@@ -13,7 +14,7 @@ export class FormField implements ComponentInterface {
   /**
    * Label of the form field
    */
-  @Prop() label: string = "";
+  @Prop() label = "";
 
   render() {
     return (

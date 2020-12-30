@@ -1,4 +1,5 @@
-import { Component, Host, h, Prop, Event, EventEmitter } from "@stencil/core";
+import type { EventEmitter } from "@stencil/core";
+import { Component, Host, h, Prop, Event } from "@stencil/core";
 
 /**
  * @docsMenu { "group": "navigation", "subGroup": "menu" }
@@ -6,7 +7,7 @@ import { Component, Host, h, Prop, Event, EventEmitter } from "@stencil/core";
 @Component({
   tag: "sen-menu-item",
   styleUrl: "menu-item.scss",
-  shadow: true
+  shadow: true,
 })
 export class MenuItem {
   /**
@@ -17,7 +18,7 @@ export class MenuItem {
   /**
    * Active state
    */
-  @Prop() active: boolean = false;
+  @Prop() active = false;
 
   /**
    * Emitted when a keyboard input occurred.
@@ -25,13 +26,13 @@ export class MenuItem {
   @Event() senInput!: EventEmitter<any>;
 
   private onClick = () => {
-    this.senInput.emit(this.value)
-  }
+    this.senInput.emit(this.value);
+  };
 
   render() {
     return (
       <Host>
-        <a class={this.active ? 'active' : ''} onClick={this.onClick}>
+        <a class={this.active ? "active" : ""} onClick={this.onClick}>
           <slot />
         </a>
       </Host>

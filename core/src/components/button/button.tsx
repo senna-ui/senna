@@ -1,5 +1,7 @@
-import { Component, ComponentInterface, Host, h, Prop } from "@stencil/core";
-import { Color } from "../../interface";
+import type { ComponentInterface } from "@stencil/core";
+import { Component, Host, h, Prop } from "@stencil/core";
+
+import type { Color } from "../../interface";
 
 /**
  * @docsCodePen { "user": "senna-ui", "id": "YzGYNEW" }
@@ -8,7 +10,7 @@ import { Color } from "../../interface";
 @Component({
   tag: "sen-button",
   styleUrl: "button.scss",
-  shadow: true
+  shadow: true,
 })
 export class Button implements ComponentInterface {
   /**
@@ -32,8 +34,8 @@ export class Button implements ComponentInterface {
   render() {
     const classes = {
       btn: true,
-      'btn-icon': !!this.icon,
-      [`btn-${this.color || 'secondary'}`]: true,
+      "btn-icon": !!this.icon,
+      [`btn-${this.color || "secondary"}`]: true,
     };
 
     return (

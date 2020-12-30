@@ -1,4 +1,5 @@
-import { Component, ComponentInterface, Host, h, Prop } from "@stencil/core";
+import type { ComponentInterface } from "@stencil/core";
+import { Component, Host, h, Prop } from "@stencil/core";
 
 /**
  * @docsCodePen { "user": "senna-ui", "id": "qBapaVj" }

@@ -1,5 +1,5 @@
 export default {
-  title: "Menu"
+  title: "Menu",
 };
 
 export const Default = () => {
@@ -7,7 +7,7 @@ export const Default = () => {
   menu.items = [
     { label: "Accounts" },
     { label: "Statistics" },
-    { label: "Settings" }
+    { label: "Settings" },
   ];
 
   return menu;

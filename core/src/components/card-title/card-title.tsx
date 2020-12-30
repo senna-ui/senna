@@ -1,4 +1,5 @@
-import { Component, ComponentInterface, Host, h } from "@stencil/core";
+import type { ComponentInterface } from "@stencil/core";
+import { Component, Host, h } from "@stencil/core";
 
 /**
  * @docsCodePen { "user": "senna-ui", "id": "wvzpgoe" }
@@ -14,7 +15,9 @@ export class CardTitle implements ComponentInterface {
     return (
       <Host>
         <header>
-          <h1><slot></slot></h1>
+          <h1>
+            <slot></slot>
+          </h1>
         </header>
       </Host>
     );

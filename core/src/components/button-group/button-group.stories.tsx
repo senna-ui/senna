@@ -9,7 +9,6 @@ export const Default = () => `
   </sen-button-group>
 `;
 
-
 export const ThreeButtons = () => `
   <sen-button-group>
     <sen-button color="primary">Button 1</sen-button>

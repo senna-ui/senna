@@ -78,6 +78,7 @@ module.exports = {
     // disable rules
     'arrow-parens': 'off',
     '@typescript-eslint/explicit-module-boundary-types': "off",
-    "@stencil/strict-boolean-conditions": "off"
+    "@stencil/strict-boolean-conditions": "off",
+    "react/jsx-no-bind": "off"
   },
 };

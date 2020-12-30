@@ -1,5 +1,5 @@
-
-import {  State, Prop, EventEmitter, Event, Watch, Method } from '@stencil/core';
+import type { EventEmitter } from "@stencil/core";
+import { State, Prop, Event, Watch, Method } from "@stencil/core";
 
 export abstract class InputComponent<T> {
   protected nativeInput?: HTMLInputElement;
@@ -51,5 +51,5 @@ export abstract class InputComponent<T> {
     }
   }
 
-  protected abstract getDefaultValue(): T
+  protected abstract getDefaultValue(): T;
 }

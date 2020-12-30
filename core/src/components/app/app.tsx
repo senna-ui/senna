@@ -1,4 +1,5 @@
-import { Component, ComponentInterface, Host, Element, h } from "@stencil/core";
+import type { ComponentInterface } from "@stencil/core";
+import { Component, Host, Element, h } from "@stencil/core";
 
 /**
  * @docsMenu { "group": "app" }

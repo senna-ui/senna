@@ -2,7 +2,6 @@ export default {
   title: "Text",
 };
 
-
 export const HtmlElements = () => `
   <sen-app>
     <sen-text>Element default is a p element</sen-text>
@@ -15,7 +14,6 @@ export const HtmlElements = () => `
     <sen-text tag="h6">Element h6</sen-text>
   </sen-app>
 `;
-
 
 export const FontWeights = () => `
   <sen-app>

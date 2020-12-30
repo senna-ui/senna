@@ -1,7 +1,8 @@
-import { Component, ComponentInterface, Host, h, Prop, State, Watch  } from "@stencil/core";
+import type { ComponentInterface } from "@stencil/core";
+import { Component, Host, h, Prop, State, Watch } from "@stencil/core";
 
-import { getSvgContent, senIconContent } from './request';
-import { getUrl } from './utils';
+import { getSvgContent, senIconContent } from "./request";
+import { getUrl } from "./utils";
 
 /**
  * @docsCodePen { "user": "senna-ui", "id": "KKgZgNj" }
@@ -17,11 +18,11 @@ export class Icon implements ComponentInterface {
   /**
    * Icon to display.
    */
-  @Prop() name: string = "";
- /**
+  @Prop() name = "";
+  /**
    * The color to use for the background of the icon.
    */
-  @Prop() color?: string;;
+  @Prop() color?: string;
 
   /**
    * When set to `false`, SVG content that is HTTP fetched will not be checked
@@ -34,24 +35,24 @@ export class Icon implements ComponentInterface {
   @State() private svgContent?: string;
 
   componentWillRender() {
-    this.loadIcon()
+    this.loadIcon();
   }
 
-  @Watch('name')
+  @Watch("name")
   loadIcon() {
     const url = getUrl(this.name);
-    if (!url) return
+    if (!url) return;
 
     if (senIconContent.has(url)) {
       // sync if it's already loaded
       this.svgContent = senIconContent.get(url);
     } else {
       // async if it hasn't been loaded
-      getSvgContent(url, this.sanitize).then(() => (this.svgContent = senIconContent.get(url)));
+      getSvgContent(url, this.sanitize).then(
+        () => (this.svgContent = senIconContent.get(url))
+      );
     }
-
   }
-
 
   render() {
     return (
@@ -71,7 +72,7 @@ export class Icon implements ComponentInterface {
 const createColorClasses = (color: string | undefined) => {
   return color
     ? {
-        'sen-color': true,
+        "sen-color": true,
         [`sen-color-${color}`]: true,
       }
     : null;

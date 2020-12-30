@@ -1,4 +1,5 @@
 import { newSpecPage } from "@stencil/core/testing";
+
 import { Button } from "./button";
 
 describe("sen-button", () => {

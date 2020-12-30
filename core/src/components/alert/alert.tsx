@@ -1,12 +1,7 @@
-import {
-  Component,
-  ComponentInterface,
-  Host,
-  h,
-  Prop,
-  Element,
-} from "@stencil/core";
-import { Color } from "../../interface";
+import type { ComponentInterface } from "@stencil/core";
+import { Component, Host, h, Prop, Element } from "@stencil/core";
+
+import type { Color } from "../../interface";
 
 /**
  * Docs page options
@@ -20,7 +15,7 @@ import { Color } from "../../interface";
   shadow: true,
 })
 export class Alert implements ComponentInterface {
-  private hasTitleSlot: boolean = false;
+  private hasTitleSlot = false;
 
   @Element() el!: HTMLSenAlertElement;
 
@@ -38,7 +33,7 @@ export class Alert implements ComponentInterface {
    */
   render() {
     const classes = {
-      [`alert-${this.color || 'secondary'}`]: true,
+      [`alert-${this.color || "secondary"}`]: true,
     };
     return (
       <Host class={classes}>
