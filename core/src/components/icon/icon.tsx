@@ -71,8 +71,8 @@ export class Icon implements ComponentInterface {
 const createColorClasses = (color: string | undefined) => {
   return color
     ? {
-        'ion-color': true,
-        [`ion-color-${color}`]: true,
+        'sen-color': true,
+        [`sen-color-${color}`]: true,
       }
     : null;
 };

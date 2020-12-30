@@ -1,0 +1,80 @@
+
+:host {
+  // make invisible, but not to screen readers
+  &.disabled {
+    cursor: default;
+    .label-text {
+      color: $gray-500;
+    }
+    svg path {
+      fill: $gray-500;
+    }
+  }
+
+  &.readonly {
+    cursor: default;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    margin-bottom: $spacer;
+    cursor: pointer;
+    user-select: none;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    height: $checkmark-box-size;
+    width: $checkmark-box-size;
+    background-color: $checkmark-box-bg;
+    border: $checkmark-box-border;
+    border-radius: 50%;
+    margin-right: $spacer;
+    position: relative;
+  }
+
+  .container input:checked ~ .checkmark {
+    background-color: $checkmark-box-bg;
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .container .checkmark:after {
+    top: ($checkmark-box-size - $checkmark-size) / 2;
+    left: ($checkmark-box-size - $checkmark-size) / 2;
+    width: $checkmark-size;
+    height: $checkmark-size;
+    border-radius: 50%;
+    background: $checkmark-bg;
+  }
+
+  .disabled {
+    .checkmark {
+      border-color: $input-disabled-color;
+
+      &:after {
+        background-color: $input-disabled-color;
+      }
+    }
+  }
+}

@@ -1,46 +1,67 @@
 :host {
   display: inline-block;
 
-  // make invisible, but not to screen readers
-  .native-checkbox {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-
-
-  label {
+  .container {
     display: flex;
     align-items: center;
     cursor: pointer;
+    user-select: none;
+  }
 
-    svg {
-      width: 16px;
-      height: 16px;
-      margin-right: $spacer / 2;
-      path {
-        fill: var(--sen-font-color-base, #{$text-color});
-      }
-    }
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
 
-    &.disabled {
-      cursor: default;
-      .label-text {
-        color: $gray-500;
-      }
-      svg path {
-        fill: $gray-500;
-      }
-    }
+  .checkmark {
+    height: $checkmark-box-size;
+    width: $checkmark-box-size;
+    background-color: $checkmark-box-bg;
+    border: $checkmark-box-border;
+    margin-right: $spacer;
 
-    &.readonly {
-      cursor: default;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  input:checked ~ .checkmark {
+    background-color: $checkmark-box-bg;
+  }
+
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    $checkmark-small-side-width: $checkmark-size / 2;
+    $sin-45: 0.85090352453;
+
+    width: $checkmark-small-side-width;
+    height: $checkmark-size;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    border-color: $checkmark-bg;
+    border: solid $checkmark-bg;
+    border-width: 0 $checkmark-width $checkmark-width 0;
+    transform: rotate(45deg);
+    margin-bottom: $checkmark-small-side-width * $sin-45;
+  }
+
+  .disabled {
+    .checkmark {
+      border-color: $input-disabled-color;
+
+      &:after {
+        border-color: $input-disabled-color;
+      }
     }
   }
 }

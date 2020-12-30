@@ -24,6 +24,7 @@ export const SenIcon = /*@__PURE__*/createReactComponent<JSX.SenIcon, HTMLSenIco
 export const SenInput = /*@__PURE__*/createReactComponent<JSX.SenInput, HTMLSenInputElement>('sen-input');
 export const SenMenu = /*@__PURE__*/createReactComponent<JSX.SenMenu, HTMLSenMenuElement>('sen-menu');
 export const SenMenuItem = /*@__PURE__*/createReactComponent<JSX.SenMenuItem, HTMLSenMenuItemElement>('sen-menu-item');
+export const SenRadio = /*@__PURE__*/createReactComponent<JSX.SenRadio, HTMLSenRadioElement>('sen-radio');
 export const SenRow = /*@__PURE__*/createReactComponent<JSX.SenRow, HTMLSenRowElement>('sen-row');
 export const SenTable = /*@__PURE__*/createReactComponent<JSX.SenTable, HTMLSenTableElement>('sen-table');
 export const SenText = /*@__PURE__*/createReactComponent<JSX.SenText, HTMLSenTextElement>('sen-text');

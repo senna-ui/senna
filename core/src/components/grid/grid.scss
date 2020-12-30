@@ -39,7 +39,7 @@
 // --------------------------------------------------
 
 // Remove the padding from grid and all immediate children columns
-:host(.ion-no-padding) {
+:host(.sen-no-padding) {
   --sen-grid-column-padding: 0;
   --sen-grid-column-padding-xs: 0;
   --sen-grid-column-padding-sm: 0;

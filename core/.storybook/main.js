@@ -17,4 +17,16 @@ module.exports = {
     config.entry.push(...files);
     return config;
   },
+  babel: async(options) => ({
+    ...options,
+    "plugins": [
+      "@babel/plugin-syntax-jsx",
+      [
+        "@babel/plugin-transform-react-jsx",
+        {
+          "pragma": "h"
+        }
+      ]
+    ]
+  })
 };

@@ -132,6 +132,8 @@ $input-padding-x: $spacer * 0.8 !default;
 $input-line-height: 1em;
 $input-background: $gray-200 !default;
 
+$input-disabled-color: $gray-500;
+
 $fieldset-border-color: $gray-100 !default;
 $fieldset-border-radius: $border-radius !default;
 $fieldset-border-width: 2px !default;
@@ -184,6 +186,13 @@ $select-item-bg: $white;
 $select-item-text-color: $text-color;
 $select-border-color: $gray-200;
 $select-item-selected-bg: lighten($primary, 50);
+
+$checkmark-box-size: 14px;
+$checkmark-box-bg: $white;
+$checkmark-box-border: 1px solid $text-color;
+$checkmark-size: 7px;
+$checkmark-width: 3px;
+$checkmark-bg: $text-color;
 
 $highlight-color: $primary;
 

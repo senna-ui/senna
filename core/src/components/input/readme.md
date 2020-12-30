@@ -48,7 +48,7 @@
 
 ### `setFocus() => Promise<void>`
 
-Sets focus on the specified `ion-input`. Use this method instead of the global
+Sets focus on the specified `sen-input`. Use this method instead of the global
 `input.focus()`.
 
 #### Returns

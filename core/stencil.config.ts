@@ -1,10 +1,6 @@
-import { Config } from "@stencil/core";
-import { sass } from "@stencil/sass";
+import type { Config } from "@stencil/core";
 import { reactOutputTarget } from "@stencil/react-output-target";
-
-const iconPackages = {
-
-}
+import { sass } from "@stencil/sass";
 
 export const config: Config = {
   namespace: "Senna",
@@ -25,10 +21,12 @@ export const config: Config = {
       esmLoaderPath: "../loader",
       copy: [
         {
-          src: '../node_modules/material-design-icons/*/svg/production/*24px.svg', dest: './svg/',
-          warn: true
-        }
-      ]
+          src:
+            "../node_modules/material-design-icons/*/svg/production/*24px.svg",
+          dest: "./svg/",
+          warn: true,
+        },
+      ],
     },
     {
       type: "docs-readme",
@@ -42,10 +40,12 @@ export const config: Config = {
       serviceWorker: null, // disable service workers,
       copy: [
         {
-          src: '../node_modules/material-design-icons/*/svg/production/*24px.svg', dest: './build/svg/',
-          warn: true
-        }
-      ]
+          src:
+            "../node_modules/material-design-icons/*/svg/production/*24px.svg",
+          dest: "./build/svg/",
+          warn: true,
+        },
+      ],
     },
   ],
 };

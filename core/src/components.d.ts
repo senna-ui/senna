@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AutocompleteTypes, Color, FontWeight, InputChangeEventDetail, MenuItem, OptionSelectedEvent, TableHeaders, TextAlign, TextFieldTypes, TextTag, TextTransform, TypeaheadOption } from "./interface";
+import { RadioOption, RadioValue } from "./components/radio/radio";
 export namespace Components {
     interface SenAlert {
         /**
@@ -303,7 +304,7 @@ export namespace Components {
          */
         "required": boolean;
         /**
-          * Sets focus on the specified `ion-input`. Use this method instead of the global `input.focus()`.
+          * Sets focus on the specified `sen-input`. Use this method instead of the global `input.focus()`.
          */
         "setFocus": () => Promise<void>;
         /**
@@ -342,6 +343,36 @@ export namespace Components {
           * Value to emit when clicked
          */
         "value": any;
+    }
+    interface SenRadio {
+        /**
+          * If `true`, the user cannot interact with the radio.
+         */
+        "disabled": boolean;
+        /**
+          * Label for the radio
+         */
+        "label": string;
+        /**
+          * The name of the control, which is submitted with the form data.
+         */
+        "name": string;
+        /**
+          * Radio options to display
+         */
+        "options": RadioOption[];
+        /**
+          * If `true`, the user cannot modify the value.
+         */
+        "readonly": boolean;
+        /**
+          * Sets focus on the specified input. Use this method instead of the global `input.focus()`.
+         */
+        "setFocus": () => Promise<void>;
+        /**
+          * The value of the input.
+         */
+        "value"?: RadioValue;
     }
     interface SenRow {
     }
@@ -491,6 +522,12 @@ declare global {
         prototype: HTMLSenMenuItemElement;
         new (): HTMLSenMenuItemElement;
     };
+    interface HTMLSenRadioElement extends Components.SenRadio, HTMLStencilElement {
+    }
+    var HTMLSenRadioElement: {
+        prototype: HTMLSenRadioElement;
+        new (): HTMLSenRadioElement;
+    };
     interface HTMLSenRowElement extends Components.SenRow, HTMLStencilElement {
     }
     var HTMLSenRowElement: {
@@ -533,6 +570,7 @@ declare global {
         "sen-input": HTMLSenInputElement;
         "sen-menu": HTMLSenMenuElement;
         "sen-menu-item": HTMLSenMenuItemElement;
+        "sen-radio": HTMLSenRadioElement;
         "sen-row": HTMLSenRowElement;
         "sen-table": HTMLSenTableElement;
         "sen-text": HTMLSenTextElement;
@@ -888,6 +926,40 @@ declare namespace LocalJSX {
          */
         "value"?: any;
     }
+    interface SenRadio {
+        /**
+          * If `true`, the user cannot interact with the radio.
+         */
+        "disabled"?: boolean;
+        /**
+          * Label for the radio
+         */
+        "label"?: string;
+        /**
+          * The name of the control, which is submitted with the form data.
+         */
+        "name"?: string;
+        /**
+          * Emitted when input is changed
+         */
+        "onSenChange"?: (event: CustomEvent<{ value: RadioValue }>) => void;
+        /**
+          * Emitted when a keyboard input occurred.
+         */
+        "onSenInput"?: (event: CustomEvent<MouseEvent>) => void;
+        /**
+          * Radio options to display
+         */
+        "options"?: RadioOption[];
+        /**
+          * If `true`, the user cannot modify the value.
+         */
+        "readonly"?: boolean;
+        /**
+          * The value of the input.
+         */
+        "value"?: RadioValue;
+    }
     interface SenRow {
     }
     interface SenTable {
@@ -958,6 +1030,7 @@ declare namespace LocalJSX {
         "sen-input": SenInput;
         "sen-menu": SenMenu;
         "sen-menu-item": SenMenuItem;
+        "sen-radio": SenRadio;
         "sen-row": SenRow;
         "sen-table": SenTable;
         "sen-text": SenText;
@@ -985,6 +1058,7 @@ declare module "@stencil/core" {
             "sen-input": LocalJSX.SenInput & JSXBase.HTMLAttributes<HTMLSenInputElement>;
             "sen-menu": LocalJSX.SenMenu & JSXBase.HTMLAttributes<HTMLSenMenuElement>;
             "sen-menu-item": LocalJSX.SenMenuItem & JSXBase.HTMLAttributes<HTMLSenMenuItemElement>;
+            "sen-radio": LocalJSX.SenRadio & JSXBase.HTMLAttributes<HTMLSenRadioElement>;
             "sen-row": LocalJSX.SenRow & JSXBase.HTMLAttributes<HTMLSenRowElement>;
             "sen-table": LocalJSX.SenTable & JSXBase.HTMLAttributes<HTMLSenTableElement>;
             "sen-text": LocalJSX.SenText & JSXBase.HTMLAttributes<HTMLSenTextElement>;

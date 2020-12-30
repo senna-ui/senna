@@ -1,6 +1,6 @@
+import type { ComponentInterface, EventEmitter } from "@stencil/core";
 import {
   Component,
-  ComponentInterface,
   Element,
   Host,
   Method,
@@ -9,10 +9,9 @@ import {
   Watch,
   Event,
   h,
-  EventEmitter,
 } from "@stencil/core";
 
-import {
+import type {
   AutocompleteTypes,
   Color,
   InputChangeEventDetail,
@@ -217,7 +216,7 @@ export class Input implements ComponentInterface {
   @Event() senChange!: EventEmitter<InputChangeEventDetail>;
 
   /**
-   * Sets focus on the specified `ion-input`. Use this method instead of the global
+   * Sets focus on the specified `sen-input`. Use this method instead of the global
    * `input.focus()`.
    */
   @Method()
