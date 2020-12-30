@@ -4,6 +4,7 @@ import { sass } from "@stencil/sass";
 
 export const config: Config = {
   namespace: "Senna",
+  preamble: "Built with Senna",
   taskQueue: "async",
   globalStyle: "src/scss/senna.scss",
   plugins: [
@@ -15,6 +16,8 @@ export const config: Config = {
     reactOutputTarget({
       componentCorePackage: "@senna-ui/core",
       proxiesFile: "../packages/react/src/components.ts",
+      includePolyfills: true,
+      includeDefineCustomElements: true
     }),
     {
       type: "dist",
