@@ -7,13 +7,22 @@
 
 ## Usage
 
-### Example
+### React
 
-```html
-<sen-checkbox label="A labeled checkbox" value="1"></sen-checkbox>
-<sen-checkbox>Slot used for label</sen-checkbox>
-<sen-checkbox label="A disabled checkbox" disabled></sen-checkbox>
-<sen-checkbox label="A readonly checkbox" readonly></sen-checkbox>
+```tsx
+import React from "react";
+import { SenRadio } from "@senna/react";
+
+export const RadioExample: React.FC = () => {
+
+  const radioOptions = [
+    {value: 1, label: "Option 1"},
+    {value: 2, label: "Option 2"},
+    {value: 3, label: "Option 3"},
+  ]
+
+  return <SenRadio options={radioOptions} />
+}
 ```
 
 
@@ -51,6 +60,19 @@ Type: `Promise<void>`
 
 
 
+
+## Dependencies
+
+### Used by
+
+ - [demo-form](../_demo/demo-form)
+
+### Graph
+```mermaid
+graph TD;
+  demo-form --> sen-radio
+  style sen-radio fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

@@ -14,6 +14,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [demo-form](../_demo/demo-form)
+
 ### Depends on
 
 - [sen-grid](../grid)
@@ -22,6 +26,7 @@
 ```mermaid
 graph TD;
   sen-fieldset --> sen-grid
+  demo-form --> sen-fieldset
   style sen-fieldset fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -51,6 +51,19 @@ Type: `Promise<void>`
 
 
 
+## Dependencies
+
+### Used by
+
+ - [demo-form](../_demo/demo-form)
+
+### Graph
+```mermaid
+graph TD;
+  demo-form --> sen-checkbox
+  style sen-checkbox fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

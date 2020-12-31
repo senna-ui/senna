@@ -7,27 +7,38 @@
 
 ## Usage
 
-### Example
+### React
 
-```html
-<sen-checkbox label="A labeled checkbox" value="1"></sen-checkbox>
-<sen-checkbox>Slot used for label</sen-checkbox>
-<sen-checkbox label="A disabled checkbox" disabled></sen-checkbox>
-<sen-checkbox label="A readonly checkbox" readonly></sen-checkbox>
+```tsx
+import React from "react";
+import { SenSelect } from "@senna/react";
+
+export const Example: React.FC = () => {
+
+  const options = [
+    {value: 1, label: "Option 1"},
+    {value: 2, label: "Option 2"},
+    {value: 3, label: "Option 3"},
+  ]
+
+  return <SenSelect options={options} />
+}
 ```
 
 
 
 ## Properties
 
-| Property   | Attribute  | Description                                                     | Type                                    | Default        |
-| ---------- | ---------- | --------------------------------------------------------------- | --------------------------------------- | -------------- |
-| `disabled` | `disabled` | If `true`, the user cannot interact with the radio.             | `boolean`                               | `false`        |
-| `label`    | `label`    | Label for the radio                                             | `string`                                | `""`           |
-| `name`     | `name`     | The name of the control, which is submitted with the form data. | `string`                                | `this.radioId` |
-| `options`  | --         | Radio options to display                                        | `RadioOption[]`                         | `[]`           |
-| `readonly` | `readonly` | If `true`, the user cannot modify the value.                    | `boolean`                               | `false`        |
-| `value`    | `value`    | The value of the input.                                         | `null \| number \| string \| undefined` | `undefined`    |
+| Property     | Attribute     | Description                                                     | Type                                    | Default         |
+| ------------ | ------------- | --------------------------------------------------------------- | --------------------------------------- | --------------- |
+| `disabled`   | `disabled`    | If `true`, the user cannot interact with the select.            | `boolean`                               | `false`         |
+| `emptyLabel` | `empty-label` | Label of empty option                                           | `string`                                | `"-"`           |
+| `label`      | `label`       | Label for the select                                            | `string`                                | `""`            |
+| `name`       | `name`        | The name of the control, which is submitted with the form data. | `string`                                | `this.selectId` |
+| `options`    | --            | Select options to display                                       | `SelectOption[]`                        | `[]`            |
+| `readonly`   | `readonly`    | If `true`, the user cannot modify the value.                    | `boolean`                               | `false`         |
+| `required`   | `required`    | Set to true to disallow empty selections                        | `boolean`                               | `false`         |
+| `value`      | `value`       | The value of the input.                                         | `null \| number \| string \| undefined` | `undefined`     |
 
 
 ## Events
@@ -51,6 +62,19 @@ Type: `Promise<void>`
 
 
 
+
+## Dependencies
+
+### Used by
+
+ - [demo-form](../_demo/demo-form)
+
+### Graph
+```mermaid
+graph TD;
+  demo-form --> sen-select
+  style sen-select fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

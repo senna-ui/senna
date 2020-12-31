@@ -8,6 +8,7 @@ import type { JSX } from '@senna-ui/core';
 import { applyPolyfills, defineCustomElements } from '@senna-ui/core/loader';
 
 applyPolyfills().then(() => defineCustomElements());
+export const DemoForm = /*@__PURE__*/createReactComponent<JSX.DemoForm, HTMLDemoFormElement>('demo-form');
 export const SenAlert = /*@__PURE__*/createReactComponent<JSX.SenAlert, HTMLSenAlertElement>('sen-alert');
 export const SenApp = /*@__PURE__*/createReactComponent<JSX.SenApp, HTMLSenAppElement>('sen-app');
 export const SenButton = /*@__PURE__*/createReactComponent<JSX.SenButton, HTMLSenButtonElement>('sen-button');
@@ -27,6 +28,7 @@ export const SenMenu = /*@__PURE__*/createReactComponent<JSX.SenMenu, HTMLSenMen
 export const SenMenuItem = /*@__PURE__*/createReactComponent<JSX.SenMenuItem, HTMLSenMenuItemElement>('sen-menu-item');
 export const SenRadio = /*@__PURE__*/createReactComponent<JSX.SenRadio, HTMLSenRadioElement>('sen-radio');
 export const SenRow = /*@__PURE__*/createReactComponent<JSX.SenRow, HTMLSenRowElement>('sen-row');
+export const SenSelect = /*@__PURE__*/createReactComponent<JSX.SenSelect, HTMLSenSelectElement>('sen-select');
 export const SenTable = /*@__PURE__*/createReactComponent<JSX.SenTable, HTMLSenTableElement>('sen-table');
 export const SenText = /*@__PURE__*/createReactComponent<JSX.SenText, HTMLSenTextElement>('sen-text');
 export const SenTypeahead = /*@__PURE__*/createReactComponent<JSX.SenTypeahead, HTMLSenTypeaheadElement>('sen-typeahead');

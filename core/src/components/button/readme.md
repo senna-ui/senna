@@ -19,12 +19,12 @@
 
 ## Properties
 
-| Property     | Attribute     | Description         | Type                                                                          | Default     |
-| ------------ | ------------- | ------------------- | ----------------------------------------------------------------------------- | ----------- |
-| `buttonType` | `button-type` | Button type         | `"button" \| "reset" \| "submit"`                                             | `"button"`  |
-| `color`      | `color`       | Button variant      | `"danger" \| "primary" \| "secondary" \| "success" \| "warning" \| undefined` | `undefined` |
-| `disabled`   | `disabled`    | Disables the button | `boolean`                                                                     | `false`     |
-| `icon`       | `icon`        | Icon to show        | `string \| undefined`                                                         | `undefined` |
+| Property   | Attribute  | Description         | Type                                                                          | Default     |
+| ---------- | ---------- | ------------------- | ----------------------------------------------------------------------------- | ----------- |
+| `color`    | `color`    | Button variant      | `"danger" \| "primary" \| "secondary" \| "success" \| "warning" \| undefined` | `undefined` |
+| `disabled` | `disabled` | Disables the button | `boolean`                                                                     | `false`     |
+| `icon`     | `icon`     | Icon to show        | `string \| undefined`                                                         | `undefined` |
+| `type`     | `type`     | Button type         | `"button" \| "reset" \| "submit"`                                             | `"button"`  |
 
 
 ## CSS Custom Properties
@@ -37,6 +37,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [demo-form](../_demo/demo-form)
+
 ### Depends on
 
 - [sen-icon](../icon)
@@ -45,6 +49,7 @@
 ```mermaid
 graph TD;
   sen-button --> sen-icon
+  demo-form --> sen-button
   style sen-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -52,6 +52,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [demo-form](../_demo/demo-form)
+
 ### Depends on
 
 - [sen-row](../row)
@@ -62,6 +66,7 @@
 graph TD;
   sen-form-field --> sen-row
   sen-form-field --> sen-col
+  demo-form --> sen-form-field
   style sen-form-field fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
