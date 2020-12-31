@@ -8,6 +8,15 @@ const genderOptions: RadioOption[] = [
   { label: "Other", value: "n/a" },
 ];
 
+const countryOptions = [
+  { value: "at", label: "Austria" },
+  { value: "fr", label: "France" },
+  { value: "de", label: "Germany" },
+  { value: "it", label: "Italy" },
+  { value: "li", label: "Lichtenstein" },
+  { value: "ch", label: "Switzerland" },
+];
+
 @Component({
   tag: "demo-form",
   shadow: true,
@@ -30,8 +39,11 @@ export class DemoForm {
             <sen-form-field label="Gender">
               <sen-radio options={genderOptions} />
             </sen-form-field>
+            <sen-form-field label="Role">
+              <sen-input type="text" disabled value="admin" />
+            </sen-form-field>
             <sen-form-field label="Country">
-              <sen-input type="text" disabled value="Switzerland" />
+              <sen-select options={countryOptions} />
             </sen-form-field>
             <sen-form-field>
               <sen-checkbox label="Subscribe to newsletter" />

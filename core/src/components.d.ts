@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AutocompleteTypes, Color, FontWeight, InputChangeEventDetail, MenuItem, OptionSelectedEvent, TableHeaders, TextAlign, TextFieldTypes, TextTag, TextTransform, TypeaheadOption } from "./interface";
 import { RadioOption, RadioValue } from "./components/radio/radio";
+import { SelectOption, SelectValue } from "./components/select/select";
 export namespace Components {
     interface DemoForm {
     }
@@ -379,6 +380,44 @@ export namespace Components {
     }
     interface SenRow {
     }
+    interface SenSelect {
+        /**
+          * If `true`, the user cannot interact with the select.
+         */
+        "disabled": boolean;
+        /**
+          * Label of empty option
+         */
+        "emptyLabel": string;
+        /**
+          * Label for the select
+         */
+        "label": string;
+        /**
+          * The name of the control, which is submitted with the form data.
+         */
+        "name": string;
+        /**
+          * Select options to display
+         */
+        "options": SelectOption[];
+        /**
+          * If `true`, the user cannot modify the value.
+         */
+        "readonly": boolean;
+        /**
+          * Set to true to disallow empty selections
+         */
+        "required": boolean;
+        /**
+          * Sets focus on the specified input. Use this method instead of the global `input.focus()`.
+         */
+        "setFocus": () => Promise<void>;
+        /**
+          * The value of the input.
+         */
+        "value"?: SelectValue;
+    }
     interface SenTable {
         /**
           * Table data, array of table rows
@@ -543,6 +582,12 @@ declare global {
         prototype: HTMLSenRowElement;
         new (): HTMLSenRowElement;
     };
+    interface HTMLSenSelectElement extends Components.SenSelect, HTMLStencilElement {
+    }
+    var HTMLSenSelectElement: {
+        prototype: HTMLSenSelectElement;
+        new (): HTMLSenSelectElement;
+    };
     interface HTMLSenTableElement extends Components.SenTable, HTMLStencilElement {
     }
     var HTMLSenTableElement: {
@@ -582,6 +627,7 @@ declare global {
         "sen-menu-item": HTMLSenMenuItemElement;
         "sen-radio": HTMLSenRadioElement;
         "sen-row": HTMLSenRowElement;
+        "sen-select": HTMLSenSelectElement;
         "sen-table": HTMLSenTableElement;
         "sen-text": HTMLSenTextElement;
         "sen-typeahead": HTMLSenTypeaheadElement;
@@ -975,6 +1021,48 @@ declare namespace LocalJSX {
     }
     interface SenRow {
     }
+    interface SenSelect {
+        /**
+          * If `true`, the user cannot interact with the select.
+         */
+        "disabled"?: boolean;
+        /**
+          * Label of empty option
+         */
+        "emptyLabel"?: string;
+        /**
+          * Label for the select
+         */
+        "label"?: string;
+        /**
+          * The name of the control, which is submitted with the form data.
+         */
+        "name"?: string;
+        /**
+          * Emitted when input is changed
+         */
+        "onSenChange"?: (event: CustomEvent<{ value: SelectValue }>) => void;
+        /**
+          * Emitted when a keyboard input occurred.
+         */
+        "onSenInput"?: (event: CustomEvent<MouseEvent>) => void;
+        /**
+          * Select options to display
+         */
+        "options"?: SelectOption[];
+        /**
+          * If `true`, the user cannot modify the value.
+         */
+        "readonly"?: boolean;
+        /**
+          * Set to true to disallow empty selections
+         */
+        "required"?: boolean;
+        /**
+          * The value of the input.
+         */
+        "value"?: SelectValue;
+    }
     interface SenTable {
         /**
           * Table data, array of table rows
@@ -1046,6 +1134,7 @@ declare namespace LocalJSX {
         "sen-menu-item": SenMenuItem;
         "sen-radio": SenRadio;
         "sen-row": SenRow;
+        "sen-select": SenSelect;
         "sen-table": SenTable;
         "sen-text": SenText;
         "sen-typeahead": SenTypeahead;
@@ -1075,6 +1164,7 @@ declare module "@stencil/core" {
             "sen-menu-item": LocalJSX.SenMenuItem & JSXBase.HTMLAttributes<HTMLSenMenuItemElement>;
             "sen-radio": LocalJSX.SenRadio & JSXBase.HTMLAttributes<HTMLSenRadioElement>;
             "sen-row": LocalJSX.SenRow & JSXBase.HTMLAttributes<HTMLSenRowElement>;
+            "sen-select": LocalJSX.SenSelect & JSXBase.HTMLAttributes<HTMLSenSelectElement>;
             "sen-table": LocalJSX.SenTable & JSXBase.HTMLAttributes<HTMLSenTableElement>;
             "sen-text": LocalJSX.SenText & JSXBase.HTMLAttributes<HTMLSenTextElement>;
             "sen-typeahead": LocalJSX.SenTypeahead & JSXBase.HTMLAttributes<HTMLSenTypeaheadElement>;

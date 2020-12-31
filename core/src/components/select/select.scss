@@ -1,0 +1,45 @@
+:host {
+  .select-wrapper {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: calc(50% - 6px);
+      right: $spacer + $input-padding-x;
+      display: block;
+      width: 6px;
+      height: 6px;
+      transform: rotate(45deg);
+      border-bottom: 2px solid $gray-600;
+      border-right: 2px solid $gray-600;
+    }
+  }
+
+  select {
+    appearance: none;
+    box-sizing: border-box;
+    padding: $input-padding-y $input-padding-x - 3px;
+    font-size: $font-size-base;
+    font-family: $font-family-code;
+    border: $input-border-width solid $input-border-color;
+    background: $input-background;
+    line-height: 17.5px;
+    border-bottom: $input-border-bottom;
+    display: block;
+    width: 100%;
+
+    option {
+      font-family: $font-family-base;
+      font-size: $font-size-base;
+      line-height: 20px;
+      padding: $input-padding-x $input-padding-y;
+    }
+  }
+
+  select:focus {
+    box-shadow: 0 0 0 2px $input-focus-outline-color;
+    outline: none;
+    border-bottom-color: $input-border-color;
+  }
+
+}
