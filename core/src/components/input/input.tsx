@@ -111,6 +111,7 @@ export class Input implements ComponentInterface {
    */
   @Prop() inputmode?:
     | "none"
+    | "radio"
     | "text"
     | "tel"
     | "url"

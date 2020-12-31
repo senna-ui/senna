@@ -8,6 +8,8 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AutocompleteTypes, Color, FontWeight, InputChangeEventDetail, MenuItem, OptionSelectedEvent, TableHeaders, TextAlign, TextFieldTypes, TextTag, TextTransform, TypeaheadOption } from "./interface";
 import { RadioOption, RadioValue } from "./components/radio/radio";
 export namespace Components {
+    interface DemoForm {
+    }
     interface SenAlert {
         /**
           * Button variant
@@ -17,10 +19,6 @@ export namespace Components {
     interface SenApp {
     }
     interface SenButton {
-        /**
-          * Button type
-         */
-        "buttonType": "button" | "submit" | "reset";
         /**
           * Button variant
          */
@@ -33,6 +31,10 @@ export namespace Components {
           * Icon to show
          */
         "icon"?: string;
+        /**
+          * Button type
+         */
+        "type": "button" | "submit" | "reset";
     }
     interface SenButtonGroup {
     }
@@ -256,6 +258,7 @@ export namespace Components {
           * A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`.
          */
         "inputmode"?: | "none"
+    | "radio"
     | "text"
     | "tel"
     | "url"
@@ -420,6 +423,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLDemoFormElement extends Components.DemoForm, HTMLStencilElement {
+    }
+    var HTMLDemoFormElement: {
+        prototype: HTMLDemoFormElement;
+        new (): HTMLDemoFormElement;
+    };
     interface HTMLSenAlertElement extends Components.SenAlert, HTMLStencilElement {
     }
     var HTMLSenAlertElement: {
@@ -553,6 +562,7 @@ declare global {
         new (): HTMLSenTypeaheadElement;
     };
     interface HTMLElementTagNameMap {
+        "demo-form": HTMLDemoFormElement;
         "sen-alert": HTMLSenAlertElement;
         "sen-app": HTMLSenAppElement;
         "sen-button": HTMLSenButtonElement;
@@ -578,6 +588,8 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface DemoForm {
+    }
     interface SenAlert {
         /**
           * Button variant
@@ -587,10 +599,6 @@ declare namespace LocalJSX {
     interface SenApp {
     }
     interface SenButton {
-        /**
-          * Button type
-         */
-        "buttonType"?: "button" | "submit" | "reset";
         /**
           * Button variant
          */
@@ -603,6 +611,10 @@ declare namespace LocalJSX {
           * Icon to show
          */
         "icon"?: string;
+        /**
+          * Button type
+         */
+        "type"?: "button" | "submit" | "reset";
     }
     interface SenButtonGroup {
     }
@@ -830,6 +842,7 @@ declare namespace LocalJSX {
           * A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`.
          */
         "inputmode"?: | "none"
+    | "radio"
     | "text"
     | "tel"
     | "url"
@@ -1013,6 +1026,7 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface IntrinsicElements {
+        "demo-form": DemoForm;
         "sen-alert": SenAlert;
         "sen-app": SenApp;
         "sen-button": SenButton;
@@ -1041,6 +1055,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "demo-form": LocalJSX.DemoForm & JSXBase.HTMLAttributes<HTMLDemoFormElement>;
             "sen-alert": LocalJSX.SenAlert & JSXBase.HTMLAttributes<HTMLSenAlertElement>;
             "sen-app": LocalJSX.SenApp & JSXBase.HTMLAttributes<HTMLSenAppElement>;
             "sen-button": LocalJSX.SenButton & JSXBase.HTMLAttributes<HTMLSenButtonElement>;

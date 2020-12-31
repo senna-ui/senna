@@ -5,10 +5,17 @@
     box-sizing: border-box;
     padding: $input-padding-y $input-padding-x;
     font-size: $font-size-base;
-    font-family: $font-family-base;
+    font-family: $font-family-code;
     border: $input-border-width solid $input-border-color;
     background: $input-background;
     line-height: $input-line-height;
+    border-bottom: $input-border-bottom;
+  }
+
+  input:focus {
+    box-shadow: 0 0 0 2px $input-focus-outline-color;
+    outline: none;
+    border-bottom-color: $input-border-color;
   }
 
   input[type="text"] {

@@ -5,10 +5,9 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    user-select: none;
   }
 
-  .container input {
+  input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -27,6 +26,10 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+  }
+
+  input:focus ~ .checkmark {
+    box-shadow: 0 0 0 2px $input-focus-outline-color;
   }
 
   input:checked ~ .checkmark {

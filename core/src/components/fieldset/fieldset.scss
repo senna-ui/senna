@@ -14,7 +14,7 @@
     font-weight: $font-weight-bold;
     color: $fieldset-legend-color;
     left: 0;
-    padding: 0 $fieldset-padding;
+    padding: $fieldset-padding $fieldset-padding 0 0;
     top: -2 * $fieldset-padding - $fieldset-border-width / 2;
   }
 }

@@ -1,26 +1,10 @@
 
 :host {
-  // make invisible, but not to screen readers
-  &.disabled {
-    cursor: default;
-    .label-text {
-      color: $gray-500;
-    }
-    svg path {
-      fill: $gray-500;
-    }
-  }
-
-  &.readonly {
-    cursor: default;
-  }
-
   .container {
     display: flex;
     align-items: center;
     margin-bottom: $spacer;
     cursor: pointer;
-    user-select: none;
 
     &:last-child {
       margin-bottom: 0;
@@ -47,6 +31,10 @@
 
   .container input:checked ~ .checkmark {
     background-color: $checkmark-box-bg;
+  }
+
+  .container input:focus ~ .checkmark {
+    box-shadow: 0 0 0 2px $input-focus-outline-color;
   }
 
   .checkmark:after {

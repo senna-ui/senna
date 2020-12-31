@@ -65,8 +65,8 @@ $named-colors: map-merge(
 );
 
 $text-color: $black;
-$font-family: "Source Sans Pro", Helvetica, sans-serif;
-$font-family-monospace: "Consolas", monospace;
+$font-family: "IBM Plex Sans", "Source Sans Pro", Helvetica, sans-serif;
+$font-family-monospace: "IBM Plex Mono", "Consolas", monospace;
 
 $body-bg: $white !default;
 $link-color: $primary !default;
@@ -126,11 +126,13 @@ $btn-color-names: (
 $btn-colors: map-pick-keys($named-colors, $btn-color-names) !default;
 
 $input-border-width: $border-width !default;
-$input-border-color: $gray-200 !default;
+$input-border-color: $gray-100 !default;
 $input-padding-y: $btn-padding-y !default;
 $input-padding-x: $spacer * 0.8 !default;
 $input-line-height: 1em;
-$input-background: $gray-200 !default;
+$input-background: $gray-100 !default;
+$input-focus-outline-color: lighten($primary, 30);
+$input-border-bottom: 1px solid $gray-500;
 
 $input-disabled-color: $gray-500;
 

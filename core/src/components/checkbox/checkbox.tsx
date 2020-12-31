@@ -121,7 +121,6 @@ export class Checkbox implements ComponentInterface {
             onInput={this.onInput}
             disabled={this.disabled}
             readOnly={this.readonly}
-            tabindex="-1"
             checked={this.value}
             aria-labelledby={`${this.checkboxId}-label`}
             type="checkbox"

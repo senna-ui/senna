@@ -16,7 +16,7 @@ export class Button implements ComponentInterface {
   /**
    * Button type
    */
-  @Prop() buttonType: "button" | "submit" | "reset" = "button";
+  @Prop() type: "button" | "submit" | "reset" = "button";
   /**
    * Button variant
    */
@@ -40,7 +40,7 @@ export class Button implements ComponentInterface {
 
     return (
       <Host>
-        <button class={classes} type={this.buttonType} disabled={this.disabled}>
+        <button class={classes} type={this.type} disabled={this.disabled}>
           <span>
             {this.icon && <sen-icon name={this.icon}></sen-icon>}
             <slot />
