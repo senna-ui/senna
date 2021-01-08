@@ -1,0 +1,11 @@
+
+:host {
+
+  display: contents;
+
+  td {
+    text-align: left;
+    padding: var(--sen-table-cell-padding-y, $table-cell-padding-y) var(--sen-table-cell-padding-x, $table-cell-padding-x);
+    font-variant-numeric: tabular-nums;
+  }
+}

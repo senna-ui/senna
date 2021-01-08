@@ -23,28 +23,30 @@ export class DataTable implements ComponentInterface {
   render() {
     return (
       <Host>
-        <table class="table">
-          <thead>
-            {this.headers.map((header) => (
-              <th style={{ textAlign: header.textAlign }}>{header.value}</th>
-            ))}
-          </thead>
-          <tbody>
+        <sen-table>
+          <sen-table-head>
+            <sen-table-row>
+              {this.headers.map((header) => (
+                <sen-table-cell style={{ textAlign: header.textAlign }}>
+                  {header.value}
+                </sen-table-cell>
+              ))}
+            </sen-table-row>
+          </sen-table-head>
+          <sen-table-body>
             {this.data.map((row) => (
-              <tr>
+              <sen-table-row>
                 {this.headers.map((header) => (
-                  <td
-                    style={{
-                      textAlign: row[header.key].textAlign || header.textAlign,
-                    }}
+                  <sen-table-cell
+                    align={row[header.key].textAlign || header.textAlign}
                   >
                     {row[header.key]}
-                  </td>
+                  </sen-table-cell>
                 ))}
-              </tr>
+              </sen-table-row>
             ))}
-          </tbody>
-        </table>
+          </sen-table-body>
+        </sen-table>
       </Host>
     );
   }

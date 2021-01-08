@@ -1,0 +1,9 @@
+:host {
+  display: table-row-group;
+}
+
+::slotted(sen-table-row) {
+  &:hover {
+    background: var(--sen-table-row-active-bg, $table-row-active-bg);
+  }
+}

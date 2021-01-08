@@ -1,7 +1,6 @@
 import { Component, Host, h } from "@stencil/core";
 
 import type { TableHeaders } from "../../../interface";
-
 import { users } from "../../../utils/mockdata/users";
 
 const tableHeaders: TableHeaders = [

@@ -1,0 +1,7 @@
+
+:host {
+  display: table;
+  background: $table-bg;
+  border: var(--sen-table-border-width, $table-border-width) solid var(--sen-table-border-color, $table-border-color);
+  border-spacing: 0;
+}

@@ -430,6 +430,28 @@ export namespace Components {
          */
         "value"?: SelectValue;
     }
+    interface SenTable {
+    }
+    interface SenTableBody {
+    }
+    interface SenTableCell {
+        /**
+          * Alignment of contents
+         */
+        "align"?: TextAlign | undefined;
+        /**
+          * How many columns to span
+         */
+        "colspan"?: string | number | undefined;
+        /**
+          * How many rows to span
+         */
+        "rowspan"?: string | number | undefined;
+    }
+    interface SenTableHead {
+    }
+    interface SenTableRow {
+    }
     interface SenText {
         /**
           * [Text align](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align)
@@ -602,6 +624,36 @@ declare global {
         prototype: HTMLSenSelectElement;
         new (): HTMLSenSelectElement;
     };
+    interface HTMLSenTableElement extends Components.SenTable, HTMLStencilElement {
+    }
+    var HTMLSenTableElement: {
+        prototype: HTMLSenTableElement;
+        new (): HTMLSenTableElement;
+    };
+    interface HTMLSenTableBodyElement extends Components.SenTableBody, HTMLStencilElement {
+    }
+    var HTMLSenTableBodyElement: {
+        prototype: HTMLSenTableBodyElement;
+        new (): HTMLSenTableBodyElement;
+    };
+    interface HTMLSenTableCellElement extends Components.SenTableCell, HTMLStencilElement {
+    }
+    var HTMLSenTableCellElement: {
+        prototype: HTMLSenTableCellElement;
+        new (): HTMLSenTableCellElement;
+    };
+    interface HTMLSenTableHeadElement extends Components.SenTableHead, HTMLStencilElement {
+    }
+    var HTMLSenTableHeadElement: {
+        prototype: HTMLSenTableHeadElement;
+        new (): HTMLSenTableHeadElement;
+    };
+    interface HTMLSenTableRowElement extends Components.SenTableRow, HTMLStencilElement {
+    }
+    var HTMLSenTableRowElement: {
+        prototype: HTMLSenTableRowElement;
+        new (): HTMLSenTableRowElement;
+    };
     interface HTMLSenTextElement extends Components.SenText, HTMLStencilElement {
     }
     var HTMLSenTextElement: {
@@ -638,6 +690,11 @@ declare global {
         "sen-radio": HTMLSenRadioElement;
         "sen-row": HTMLSenRowElement;
         "sen-select": HTMLSenSelectElement;
+        "sen-table": HTMLSenTableElement;
+        "sen-table-body": HTMLSenTableBodyElement;
+        "sen-table-cell": HTMLSenTableCellElement;
+        "sen-table-head": HTMLSenTableHeadElement;
+        "sen-table-row": HTMLSenTableRowElement;
         "sen-text": HTMLSenTextElement;
         "sen-typeahead": HTMLSenTypeaheadElement;
     }
@@ -1084,6 +1141,28 @@ declare namespace LocalJSX {
          */
         "value"?: SelectValue;
     }
+    interface SenTable {
+    }
+    interface SenTableBody {
+    }
+    interface SenTableCell {
+        /**
+          * Alignment of contents
+         */
+        "align"?: TextAlign | undefined;
+        /**
+          * How many columns to span
+         */
+        "colspan"?: string | number | undefined;
+        /**
+          * How many rows to span
+         */
+        "rowspan"?: string | number | undefined;
+    }
+    interface SenTableHead {
+    }
+    interface SenTableRow {
+    }
     interface SenText {
         /**
           * [Text align](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align)
@@ -1148,6 +1227,11 @@ declare namespace LocalJSX {
         "sen-radio": SenRadio;
         "sen-row": SenRow;
         "sen-select": SenSelect;
+        "sen-table": SenTable;
+        "sen-table-body": SenTableBody;
+        "sen-table-cell": SenTableCell;
+        "sen-table-head": SenTableHead;
+        "sen-table-row": SenTableRow;
         "sen-text": SenText;
         "sen-typeahead": SenTypeahead;
     }
@@ -1179,6 +1263,11 @@ declare module "@stencil/core" {
             "sen-radio": LocalJSX.SenRadio & JSXBase.HTMLAttributes<HTMLSenRadioElement>;
             "sen-row": LocalJSX.SenRow & JSXBase.HTMLAttributes<HTMLSenRowElement>;
             "sen-select": LocalJSX.SenSelect & JSXBase.HTMLAttributes<HTMLSenSelectElement>;
+            "sen-table": LocalJSX.SenTable & JSXBase.HTMLAttributes<HTMLSenTableElement>;
+            "sen-table-body": LocalJSX.SenTableBody & JSXBase.HTMLAttributes<HTMLSenTableBodyElement>;
+            "sen-table-cell": LocalJSX.SenTableCell & JSXBase.HTMLAttributes<HTMLSenTableCellElement>;
+            "sen-table-head": LocalJSX.SenTableHead & JSXBase.HTMLAttributes<HTMLSenTableHeadElement>;
+            "sen-table-row": LocalJSX.SenTableRow & JSXBase.HTMLAttributes<HTMLSenTableRowElement>;
             "sen-text": LocalJSX.SenText & JSXBase.HTMLAttributes<HTMLSenTextElement>;
             "sen-typeahead": LocalJSX.SenTypeahead & JSXBase.HTMLAttributes<HTMLSenTypeaheadElement>;
         }
