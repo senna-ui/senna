@@ -11,6 +11,8 @@ import { SelectOption, SelectValue } from "./components/select/select";
 export namespace Components {
     interface DemoForm {
     }
+    interface DemoTable {
+    }
     interface SenAlert {
         /**
           * Button variant
@@ -170,6 +172,16 @@ export namespace Components {
           * The size of the column for xs screens, in terms of how many columns it should take up out of the total available. If `"auto"` is passed, the column will be the size of its content.
          */
         "sizeXs"?: string;
+    }
+    interface SenDataTable {
+        /**
+          * Table data, array of table rows
+         */
+        "data": any[];
+        /**
+          * Table headers
+         */
+        "headers": TableHeaders;
     }
     interface SenFieldset {
         /**
@@ -418,16 +430,6 @@ export namespace Components {
          */
         "value"?: SelectValue;
     }
-    interface SenTable {
-        /**
-          * Table data, array of table rows
-         */
-        "data": any[];
-        /**
-          * Table headers
-         */
-        "headers": TableHeaders;
-    }
     interface SenText {
         /**
           * [Text align](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align)
@@ -467,6 +469,12 @@ declare global {
     var HTMLDemoFormElement: {
         prototype: HTMLDemoFormElement;
         new (): HTMLDemoFormElement;
+    };
+    interface HTMLDemoTableElement extends Components.DemoTable, HTMLStencilElement {
+    }
+    var HTMLDemoTableElement: {
+        prototype: HTMLDemoTableElement;
+        new (): HTMLDemoTableElement;
     };
     interface HTMLSenAlertElement extends Components.SenAlert, HTMLStencilElement {
     }
@@ -528,6 +536,12 @@ declare global {
         prototype: HTMLSenColElement;
         new (): HTMLSenColElement;
     };
+    interface HTMLSenDataTableElement extends Components.SenDataTable, HTMLStencilElement {
+    }
+    var HTMLSenDataTableElement: {
+        prototype: HTMLSenDataTableElement;
+        new (): HTMLSenDataTableElement;
+    };
     interface HTMLSenFieldsetElement extends Components.SenFieldset, HTMLStencilElement {
     }
     var HTMLSenFieldsetElement: {
@@ -588,12 +602,6 @@ declare global {
         prototype: HTMLSenSelectElement;
         new (): HTMLSenSelectElement;
     };
-    interface HTMLSenTableElement extends Components.SenTable, HTMLStencilElement {
-    }
-    var HTMLSenTableElement: {
-        prototype: HTMLSenTableElement;
-        new (): HTMLSenTableElement;
-    };
     interface HTMLSenTextElement extends Components.SenText, HTMLStencilElement {
     }
     var HTMLSenTextElement: {
@@ -608,6 +616,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "demo-form": HTMLDemoFormElement;
+        "demo-table": HTMLDemoTableElement;
         "sen-alert": HTMLSenAlertElement;
         "sen-app": HTMLSenAppElement;
         "sen-button": HTMLSenButtonElement;
@@ -618,6 +627,7 @@ declare global {
         "sen-card-title": HTMLSenCardTitleElement;
         "sen-checkbox": HTMLSenCheckboxElement;
         "sen-col": HTMLSenColElement;
+        "sen-data-table": HTMLSenDataTableElement;
         "sen-fieldset": HTMLSenFieldsetElement;
         "sen-form-field": HTMLSenFormFieldElement;
         "sen-grid": HTMLSenGridElement;
@@ -628,13 +638,14 @@ declare global {
         "sen-radio": HTMLSenRadioElement;
         "sen-row": HTMLSenRowElement;
         "sen-select": HTMLSenSelectElement;
-        "sen-table": HTMLSenTableElement;
         "sen-text": HTMLSenTextElement;
         "sen-typeahead": HTMLSenTypeaheadElement;
     }
 }
 declare namespace LocalJSX {
     interface DemoForm {
+    }
+    interface DemoTable {
     }
     interface SenAlert {
         /**
@@ -799,6 +810,16 @@ declare namespace LocalJSX {
           * The size of the column for xs screens, in terms of how many columns it should take up out of the total available. If `"auto"` is passed, the column will be the size of its content.
          */
         "sizeXs"?: string;
+    }
+    interface SenDataTable {
+        /**
+          * Table data, array of table rows
+         */
+        "data"?: any[];
+        /**
+          * Table headers
+         */
+        "headers"?: TableHeaders;
     }
     interface SenFieldset {
         /**
@@ -1063,16 +1084,6 @@ declare namespace LocalJSX {
          */
         "value"?: SelectValue;
     }
-    interface SenTable {
-        /**
-          * Table data, array of table rows
-         */
-        "data"?: any[];
-        /**
-          * Table headers
-         */
-        "headers"?: TableHeaders;
-    }
     interface SenText {
         /**
           * [Text align](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align)
@@ -1115,6 +1126,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "demo-form": DemoForm;
+        "demo-table": DemoTable;
         "sen-alert": SenAlert;
         "sen-app": SenApp;
         "sen-button": SenButton;
@@ -1125,6 +1137,7 @@ declare namespace LocalJSX {
         "sen-card-title": SenCardTitle;
         "sen-checkbox": SenCheckbox;
         "sen-col": SenCol;
+        "sen-data-table": SenDataTable;
         "sen-fieldset": SenFieldset;
         "sen-form-field": SenFormField;
         "sen-grid": SenGrid;
@@ -1135,7 +1148,6 @@ declare namespace LocalJSX {
         "sen-radio": SenRadio;
         "sen-row": SenRow;
         "sen-select": SenSelect;
-        "sen-table": SenTable;
         "sen-text": SenText;
         "sen-typeahead": SenTypeahead;
     }
@@ -1145,6 +1157,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "demo-form": LocalJSX.DemoForm & JSXBase.HTMLAttributes<HTMLDemoFormElement>;
+            "demo-table": LocalJSX.DemoTable & JSXBase.HTMLAttributes<HTMLDemoTableElement>;
             "sen-alert": LocalJSX.SenAlert & JSXBase.HTMLAttributes<HTMLSenAlertElement>;
             "sen-app": LocalJSX.SenApp & JSXBase.HTMLAttributes<HTMLSenAppElement>;
             "sen-button": LocalJSX.SenButton & JSXBase.HTMLAttributes<HTMLSenButtonElement>;
@@ -1155,6 +1168,7 @@ declare module "@stencil/core" {
             "sen-card-title": LocalJSX.SenCardTitle & JSXBase.HTMLAttributes<HTMLSenCardTitleElement>;
             "sen-checkbox": LocalJSX.SenCheckbox & JSXBase.HTMLAttributes<HTMLSenCheckboxElement>;
             "sen-col": LocalJSX.SenCol & JSXBase.HTMLAttributes<HTMLSenColElement>;
+            "sen-data-table": LocalJSX.SenDataTable & JSXBase.HTMLAttributes<HTMLSenDataTableElement>;
             "sen-fieldset": LocalJSX.SenFieldset & JSXBase.HTMLAttributes<HTMLSenFieldsetElement>;
             "sen-form-field": LocalJSX.SenFormField & JSXBase.HTMLAttributes<HTMLSenFormFieldElement>;
             "sen-grid": LocalJSX.SenGrid & JSXBase.HTMLAttributes<HTMLSenGridElement>;
@@ -1165,7 +1179,6 @@ declare module "@stencil/core" {
             "sen-radio": LocalJSX.SenRadio & JSXBase.HTMLAttributes<HTMLSenRadioElement>;
             "sen-row": LocalJSX.SenRow & JSXBase.HTMLAttributes<HTMLSenRowElement>;
             "sen-select": LocalJSX.SenSelect & JSXBase.HTMLAttributes<HTMLSenSelectElement>;
-            "sen-table": LocalJSX.SenTable & JSXBase.HTMLAttributes<HTMLSenTableElement>;
             "sen-text": LocalJSX.SenText & JSXBase.HTMLAttributes<HTMLSenTextElement>;
             "sen-typeahead": LocalJSX.SenTypeahead & JSXBase.HTMLAttributes<HTMLSenTypeaheadElement>;
         }

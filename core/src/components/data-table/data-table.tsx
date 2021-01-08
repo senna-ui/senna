@@ -4,14 +4,14 @@ import { Component, Host, h, Prop } from "@stencil/core";
 import type { TableHeaders } from "../../interface";
 
 /**
- * @docsMenu { "group": "table" }
+ * @docsMenu { "group": "table", "subGroup": "data-table" }
  */
 @Component({
-  tag: "sen-table",
-  styleUrl: "table.scss",
+  tag: "sen-data-table",
+  styleUrl: "data-table.scss",
   shadow: true,
 })
-export class Table implements ComponentInterface {
+export class DataTable implements ComponentInterface {
   /**
    * Table headers
    */

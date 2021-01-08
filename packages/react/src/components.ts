@@ -9,6 +9,7 @@ import { applyPolyfills, defineCustomElements } from '@senna-ui/core/loader';
 
 applyPolyfills().then(() => defineCustomElements());
 export const DemoForm = /*@__PURE__*/createReactComponent<JSX.DemoForm, HTMLDemoFormElement>('demo-form');
+export const DemoTable = /*@__PURE__*/createReactComponent<JSX.DemoTable, HTMLDemoTableElement>('demo-table');
 export const SenAlert = /*@__PURE__*/createReactComponent<JSX.SenAlert, HTMLSenAlertElement>('sen-alert');
 export const SenApp = /*@__PURE__*/createReactComponent<JSX.SenApp, HTMLSenAppElement>('sen-app');
 export const SenButton = /*@__PURE__*/createReactComponent<JSX.SenButton, HTMLSenButtonElement>('sen-button');
@@ -19,6 +20,7 @@ export const SenCardBody = /*@__PURE__*/createReactComponent<JSX.SenCardBody, HT
 export const SenCardTitle = /*@__PURE__*/createReactComponent<JSX.SenCardTitle, HTMLSenCardTitleElement>('sen-card-title');
 export const SenCheckbox = /*@__PURE__*/createReactComponent<JSX.SenCheckbox, HTMLSenCheckboxElement>('sen-checkbox');
 export const SenCol = /*@__PURE__*/createReactComponent<JSX.SenCol, HTMLSenColElement>('sen-col');
+export const SenDataTable = /*@__PURE__*/createReactComponent<JSX.SenDataTable, HTMLSenDataTableElement>('sen-data-table');
 export const SenFieldset = /*@__PURE__*/createReactComponent<JSX.SenFieldset, HTMLSenFieldsetElement>('sen-fieldset');
 export const SenFormField = /*@__PURE__*/createReactComponent<JSX.SenFormField, HTMLSenFormFieldElement>('sen-form-field');
 export const SenGrid = /*@__PURE__*/createReactComponent<JSX.SenGrid, HTMLSenGridElement>('sen-grid');
@@ -29,6 +31,5 @@ export const SenMenuItem = /*@__PURE__*/createReactComponent<JSX.SenMenuItem, HT
 export const SenRadio = /*@__PURE__*/createReactComponent<JSX.SenRadio, HTMLSenRadioElement>('sen-radio');
 export const SenRow = /*@__PURE__*/createReactComponent<JSX.SenRow, HTMLSenRowElement>('sen-row');
 export const SenSelect = /*@__PURE__*/createReactComponent<JSX.SenSelect, HTMLSenSelectElement>('sen-select');
-export const SenTable = /*@__PURE__*/createReactComponent<JSX.SenTable, HTMLSenTableElement>('sen-table');
 export const SenText = /*@__PURE__*/createReactComponent<JSX.SenText, HTMLSenTextElement>('sen-text');
 export const SenTypeahead = /*@__PURE__*/createReactComponent<JSX.SenTypeahead, HTMLSenTypeaheadElement>('sen-typeahead');
