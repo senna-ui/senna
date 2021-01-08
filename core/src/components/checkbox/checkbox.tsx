@@ -11,11 +11,10 @@ import {
   Method,
 } from "@stencil/core";
 
+let checkboxIds = 0;
 /**
  * @docsMenu { "group": "forms", "subGroup": "input" }
  */
-
-let checkboxIds = 0;
 @Component({
   tag: "sen-checkbox",
   styleUrl: "checkbox.scss",

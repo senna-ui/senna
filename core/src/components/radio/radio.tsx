@@ -18,10 +18,11 @@ export type RadioOption = {
 
 export type RadioValue = string | number | undefined | null;
 
+let radioIds = 0;
+
 /**
  * @docsMenu { "group": "forms", "subGroup": "input" }
  */
-let radioIds = 0;
 @Component({
   tag: "sen-radio",
   styleUrl: "radio.scss",

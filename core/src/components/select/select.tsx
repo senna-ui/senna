@@ -18,10 +18,11 @@ export type SelectOption = {
 
 export type SelectValue = string | number | undefined | null;
 
+let selectIds = 0;
+
 /**
  * @docsMenu { "group": "forms", "subGroup": "input" }
  */
-let selectIds = 0;
 @Component({
   tag: "sen-select",
   styleUrl: "select.scss",
