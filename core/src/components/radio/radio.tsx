@@ -19,7 +19,7 @@ export type RadioOption = {
 export type RadioValue = string | number | undefined | null;
 
 /**
- * @docsMenu { "group": "forms" }
+ * @docsMenu { "group": "forms", "subGroup": "input" }
  */
 let radioIds = 0;
 @Component({

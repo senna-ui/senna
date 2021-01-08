@@ -12,7 +12,7 @@ import {
 } from "@stencil/core";
 
 /**
- * @docsMenu { "group": "forms" }
+ * @docsMenu { "group": "forms", "subGroup": "input" }
  */
 
 let checkboxIds = 0;

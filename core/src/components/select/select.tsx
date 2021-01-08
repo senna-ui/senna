@@ -19,7 +19,7 @@ export type SelectOption = {
 export type SelectValue = string | number | undefined | null;
 
 /**
- * @docsMenu { "group": "forms" }
+ * @docsMenu { "group": "forms", "subGroup": "input" }
  */
 let selectIds = 0;
 @Component({
