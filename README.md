@@ -12,10 +12,7 @@ Senna UI is based on [Web Components](https://www.webcomponents.org/introduction
 | **Core** | [`@senna-ui/core`](https://www.npmjs.com/package/@senna-ui/core) | [![version](https://img.shields.io/npm/v/@senna-ui/core/latest.svg)](https://www.npmjs.com/package/@senna-ui/core) | [`README.md`](core/README.md)
 | **React** | [`@senna-ui/react`](https://www.npmjs.com/package/@senna-ui/react) | [![version](https://img.shields.io/npm/v/@senna-ui/react/latest.svg)](https://www.npmjs.com/package/@senna-ui/react) | [`README.md`](packages/react/README.md)
 
-### Getting Started
+### Getting Started (React)
 
-TODO
+https://docs.senna-ui.com/docs/react
 
-### Examples
-
-TODO
