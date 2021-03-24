@@ -1,6 +1,6 @@
 # Senna UI
 
-[Senna UI](https://senna-ui.com/) is a design system and UI framework to build high productivity user interfaces.
+[Senna UI](https://docs.senna-ui.com/docs) is a design system and UI framework to build high productivity user interfaces.
 
 Senna UI is based on [Web Components](https://www.webcomponents.org/introduction) for great performance and robust styling.
 
